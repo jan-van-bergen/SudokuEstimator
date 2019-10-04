@@ -152,7 +152,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ScopedTimer.h" />
     <ClInclude Include="Sudoku.h" />
+    <ClInclude Include="SudokuTraverser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

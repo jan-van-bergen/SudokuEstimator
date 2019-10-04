@@ -44,14 +44,14 @@ struct Sudoku {
 	inline bool is_valid_move(int x, int y, int value) const {
 		// Check if row rule would be violated
 		for (int i = 0; i < size; i++) {
-			if (grid[i, y] == value) {
+			if (grid[INDEX(i, y)] == value) {
 				return false;
 			}
 		}
 
 		// Check if column rule would be violated
 		for (int j = 0; j < size; j++) {
-			if (grid[x, j] == value) {
+			if (grid[INDEX(x, j)] == value) {
 				return false;
 			}
 		}
@@ -62,7 +62,7 @@ struct Sudoku {
 
 		for (int j = by; j < by + N; j++) {
 			for (int i = bx; i < bx + N; i++) {
-				if (grid[i, j] == value) {
+				if (grid[INDEX(i, j)] == value) {
 					return false;
 				}
 			}
@@ -80,5 +80,9 @@ struct Sudoku {
 		assert(!is_fixed[INDEX(x, y)]);
 
 		grid[INDEX(x, y)] = value;
+	}
+
+	inline bool is_free(int x, int y) const {
+		return !is_fixed[INDEX(x, y)];
 	}
 };
