@@ -2,28 +2,20 @@
 #include <cassert>
 
 struct RowRightColumnDownTraverser {
-    int x;
-	int y;
-
-	inline RowRightColumnDownTraverser() {
-		x = 0;
-		y = 0;
-	}
-
 	template<int N>
-    inline bool move(const Sudoku<N> * sudoku) {
+    inline static bool move(const Sudoku<N> * sudoku, int * x, int * y) {
 		do {
-			x++;
+			(*x)++;
 
-			if (x == sudoku->size) { 
-				x = 0; 
-				y++; 
+			if (*x == sudoku->size) { 
+				*x = 0; 
+				(*y)++; 
 
-				if (y == sudoku->size) {
+				if (*y == sudoku->size) {
 					return true;
 				}
 			}
-		} while (sudoku->get(x, y) != 0);
+		} while (sudoku->get(*x, *y) != 0);
 
 		return false;
 	}

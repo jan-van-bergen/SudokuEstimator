@@ -77,6 +77,8 @@ struct Sudoku {
 			for (int x = 0; x < size; x++) {
 				int current_value = grid[INDEX(x, y)];
 
+				if (current_value < 1 || current_value > size) return false;
+
 				// Check row, skipping the current cell
 				for (int i = 0; i < size; i++) {
 					if (i != x && grid[INDEX(i, y)] == current_value) {
