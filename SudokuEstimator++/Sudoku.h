@@ -72,6 +72,42 @@ struct Sudoku {
 		return true;
 	}
 
+	inline bool is_valid_solution() const {
+		for (int y = 0; y < size; y++) {
+			for (int x = 0; x < size; x++) {
+				int current_value = grid[INDEX(x, y)];
+
+				// Check row, skipping the current cell
+				for (int i = 0; i < size; i++) {
+					if (i != x && grid[INDEX(i, y)] == current_value) {
+						return false;
+					}
+				}
+
+				// Check column, skipping the current cell
+				for (int j = 0; j < size; j++) {
+					if (j != y && grid[INDEX(x, j)] == current_value) {
+						return false;
+					}
+				}
+
+				// Check block, skipping the current cell
+				int bx = N * (x / N);
+				int by = N * (y / N);
+
+				for (int j = by; j < by + N; j++) {
+					for (int i = bx; i < bx + N; i++) {
+						if ((i != x || j != y) && grid[INDEX(i, j)] == current_value) {
+							return false;
+						}
+					}
+				}
+			}
+		}
+
+		return true;
+	}
+
 	inline int get(int x, int y) const {
 		return grid[INDEX(x, y)];
 	}
