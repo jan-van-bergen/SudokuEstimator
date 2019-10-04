@@ -41,7 +41,7 @@ struct Sudoku {
     }
 
 	// Returns true if the cell (x, y) can assume the given value, given the current state of the grid
-	inline bool is_valid_move(int x, int y, int value) {
+	inline bool is_valid_move(int x, int y, int value) const {
 		// Check if row rule would be violated
 		for (int i = 0; i < size; i++) {
 			if (grid[i, y] == value) {
@@ -72,7 +72,7 @@ struct Sudoku {
 		return true;
 	}
 
-	inline int get(int x, int y) {
+	inline int get(int x, int y) const {
 		return grid[INDEX(x, y)];
 	}
 
