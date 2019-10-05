@@ -18,16 +18,14 @@ struct Domain_Sudoku : Sudoku<N> {
 		}
 	}
 
-	inline bool is_valid_move(int x, int y, int value) {
+	inline bool is_valid_move(int x, int y, int value) const {
 		return domains[INDEX(x, y) * size + value - 1] == 0;
 	}
 
 	// Gets the domain of cell (x, )
 	// Stores the resulting domain in result_domain, which should be an array of length >= size
 	// The size of the domain is returned
-	inline int get_domain(int x, int y, int result_domain[size]) {
-		int index = INDEX(x, y);
-
+	inline int get_domain(int x, int y, int result_domain[size]) const {
 		int domain_size = 0;
 
 		for (int value = 1; value <= size; value++) {

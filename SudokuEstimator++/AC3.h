@@ -73,7 +73,13 @@ void ac3(Domain_Sudoku<N> * sudoku) {
 				if (all_equal) {
 					assert(domain_size_j == 1); // @TODO: use this fact to optimize
 
-					sudoku->domains[(xi + yi * Domain_Sudoku<N>::size) * Domain_Sudoku<N>::size + domain_i[di] - 1]++;
+					int * domain = &sudoku->domains[(xi + yi * Domain_Sudoku<N>::size) * Domain_Sudoku<N>::size + domain_i[di] - 1];
+
+					if (*domain == 0) {
+						sudoku->domain_sizes[xi + yi * Domain_Sudoku<N>::size]--;
+					}
+
+					(*domain)++;
 
 					modified = true;
 				}
