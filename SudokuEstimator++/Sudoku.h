@@ -6,7 +6,7 @@
 
 template<int N> // N is the size of a block, meaning for a 9x9 sudoku N = 3
 struct Sudoku {
-	static const int size = N * N;
+	static constexpr int size = N * N;
 
 	int grid[size * size];
 	std::bitset<size * size> is_fixed;

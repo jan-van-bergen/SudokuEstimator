@@ -1,7 +1,7 @@
 #pragma once
-#include <cassert>
+#include "Sudoku.h"
 
-struct RowRightColumnDownTraverser {
+struct Row_Right_Column_Down_Traverser {
 	template<int N>
     inline static bool move(const Sudoku<N> * sudoku, int * x, int * y) {
 		do {
