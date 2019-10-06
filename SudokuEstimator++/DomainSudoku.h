@@ -2,7 +2,7 @@
 #include "Sudoku.h"
 
 template<int N>
-struct Domain_Sudoku : Sudoku<N> {
+struct Domain_Sudoku : public Sudoku<N> {
 	static constexpr int size = Sudoku<N>::size;
 
 	int domains     [size * size * size];
@@ -17,6 +17,22 @@ struct Domain_Sudoku : Sudoku<N> {
 			}
 		}
 	}
+
+	inline void reset() {
+        for (int j = 0; j < size; j++) {
+			for (int i = 0; i < size; i++) {
+				int index = INDEX(i, j);
+
+				Sudoku<N>::grid[index] = 0;
+
+				for (int value = 0; value < size; value++) {
+                    domains[index * size + value] = 0;
+				}
+
+                domain_sizes[index] = size;
+			}
+		}
+    }
 
 	inline bool is_valid_move(int x, int y, int value) const {
 		return domains[INDEX(x, y) * size + value - 1] == 0;
@@ -121,3 +137,52 @@ private:
 		return valid;
 	}
 };
+
+template<int N>
+void load_sudoku_from_file(Domain_Sudoku<N> * sudoku, const char * file_path) {
+	FILE * file = NULL;
+	if (fopen_s(&file, file_path, "r") != 0) {
+		abort();
+	}
+
+	assert(file);
+
+	char buffer[8];
+	int  buffer_index = 0;
+
+	for (int j = 0; j < sudoku->size; j++) {
+		for (int i = 0; i < sudoku->size; i++) {
+			buffer_index = 0;
+
+			// Read until next space, newline or EOF
+			while (true) {
+				char c = fgetc(file);
+
+				if (c == EOF) {
+					if (i == sudoku->size - 1 && j == sudoku->size - 1) {
+						break;
+					}
+				
+					abort(); // ERROR: End Of File reached before end of Sudoku!
+				}
+
+				if (c == ' ' || c == '\n') break;
+
+				assert(buffer_index < 8);
+				buffer[buffer_index++] = c;
+			}
+
+			// NULL terminate the string
+			buffer[buffer_index] = NULL;
+
+			// Convert newly read string to int
+			int value = atoi(buffer);
+
+			sudoku->set_with_forward_check(i, j, value);
+		}
+	}
+
+	fclose(file);
+
+	sudoku->set_current_state_as_start_state();
+}

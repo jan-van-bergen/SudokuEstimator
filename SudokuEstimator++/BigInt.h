@@ -32,7 +32,7 @@ struct BigInt {
    
     BigInt operator ^(const BigInt &v){
         BigInt ans=1,a=*this,b=v;
-        while(!b.isZero()){
+        while(!b.is_zero()){
             if(b%2)
             ans*=a;
             a*=a,b/=2;
@@ -293,7 +293,7 @@ struct BigInt {
             sign = 1;
     }
  
-    bool isZero() const {
+    bool is_zero() const {
         return a.empty() || (a.size() == 1 && !a[0]);
     }
  
@@ -317,7 +317,7 @@ struct BigInt {
     }
  
     friend BigInt gcd(const BigInt &a, const BigInt &b) {
-        return b.isZero() ? a : gcd(b, a % b);
+        return b.is_zero() ? a : gcd(b, a % b);
     }
    
     friend BigInt lcm(const BigInt &a, const BigInt &b) {

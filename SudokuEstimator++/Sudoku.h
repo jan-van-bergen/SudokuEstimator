@@ -1,5 +1,4 @@
 #pragma once
-#include <bitset>
 #include <cassert>
 
 #define INDEX(i, j) (i + j * size)
@@ -9,33 +8,20 @@ struct Sudoku {
 	static constexpr int size = N * N;
 
 	int grid[size * size];
-	std::bitset<size * size> is_fixed;
 
 	inline Sudoku() {
 		for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {
-				grid    [INDEX(i, j)] = 0;
-				is_fixed[INDEX(i, j)] = false;
+				grid[INDEX(i, j)] = 0;
 			}
 		}
 	}
 
-	// Records all non-zero cells as fixed
-	inline void set_current_state_as_start_state() {
+	// Resets all cells to zero
+    inline void reset() {
         for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {
-                is_fixed[INDEX(i, j)] = grid[INDEX(i, j)] != 0;
-			}
-		}
-    }
-
-	// Resets all non-fixed cells to zero
-    inline void reset_to_start_state() {
-        for (int j = 0; j < size; j++) {
-			for (int i = 0; i < size; i++) {
-                if (!is_fixed[INDEX(i, j)]) {
-                    grid[INDEX(i, j)] = 0;
-				}
+				grid[INDEX(i, j)] = 0;
 			}
 		}
     }
@@ -115,12 +101,6 @@ struct Sudoku {
 	}
 
 	inline void set(int x, int y, int value) {
-		assert(!is_fixed[INDEX(x, y)]);
-
 		grid[INDEX(x, y)] = value;
-	}
-
-	inline bool is_free(int x, int y) const {
-		return !is_fixed[INDEX(x, y)];
 	}
 };
