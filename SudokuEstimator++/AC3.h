@@ -55,26 +55,16 @@ void ac3(Domain_Sudoku<N> * sudoku) {
 
         bool modified = false;
 
-		int domain_size_i = sudoku->get_domain(xi, yi, domain_i);
 		int domain_size_j = sudoku->get_domain(xj, yj, domain_j);
 
-		if (domain_size_j > 0) {
+		if (domain_size_j == 1) {
+			int domain_size_i = sudoku->get_domain(xi, yi, domain_i);
+
 			for (int di = 0; di < domain_size_i; di++) {
-				bool all_equal = true;
-
-				for (int dj = 0; dj < domain_size_j; dj++) {
-					if (domain_i[di] != domain_j[dj]) {
-						all_equal = false;
-
-						break;
-					}
-				}
-
-				if (all_equal) {
-					assert(domain_size_j == 1); // @TODO: use this fact to optimize
-
+				if (domain_i[di] == domain_j[0]) {
 					int * domain = &sudoku->domains[(xi + yi * Domain_Sudoku<N>::size) * Domain_Sudoku<N>::size + domain_i[di] - 1];
 
+					// If domain_i[di] was previously unconstrained, it is now
 					if (*domain == 0) {
 						sudoku->domain_sizes[xi + yi * Domain_Sudoku<N>::size]--;
 					}
@@ -82,6 +72,8 @@ void ac3(Domain_Sudoku<N> * sudoku) {
 					(*domain)++;
 
 					modified = true;
+
+					break;
 				}
 			}
 		}
