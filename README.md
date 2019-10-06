@@ -1,4 +1,4 @@
-# SudokuEstimator
+# Monte Carlo Sudoku Solution Estimator
 
 Implementation of a Monte Carlo style algorithm that estimates the amount of valid solutions to a Sudoku of arbitrary size.
 
