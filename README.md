@@ -6,6 +6,6 @@ Original idea based on <a>https://theartofmachinery.com/2017/08/14/monte_carlo_c
 
 TODO:
 
-* [ ] Use Reduced Latin Rectangles instead of Normalized to further reduce search space
+* [ ] Look into faster Latin Rectangle generation.
 * [ ] Implement better way to keep track of domains, so they can be accessed in `O(1)` time
 * [ ] Multithreading
