@@ -9,3 +9,4 @@ TODO:
 * [ ] Look into faster Latin Rectangle generation.
 * [ ] Implement better way to keep track of domains, so they can be accessed in `O(1)` time
 * [ ] Multithreading
+* [ ] Custom BigInteger class
