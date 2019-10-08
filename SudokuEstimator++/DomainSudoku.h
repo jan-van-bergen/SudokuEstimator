@@ -61,21 +61,26 @@ struct Domain_Sudoku : public Sudoku<N> {
 	}
 	
 	inline bool set_with_forward_check(int x, int y, int value) {
-		bool valid = true;
+		assert(value >= 1 && value <= size);
 
-		int index = INDEX(x, y);
+		// Update all related domains that this grid is now a number
+		bool valid = update_domains(x, y, value - 1, +1);
 
-		if (value == 0) { 
-			// If resetting a value, update all related domains that this grid is no longer a number
-			valid = update_domains(x, y, Sudoku<N>::grid[index] - 1, -1);	
-		} else if (value != 0) { 
-			// If setting a value, update all related domains that this grid is now a number
-			valid = update_domains(x, y, value - 1, 1);
-		}
-
-		Sudoku<N>::grid[index] = value;
+		Sudoku<N>::grid[INDEX(x, y)] = value;
 
 		return valid;
+	}
+
+	inline void reset_cell(int x, int y) {
+		int index = INDEX(x, y);
+
+		assert(Sudoku<N>::grid[index] != 0);
+
+		// Update all related domains that this grid is no longer a number
+		bool valid = update_domains(x, y, Sudoku<N>::grid[index] - 1, -1);	
+		assert(valid);
+
+		Sudoku<N>::grid[index] = 0;
 	}
 	
 private:
@@ -83,13 +88,13 @@ private:
 	inline bool update_domain(int i, int j, int value, int change) {
 		int index = INDEX(i, j);
 
-		int oldValue = constraints[index * size + value];
-		int newValue = constraints[index * size + value] += change;
+		int old_value = constraints[index * size + value];
+		int new_value = constraints[index * size + value] += change;
 
-		if (oldValue == 1 && newValue == 0) {
+		if (old_value == 1 && new_value == 0) {
 			// The value was added to the domain,
 			domain_sizes[index]++;
-		} else if (oldValue == 0 && newValue == 1) {
+		} else if (old_value == 0 && new_value == 1) {
 			// The value was removed from the domain
 			domain_sizes[index]--;
 		}
