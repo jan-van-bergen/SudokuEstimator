@@ -4,7 +4,7 @@
 
 template<int N>
 bool ac3(Domain_Sudoku<N> * sudoku) {
-	assert(sudoku->size < 256);
+	assert(sudoku->size < 256); // Cell coordinates need to be able to be packed in a byte
 
     std::queue<unsigned int> constraints;
 
@@ -18,25 +18,21 @@ bool ac3(Domain_Sudoku<N> * sudoku) {
             int bxe = bx + N;
 			int bye = by + N;
 
-            // Update all domains in the current row
-            for (int xj = 0; xj < sudoku->size; xj++) {
-                if (xj < bx || xj >= bxe) {
-                    constraints.push((unsigned int)(xi << 24 | yi << 16 | xj << 8 | yi));
-				}
-			}
+			unsigned int current_cell = xi << 24 | yi << 16;
 
-            // Update all domains in the current column
-            for (int yj = 0; yj < sudoku->size; yj++) {
-                if (yj < by || yj >= bye) {
-                    constraints.push((unsigned int)(xi << 24 | yi << 16 | xi << 8 | yj));
-				}
-			}
+            // Update all domains in the current row, skipping the cells that are also in the current block
+			for (int xj = 0;   xj < bx;           xj++) constraints.push((unsigned int)(current_cell | xj << 8 | yi));
+			for (int xj = bxe; xj < sudoku->size; xj++) constraints.push((unsigned int)(current_cell | xj << 8 | yi));
 
-            // Update all domains in the current block
+            // Update all domains in the current column, skipping the cells that are also in the current block
+			for (int yj = 0;   yj < by;           yj++) constraints.push((unsigned int)(current_cell | xi << 8 | yj));
+			for (int yj = bye; yj < sudoku->size; yj++) constraints.push((unsigned int)(current_cell | xi << 8 | yj));
+
+            // Update all domains in the current block, except for (xi, yi) and (xj, yj)
             for (int yj = by; yj < bye; yj++) {
                 for (int xj = bx; xj < bxe; xj++) {
                     if (xj != xi || yj != yi) {
-                        constraints.push((unsigned int)(xi << 24 | yi << 16 | xj << 8 | yj));
+                        constraints.push((unsigned int)(current_cell | xj << 8 | yj));
 					}
 				}
 			}
@@ -91,21 +87,17 @@ bool ac3(Domain_Sudoku<N> * sudoku) {
             int bxe = bx + N;
 			int bye = by + N;
 
-            // Update all domains in the current row
-            for (int xk = 0; xk < sudoku->size; xk++) {
-                if ((xk < bx || xk >= bxe) && xk != xj) {
-                    constraints.push((unsigned int)(xk << 24 | yi << 16 | xi << 8 | yi));
-				}
-			}
+			unsigned int current_cell = xi << 8 | yi;
 
-            // Update all domains in the current column
-            for (int yk = 0; yk < sudoku->size; yk++) {
-                if ((yk < by || yk >= bye) && yk != yj) {
-                    constraints.push((unsigned int)(xi << 24 | yk << 16 | xi << 8 | yi));
-				}
-			}
+            // Update all domains in the current row, skipping the cells that are also in the current block
+			for (int xk = 0;   xk < bx;           xk++) constraints.push((unsigned int)(xk << 24 | yi << 16 | current_cell));
+			for (int xk = bxe; xk < sudoku->size; xk++) constraints.push((unsigned int)(xk << 24 | yi << 16 | current_cell));
 
-            // Update all domains in the current block
+            // Update all domains in the current column, skipping the cells that are also in the current block
+			for (int yk = 0;   yk < by;           yk++) constraints.push((unsigned int)(xi << 24 | yk << 16 | xi << 8 | yi));
+			for (int yk = bye; yk < sudoku->size; yk++) constraints.push((unsigned int)(xi << 24 | yk << 16 | xi << 8 | yi));
+
+            // Update all domains in the current block, except for (xi, yi) and (xj, yj)
             for (int yk = by; yk < bye; yk++) {
                 for (int xk = bx; xk < bxe; xk++) {
                     if ((xk != xi || yk != yi) && (xk != xj || yk != yj)) {
