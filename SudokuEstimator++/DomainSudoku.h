@@ -60,6 +60,9 @@ struct Domain_Sudoku : public Sudoku<N> {
 		return domain_size;
 	}
 	
+	// Sets the cell at (x, y) to the given value, using forward checking
+	// Updates all related domains (cells in the same row, column and block) that the cell has the new value
+	// If any of those domains become empty false is returned, true otherwise
 	inline bool set_with_forward_check(int x, int y, int value) {
 		assert(value >= 1 && value <= size);
 
@@ -71,6 +74,8 @@ struct Domain_Sudoku : public Sudoku<N> {
 		return valid;
 	}
 
+	// Resets the cell at (x, y) to zero
+	// Updates all related domains (cells in the same row, column and block) that the cell no longer has a value
 	inline void reset_cell(int x, int y) {
 		int index = INDEX(x, y);
 
