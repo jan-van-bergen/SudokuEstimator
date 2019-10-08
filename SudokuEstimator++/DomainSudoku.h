@@ -65,7 +65,7 @@ struct Domain_Sudoku : public Sudoku<N> {
 
 		int index = INDEX(x, y);
 
-		if (value == 0 && Sudoku<N>::grid[index] != 0) { 
+		if (value == 0) { 
 			// If resetting a value, update all related domains that this grid is no longer a number
 			valid = update_domains(x, y, Sudoku<N>::grid[index] - 1, -1);	
 		} else if (value != 0) { 
@@ -87,10 +87,10 @@ private:
 		int newValue = constraints[index * size + value] += change;
 
 		if (oldValue == 1 && newValue == 0) {
-			// Check if a value was added to the domain,
+			// The value was added to the domain,
 			domain_sizes[index]++;
 		} else if (oldValue == 0 && newValue == 1) {
-			// or removed from the domain
+			// The value was removed from the domain
 			domain_sizes[index]--;
 		}
 
@@ -104,34 +104,24 @@ private:
 		int index = INDEX(x, y) * size;
 
 		// All values other than 'value' can be removed from the domain at (x, y)
-		for (int i = 0; i < size; i++) {
-			if (i != value) {
-				constraints[index + i] += change;
-			}
-		}
+		for (int i = 0;         i < value; i++) constraints[index + i] += change;
+		for (int i = value + 1; i < size;  i++) constraints[index + i] += change;
 
 		// Calculate current block bounds
 		int bx = N * (x / N);
 		int by = N * (y / N);
-
 		int bxe = bx + N;
 		int bye = by + N;
 
-		// Update all domains in the current row
-		for (int i = 0; i < size; i++) {
-			if ((i < bx || i >= bxe)) {
-				valid &= update_domain(i, y, value, change);
-			}
-		}
+		// Update all domains in the current row, skipping the cells that are also in the current block
+		for (int i = 0;   i < bx;   i++) valid &= update_domain(i, y, value, change);
+		for (int i = bxe; i < size; i++) valid &= update_domain(i, y, value, change);
 
-		// Update all domains in the current column
-		for (int j = 0; j < size; j++) {
-			if ((j < by || j >= bye)) {
-				valid &= update_domain(x, j, value, change);
-			}
-		}
+		// Update all domains in the current column, skipping the cells that are also in the current block
+		for (int j = 0;   j < by;   j++) valid &= update_domain(x, j, value, change);
+		for (int j = bye; j < size; j++) valid &= update_domain(x, j, value, change);
 
-		// Update all domains in the current block
+		// Update all domains in the current block, except for the cell at (x, y)
 		for (int j = by; j < bye; j++) {
 			for (int i = bx; i < bxe; i++) {
 				if (i != x || j != y) {

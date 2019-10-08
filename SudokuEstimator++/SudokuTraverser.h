@@ -106,7 +106,9 @@ struct Most_Constrained_Traverser {
         
 		// Loop through the sudoku based on the precalculated domain sizes
 		// This will slightly reduce search time in the beginning, as a lot the first domain sizes are all 1 
-		for (int y = 0; y < Sudoku<N>::size; y++) {
+		for (int y = 1; y < Sudoku<N>::size; y++) {
+			if (y % N == 0) continue; // These rows are always filled with numbers obtained from a N x N^2 Latin Rectangle, no need to check their domains
+
 			for (int x = 0; x < Sudoku<N>::size; x++) {
 				// Check if the spot at (x, y) is free
 				if (sudoku->get(x, y) == 0) {

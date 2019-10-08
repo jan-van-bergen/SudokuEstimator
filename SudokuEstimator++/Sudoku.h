@@ -10,11 +10,7 @@ struct Sudoku {
 	int grid[size * size];
 
 	inline Sudoku() {
-		for (int j = 0; j < size; j++) {
-			for (int i = 0; i < size; i++) {
-				grid[INDEX(i, j)] = 0;
-			}
-		}
+		reset();
 	}
 
 	// Resets all cells to zero
