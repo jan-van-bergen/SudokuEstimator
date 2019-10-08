@@ -64,7 +64,7 @@ struct Domain_Sudoku : public Sudoku<N> {
 		assert(value >= 1 && value <= size);
 
 		// Update all related domains that this grid is now a number
-		bool valid = update_domains(x, y, value - 1, +1);
+		bool valid = update_domains<+1>(x, y, value - 1);
 
 		Sudoku<N>::grid[INDEX(x, y)] = value;
 
@@ -77,40 +77,56 @@ struct Domain_Sudoku : public Sudoku<N> {
 		assert(Sudoku<N>::grid[index] != 0);
 
 		// Update all related domains that this grid is no longer a number
-		bool valid = update_domains(x, y, Sudoku<N>::grid[index] - 1, -1);	
-		assert(valid);
+		update_domains<-1>(x, y, Sudoku<N>::grid[index] - 1);
 
 		Sudoku<N>::grid[index] = 0;
 	}
 	
 private:
 	// Updates the domain of the variable at (i, j). Returns true if it's domains isn't empty, false otherwise
-	inline bool update_domain(int i, int j, int value, int change) {
+	template<int Change> inline bool update_domain(int i, int j, int value);
+
+	template<>
+	inline bool update_domain<+1>(int i, int j, int value) {
 		int index = INDEX(i, j);
 
-		int old_value = constraints[index * size + value];
-		int new_value = constraints[index * size + value] += change;
-
-		if (old_value == 1 && new_value == 0) {
-			// The value was added to the domain,
-			domain_sizes[index]++;
-		} else if (old_value == 0 && new_value == 1) {
-			// The value was removed from the domain
+		if (constraints[index * size + value] == 0) {
+			// Previously unconstrained, now it is. The value was removed from the domain
 			domain_sizes[index]--;
+
+			constraints[index * size + value]++;
+
+			return domain_sizes[index] != 0;
 		}
 
-		// Return true if the domain isn't empty yet
-		return domain_sizes[index] != 0;
+		constraints[index * size + value]++;
+
+		return true;
 	}
 
-	inline bool update_domains(int x, int y, int value, int change) {
+	template<>
+	inline bool update_domain<-1>(int i, int j, int value) {
+		int index = INDEX(i, j);
+
+		if (constraints[index * size + value] == 1) {
+			// Previously constrained, now it isn't anymore. The value was added to the domain,
+			domain_sizes[index]++;
+		}
+
+		constraints[index * size + value]--;
+
+		return true;
+	}
+
+	template<int Change>
+	inline bool update_domains(int x, int y, int value) {
 		bool valid = true;
 
 		int index = INDEX(x, y) * size;
 
 		// All values other than 'value' can be removed from the domain at (x, y)
-		for (int i = 0;         i < value; i++) constraints[index + i] += change;
-		for (int i = value + 1; i < size;  i++) constraints[index + i] += change;
+		for (int i = 0;         i < value; i++) constraints[index + i] += Change;
+		for (int i = value + 1; i < size;  i++) constraints[index + i] += Change;
 
 		// Calculate current block bounds
 		int bx = N * (x / N);
@@ -119,18 +135,18 @@ private:
 		int bye = by + N;
 
 		// Update all domains in the current row, skipping the cells that are also in the current block
-		for (int i = 0;   i < bx;   i++) valid &= update_domain(i, y, value, change);
-		for (int i = bxe; i < size; i++) valid &= update_domain(i, y, value, change);
+		for (int i = 0;   i < bx;   i++) valid &= update_domain<Change>(i, y, value);
+		for (int i = bxe; i < size; i++) valid &= update_domain<Change>(i, y, value);
 
 		// Update all domains in the current column, skipping the cells that are also in the current block
-		for (int j = 0;   j < by;   j++) valid &= update_domain(x, j, value, change);
-		for (int j = bye; j < size; j++) valid &= update_domain(x, j, value, change);
+		for (int j = 0;   j < by;   j++) valid &= update_domain<Change>(x, j, value);
+		for (int j = bye; j < size; j++) valid &= update_domain<Change>(x, j, value);
 
 		// Update all domains in the current block, except for the cell at (x, y)
 		for (int j = by; j < bye; j++) {
 			for (int i = bx; i < bxe; i++) {
 				if (i != x || j != y) {
-					valid &= update_domain(i, j, value, change);
+					valid &= update_domain<Change>(i, j, value);
 				}
 			}
 		}
