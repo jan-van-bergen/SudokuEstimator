@@ -5,11 +5,15 @@ template<int N>
 struct Domain_Sudoku : public Sudoku<N> {
 	static constexpr int size = Sudoku<N>::size;
 
-	int domains     [size * size * size];
+    // 'constraints' stores a 1d array for each cell (x, y) in the Sudoku
+    // It contains at position [(x + y*size)*size + v - 1] the amount of variables in the row, column and block of position (x, y), that have value v.
+    // Thus if the value stored is 0, it means that v is in the domain of (x, y), as no other variable constrains that value.
+    // This setup allows for fast checking of domains
+	int constraints [size * size * size];
 	int domain_sizes[size * size];
 
 	inline Domain_Sudoku() {
-		memset(domains, 0, sizeof(domains));
+		memset(constraints, 0, sizeof(constraints));
 		
 		for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {
@@ -26,7 +30,7 @@ struct Domain_Sudoku : public Sudoku<N> {
 				Sudoku<N>::grid[index] = 0;
 
 				for (int value = 0; value < size; value++) {
-                    domains[index * size + value] = 0;
+                    constraints[index * size + value] = 0;
 				}
 
                 domain_sizes[index] = size;
@@ -35,7 +39,7 @@ struct Domain_Sudoku : public Sudoku<N> {
     }
 
 	inline bool is_valid_move(int x, int y, int value) const {
-		return domains[INDEX(x, y) * size + value - 1] == 0;
+		return constraints[INDEX(x, y) * size + value - 1] == 0;
 	}
 
 	// Gets the domain of cell (x, )
@@ -79,8 +83,8 @@ private:
 	inline bool update_domain(int i, int j, int value, int change) {
 		int index = INDEX(i, j);
 
-		int oldValue = domains[index * size + value];
-		int newValue = domains[index * size + value] += change;
+		int oldValue = constraints[index * size + value];
+		int newValue = constraints[index * size + value] += change;
 
 		if (oldValue == 1 && newValue == 0) {
 			// Check if a value was added to the domain,
@@ -102,7 +106,7 @@ private:
 		// All values other than 'value' can be removed from the domain at (x, y)
 		for (int i = 0; i < size; i++) {
 			if (i != value) {
-				domains[index + i] += change;
+				constraints[index + i] += change;
 			}
 		}
 
@@ -140,52 +144,3 @@ private:
 		return valid;
 	}
 };
-
-template<int N>
-void load_sudoku_from_file(Domain_Sudoku<N> * sudoku, const char * file_path) {
-	FILE * file = NULL;
-	if (fopen_s(&file, file_path, "r") != 0) {
-		abort();
-	}
-
-	assert(file);
-
-	char buffer[8];
-	int  buffer_index = 0;
-
-	for (int j = 0; j < sudoku->size; j++) {
-		for (int i = 0; i < sudoku->size; i++) {
-			buffer_index = 0;
-
-			// Read until next space, newline or EOF
-			while (true) {
-				char c = fgetc(file);
-
-				if (c == EOF) {
-					if (i == sudoku->size - 1 && j == sudoku->size - 1) {
-						break;
-					}
-				
-					abort(); // ERROR: End Of File reached before end of Sudoku!
-				}
-
-				if (c == ' ' || c == '\n') break;
-
-				assert(buffer_index < 8);
-				buffer[buffer_index++] = c;
-			}
-
-			// NULL terminate the string
-			buffer[buffer_index] = NULL;
-
-			// Convert newly read string to int
-			int value = atoi(buffer);
-
-			sudoku->set_with_forward_check(i, j, value);
-		}
-	}
-
-	fclose(file);
-
-	sudoku->set_current_state_as_start_state();
-}
