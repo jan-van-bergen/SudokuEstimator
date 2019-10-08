@@ -50,6 +50,9 @@ struct Domain_Sudoku : public Sudoku<N> {
 			}
 		}
 
+		// For empty cells the domain size should be the same as the cached one
+		assert(Sudoku<N>::get(x, y) != 0 || domain_size == domain_sizes[INDEX(x, y)]);
+
 		return domain_size;
 	}
 	

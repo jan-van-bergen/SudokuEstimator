@@ -96,6 +96,16 @@ struct Sudoku {
 		return true;
 	}
 
+	inline void print() const {
+		for (int y = 0; y < size; y++) {
+			for (int x = 0; x < size; x++) {
+				printf("%u ", grid[INDEX(x, y)]);
+			}
+
+			printf("\n");
+		}
+	}
+
 	inline int get(int x, int y) const {
 		return grid[INDEX(x, y)];
 	}

@@ -3,7 +3,7 @@
 #include "DomainSudoku.h"
 
 template<int N>
-void ac3(Domain_Sudoku<N> * sudoku) {
+bool ac3(Domain_Sudoku<N> * sudoku) {
 	assert(sudoku->size < 256);
 
     std::queue<unsigned int> constraints;
@@ -11,7 +11,7 @@ void ac3(Domain_Sudoku<N> * sudoku) {
     // Enqueue all constraints
     for (int yi = 0; yi < sudoku->size; yi++) {
         for (int xi = 0; xi < sudoku->size; xi++) {
-            //Calculate current block bounds
+            // Calculate current block bounds
             int bx = N * (xi / N);
 			int by = N * (yi / N);
 
@@ -62,14 +62,18 @@ void ac3(Domain_Sudoku<N> * sudoku) {
 
 			for (int di = 0; di < domain_size_i; di++) {
 				if (domain_i[di] == domain_j[0]) {
-					int * domain = &sudoku->domains[(xi + yi * Domain_Sudoku<N>::size) * Domain_Sudoku<N>::size + domain_i[di] - 1];
+					int& domain = sudoku->domains[(xi + yi * Domain_Sudoku<N>::size) * Domain_Sudoku<N>::size + domain_i[di] - 1];
 
 					// If domain_i[di] was previously unconstrained, it is now
-					if (*domain == 0) {
-						sudoku->domain_sizes[xi + yi * Domain_Sudoku<N>::size]--;
+					if (domain == 0) {
+						int& domain_size = sudoku->domain_sizes[xi + yi * Domain_Sudoku<N>::size];
+						domain_size--;
+
+						// If the domain is now empty, the Sudoku is not valid
+						if (domain_size == 0) return false;
 					}
 
-					(*domain)++;
+					domain++;
 
 					modified = true;
 
@@ -110,4 +114,6 @@ void ac3(Domain_Sudoku<N> * sudoku) {
 			}
         }
     } while (constraints.size() > 0);
+
+	return true;
 }
