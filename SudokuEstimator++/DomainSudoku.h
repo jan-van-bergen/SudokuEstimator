@@ -125,36 +125,44 @@ private:
 
 	template<int Change>
 	inline bool update_domains(int x, int y, int value) {
-		bool valid = true;
-
-		int index = INDEX(x, y) * size;
-
-		// All values other than 'value' can be removed from the domain at (x, y)
-		for (int i = 0;         i < value; i++) constraints[index + i] += Change;
-		for (int i = value + 1; i < size;  i++) constraints[index + i] += Change;
-
 		// Calculate current block bounds
 		int bx = N * (x / N);
 		int by = N * (y / N);
 		int bxe = bx + N;
 		int bye = by + N;
 
-		// Update all domains in the current row, skipping the cells that are also in the current block
-		for (int i = 0;   i < bx;   i++) valid &= update_domain<Change>(i, y, value);
-		for (int i = bxe; i < size; i++) valid &= update_domain<Change>(i, y, value);
+		bool valid = true;
 
-		// Update all domains in the current column, skipping the cells that are also in the current block
-		for (int j = 0;   j < by;   j++) valid &= update_domain<Change>(x, j, value);
-		for (int j = bye; j < size; j++) valid &= update_domain<Change>(x, j, value);
+		// Update all domains in the current row, skipping the cell at (x, y)
+		for (int i = 0;   i < x;    i++) valid &= update_domain<Change>(i, y, value);
+		for (int i = x+1; i < size; i++) valid &= update_domain<Change>(i, y, value);
 
-		// Update all domains in the current block, except for the cell at (x, y)
-		for (int j = by; j < bye; j++) {
-			for (int i = bx; i < bxe; i++) {
-				if (i != x || j != y) {
-					valid &= update_domain<Change>(i, j, value);
-				}
+		// Update all domains in the current column, skipping the cell at (x, y)
+		for (int j = 0;   j < y;    j++) valid &= update_domain<Change>(x, j, value);
+		for (int j = y+1; j < size; j++) valid &= update_domain<Change>(x, j, value);
+
+		// Update all domains in the current block, except for the cells in row y and column x
+		for (int j = by; j < y; j++) {
+			for (int i = bx; i < x; i++) {
+				valid &= update_domain<Change>(i, j, value);
+			}
+			for (int i = x+1; i < bxe; i++) {
+				valid &= update_domain<Change>(i, j, value);
 			}
 		}
+		for (int j = y+1; j < bye; j++) {
+			for (int i = bx; i < x; i++) {
+				valid &= update_domain<Change>(i, j, value);
+			}
+			for (int i = x+1; i < bxe; i++) {
+				valid &= update_domain<Change>(i, j, value);
+			}
+		}
+		
+		int index = INDEX(x, y) * size;
+		// All values other than 'value' can be removed from the domain at (x, y)
+		for (int i = 0;         i < value; i++) constraints[index + i] += Change;
+		for (int i = value + 1; i < size;  i++) constraints[index + i] += Change;
 
 		// The domain update was valid if no domains were made empty
 		return valid;
