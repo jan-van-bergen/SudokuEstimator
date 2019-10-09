@@ -14,13 +14,13 @@ struct Sudoku {
 	}
 
 	// Resets all cells to zero
-    inline void reset() {
-        for (int j = 0; j < size; j++) {
+	inline void reset() {
+        	for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {
 				grid[INDEX(i, j)] = 0;
 			}
 		}
-    }
+	}
 
 	// Returns true if the cell (x, y) can assume the given value, given the current state of the grid
 	inline bool is_valid_move(int x, int y, int value) const {
