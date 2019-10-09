@@ -1,9 +1,9 @@
 #pragma once
 #include <queue>
-#include "DomainSudoku.h"
+#include "Sudoku.h"
 
 template<int N>
-bool ac3(Domain_Sudoku<N> * sudoku) {
+bool ac3(Sudoku<N> * sudoku) {
 	assert(sudoku->size < 256); // Cell coordinates need to be able to be packed in a byte
 
     std::queue<unsigned int> constraints;
@@ -41,8 +41,8 @@ bool ac3(Domain_Sudoku<N> * sudoku) {
         }
 	}
 
-	int domain_i[Domain_Sudoku<N>::size];
-	int domain_j[Domain_Sudoku<N>::size];
+	int domain_i[Sudoku<N>::size];
+	int domain_j[Sudoku<N>::size];
 
     do {
         unsigned int cij = constraints.front();
@@ -60,12 +60,12 @@ bool ac3(Domain_Sudoku<N> * sudoku) {
 
 			for (int di = 0; di < domain_size_i; di++) {
 				if (domain_i[di] == domain_j[0]) {
-					int& constraint = sudoku->constraints[(xi + yi * Domain_Sudoku<N>::size) * Domain_Sudoku<N>::size + domain_i[di] - 1];
+					int& constraint = sudoku->constraints[(xi + yi * Sudoku<N>::size) * Sudoku<N>::size + domain_i[di] - 1];
 
 					// If domain_i[di] was previously unconstrained, it is now
 					if (constraint == 0) {
 						// Remove the value from the domain
-						int& domain_size = sudoku->domain_sizes[xi + yi * Domain_Sudoku<N>::size];
+						int& domain_size = sudoku->domain_sizes[xi + yi * Sudoku<N>::size];
 						domain_size--;
 
 						// If the domain is now empty, the Sudoku is not valid

@@ -27,9 +27,6 @@
     <ClInclude Include="AC3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DomainSudoku.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BigInteger.h">
       <Filter>Header Files</Filter>
     </ClInclude>

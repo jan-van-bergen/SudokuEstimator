@@ -41,11 +41,11 @@ struct Most_Constrained_Traverser {
 		y = -1;
 	}
 
-	inline void seek_first(const Domain_Sudoku<N> * sudoku) {
+	inline void seek_first(const Sudoku<N> * sudoku) {
 		move(sudoku);
 	}
 
-	inline bool move(const Domain_Sudoku<N> * sudoku) {
+	inline bool move(const Sudoku<N> * sudoku) {
 		int smallest_domain = Sudoku<N>::size;
 		int smallest_x = -1;
 		int smallest_y = -1;

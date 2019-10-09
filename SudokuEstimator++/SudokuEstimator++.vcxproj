@@ -154,7 +154,6 @@
     <ClInclude Include="AC3.h" />
     <ClInclude Include="BigInt.h" />
     <ClInclude Include="BigInteger.h" />
-    <ClInclude Include="DomainSudoku.h" />
     <ClInclude Include="ScopedTimer.h" />
     <ClInclude Include="Sudoku.h" />
     <ClInclude Include="SudokuTraverser.h" />
