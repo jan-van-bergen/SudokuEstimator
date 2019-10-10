@@ -19,7 +19,7 @@ public:
 	{ }
 
 	inline void operator=(unsigned long long integer) {
-		// Make sure at least 64 bytes are available
+		// Make sure at least 64 bits are available
 		bits.reserve(2);
 
 		bits[0] = (unsigned int)(integer);
