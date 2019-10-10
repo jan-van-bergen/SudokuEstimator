@@ -32,7 +32,7 @@ BigInteger BigInteger::operator+(const BigInteger& other) const {
 	}
 
 	for (int i = min_size; i < max_size; i++) {
-		result.bits[i] = (*max_bits)[i];
+		result.bits[i] = (*max_bits)[i]; // @TODO: shouldn't the carry be used here too?
 	}
 
 	return result;
