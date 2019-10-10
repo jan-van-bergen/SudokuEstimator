@@ -21,6 +21,7 @@ struct Sudoku {
 	}
 
 	// Resets all cells to zero
+	// Domains are reset to be the numbers 1 .. N^2
 	inline void reset() {
 		for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {
@@ -37,10 +38,12 @@ struct Sudoku {
 		}
 	}
 	
+	// Checks if the cell at (x, y) is allowed to assume the given value
 	inline bool is_valid_move(int x, int y, int value) const {
 		return constraints[INDEX(x, y) * size + value - 1] == 0;
 	}
 
+	// Checks if the current configuration is a valid Sudoku grid
 	inline bool is_valid_solution() const {
 		for (int y = 0; y < size; y++) {
 			for (int x = 0; x < size; x++) {
@@ -79,7 +82,7 @@ struct Sudoku {
 		return true;
 	}
 	
-	// Gets the domain of cell (x, )
+	// Gets the domain of cell (x, y)
 	// Stores the resulting domain in result_domain, which should be an array of length >= size
 	// The size of the domain is returned
 	inline int get_domain(int x, int y, int result_domain[size]) const {
@@ -97,6 +100,7 @@ struct Sudoku {
 		return domain_size;
 	}
 	
+	// Prints the Sudoku to the console
 	inline void print() const {
 		for (int y = 0; y < size; y++) {
 			for (int x = 0; x < size; x++) {
@@ -107,6 +111,7 @@ struct Sudoku {
 		}
 	}
 
+	// Retrieves the value at cell (x, y)
 	inline int get(int x, int y) const {
 		return grid[INDEX(x, y)];
 	}
@@ -139,7 +144,8 @@ struct Sudoku {
 	}
 	
 private:
-	// Updates the domain of the variable at (i, j). Returns true if it's domains isn't empty, false otherwise
+	// Updates the domain of the variable at (i, j). 
+	// Returns true if it's domains isn't empty, false otherwise
 	template<int Change> inline bool update_domain(int i, int j, int value);
 
 	template<>
