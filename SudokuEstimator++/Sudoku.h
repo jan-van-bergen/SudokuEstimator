@@ -190,7 +190,7 @@ struct Sudoku {
 	}
 	
 private:
-	int is_zero[size];
+	int is_zero[size]; // Lookup table to avoid branching. Evaluates to 1 if its input is 0, evaluates to 0 for any other input
 
 	// Updates the domain of the variable at (i, j). 
 	// Returns true if it's domains isn't empty, false otherwise
