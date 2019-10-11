@@ -30,7 +30,7 @@ struct Sudoku {
 			for (int i = 0; i < size; i++) {
 				int index = get_index(i, j);
 
-				Sudoku<N>::grid[index] = 0;
+				grid[index] = 0;
 
 				for (int value = 0; value < size; value++) {
                     constraints[index * size + value] = 0;
@@ -98,7 +98,7 @@ struct Sudoku {
 		}
 
 		// For empty cells the domain size should be the same as the cached one
-		assert(Sudoku<N>::get(x, y) != 0 || domain_size == domain_sizes[get_index(x, y)]);
+		assert(get(x, y) != 0 || domain_size == domain_sizes[get_index(x, y)]);
 
 		return domain_size;
 	}
@@ -128,7 +128,9 @@ struct Sudoku {
 		// Update all related domains that this grid is now a number
 		bool valid = update_domains<+1>(x, y, value - 1);
 
-		Sudoku<N>::grid[get_index(x, y)] = value;
+		grid[get_index(x, y)] = value;
+
+
 
 		return valid;
 	}
@@ -138,12 +140,12 @@ struct Sudoku {
 	inline void reset_cell(int x, int y) {
 		int index = get_index(x, y);
 
-		assert(Sudoku<N>::grid[index] != 0);
+		assert(grid[index] != 0);
 
 		// Update all related domains that this grid is no longer a number
-		update_domains<-1>(x, y, Sudoku<N>::grid[index] - 1);
+		update_domains<-1>(x, y, grid[index] - 1);
 
-		Sudoku<N>::grid[index] = 0;
+		grid[index] = 0;
 	}
 	
 private:
