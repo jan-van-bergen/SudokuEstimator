@@ -53,8 +53,9 @@ struct Most_Constrained_Traverser {
 		int smallest_x = -1;
 		int smallest_y = -1;
 
+		// Check the domain sizes of all empty cells
 		for (int i = 0; i < sudoku->empty_cells_length; i++) {
-			int index = sudoku->empty_cells[i];
+			int index       = sudoku->empty_cells[i];
 			int domain_size = sudoku->domain_sizes[index];
 			
 			if (domain_size < smallest_domain) {
