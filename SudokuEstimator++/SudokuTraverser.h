@@ -46,35 +46,26 @@ struct Most_Constrained_Traverser {
 	}
 
 	inline bool move(const Sudoku<N> * sudoku) {
+		// If this is the case, we can initialize smallest_domain with Sudoku<N>::size, saving 1 (potential) swap
+		assert(sudoku->empty_cells_length != Sudoku<N>::size * Sudoku<N>::size);
+
 		int smallest_domain = Sudoku<N>::size;
 		int smallest_x = -1;
 		int smallest_y = -1;
-        
-		// Loop through the sudoku based on the precalculated domain sizes
-		// This will slightly reduce search time in the beginning, as a lot the first domain sizes are all 1 
-		for (int j = 1; j < Sudoku<N>::size; j++) {
-			if (j % N == 0) continue; // These rows are always filled with numbers obtained from a N x N^2 Latin Rectangle, no need to check their domains
 
-			for (int i = 0; i < Sudoku<N>::size; i++) {
-				// Check if the spot at (x, y) is free
-				if (sudoku->get(i, j) == 0) {
-					int domain_size = sudoku->domain_sizes[Sudoku<N>::get_index(i, j)];
+		for (int i = 0; i < sudoku->empty_cells_length; i++) {
+			int index = sudoku->empty_cells[i];
+			int domain_size = sudoku->domain_sizes[index];
+			
+			if (domain_size < smallest_domain) {
+				smallest_domain = domain_size;
+				smallest_x = Sudoku<N>::get_x_from_index(index);
+				smallest_y = Sudoku<N>::get_y_from_index(index);
 
-					assert(domain_size > 0);
-
-					// Check if it's domain is smaller than the currently found smallest domain
-					if (domain_size < smallest_domain) {
-						smallest_domain = domain_size;
-						smallest_x = i;
-						smallest_y = j;
-
-						// Once we've found a domain of size 1, we don't have to keep looking for a smaller domain
-						if (smallest_domain == 1) goto early_out;
-					}
-				}
+				if (smallest_domain == 1) goto early_out;
 			}
 		}
-
+        
 		// If the Sudoku is completed, return true.
 		if (smallest_x == -1) return true;
  early_out:

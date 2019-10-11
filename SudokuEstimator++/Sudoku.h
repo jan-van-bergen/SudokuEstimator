@@ -10,6 +10,18 @@ struct Sudoku {
 		return i + j * size;
 	}
 
+	// Converts one dimensional index obtainable from get_index back into its x coordinate
+	inline static constexpr int get_x_from_index(int index) {
+		return index % size;
+	}
+	
+	// Converts one dimensional index obtainable from get_index back into its y coordinate
+	inline static constexpr int get_y_from_index(int index) {
+		return index / size;
+	}
+
+	// Sudoku grid, contains all currently filled in numbers
+	// If a number is not filled in, the value is 0
 	int grid[size * size];
 
     // 'constraints' stores a 1d array for each cell (x, y) in the Sudoku
@@ -18,6 +30,10 @@ struct Sudoku {
     // This setup allows for fast checking of domains
 	int constraints [size * size * size];
 	int domain_sizes[size * size];
+
+	int empty_cells      [size * size]; // Keeps a list of indices that are currently empty
+	int empty_cells_index[size * size]; // Used to transform a cell index (i, j) into its index in the 'empty_cells' list
+	int empty_cells_length;				// Keeps track of the length of 'empty_cells'
 
 	inline Sudoku() {
 		reset();
@@ -37,8 +53,13 @@ struct Sudoku {
 				}
 
                 domain_sizes[index] = size;
+
+				empty_cells      [index] = index;
+				empty_cells_index[index] = index;
 			}
 		}
+
+		empty_cells_length = size * size;
 	}
 	
 	// Checks if the cell at (x, y) is allowed to assume the given value
@@ -82,6 +103,7 @@ struct Sudoku {
 			}
 		}
 
+		// None of the checks failed, the Sudoku is correct
 		return true;
 	}
 	
@@ -123,14 +145,21 @@ struct Sudoku {
 	// Updates all related domains (cells in the same row, column and block) that the cell has the new value
 	// If any of those domains become empty false is returned, true otherwise
 	inline bool set_with_forward_check(int x, int y, int value) {
+		int index = get_index(x, y);
+		
+		assert(grid[index] == 0);
 		assert(value >= 1 && value <= size);
 
 		// Update all related domains that this grid is now a number
 		bool valid = update_domains<+1>(x, y, value - 1);
 
-		grid[get_index(x, y)] = value;
+		grid[index] = value;
 
-
+		int empty_cell_index = empty_cells_index[index];
+		int last_empty_cell  = empty_cells[empty_cells_length - 1];
+		empty_cells[empty_cell_index] = last_empty_cell;
+		empty_cells_index[last_empty_cell] = empty_cell_index;
+		empty_cells_length--;
 
 		return valid;
 	}
@@ -141,11 +170,16 @@ struct Sudoku {
 		int index = get_index(x, y);
 
 		assert(grid[index] != 0);
+		assert(empty_cells_length < size * size);
 
 		// Update all related domains that this grid is no longer a number
 		update_domains<-1>(x, y, grid[index] - 1);
 
 		grid[index] = 0;
+
+		empty_cells[empty_cells_length] = index;
+		empty_cells_index[index]= empty_cells_length;
+		empty_cells_length++;
 	}
 	
 private:
