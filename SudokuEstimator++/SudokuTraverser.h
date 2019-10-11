@@ -58,7 +58,7 @@ struct Most_Constrained_Traverser {
 			for (int x = 0; x < Sudoku<N>::size; x++) {
 				// Check if the spot at (x, y) is free
 				if (sudoku->get(x, y) == 0) {
-					int domain_size = sudoku->domain_sizes[x + y * sudoku->size];
+					int domain_size = sudoku->domain_sizes[Sudoku<N>::get_index(x, y)];
 
 					assert(domain_size > 0);
 
@@ -69,7 +69,7 @@ struct Most_Constrained_Traverser {
 						smallest_y = y;
 
 						// Once we've found a domain of size 1, we don't have to keep looking for a smaller domain
-						//if (smallest_domain == 1) break;
+						if (smallest_domain == 1) goto early_out;
 					}
 				}
 			}
@@ -77,10 +77,10 @@ struct Most_Constrained_Traverser {
 
 		// If the Sudoku is completed, return true.
 		if (smallest_x == -1) return true;
-
+ early_out:
 		x = smallest_x;
 		y = smallest_y;
-
+		
 		return false;
 	}
 };

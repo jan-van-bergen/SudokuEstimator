@@ -1,11 +1,14 @@
 #pragma once
 #include <cassert>
 
-#define INDEX(i, j) (i + j * size)
-
 template<int N> // N is the size of a block, meaning for a 9x9 sudoku N = 3
 struct Sudoku {
 	static constexpr int size = N * N;
+
+	// Converts 2d grid cell coordinates (i, j) into a one dimensional index in a size * size grid
+	inline static constexpr int get_index(int i, int j) {
+		return i + j * size;
+	}
 
 	int grid[size * size];
 
@@ -25,7 +28,7 @@ struct Sudoku {
 	inline void reset() {
 		for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {
-				int index = INDEX(i, j);
+				int index = get_index(i, j);
 
 				Sudoku<N>::grid[index] = 0;
 
@@ -40,27 +43,27 @@ struct Sudoku {
 	
 	// Checks if the cell at (x, y) is allowed to assume the given value
 	inline bool is_valid_move(int x, int y, int value) const {
-		return constraints[INDEX(x, y) * size + value - 1] == 0;
+		return constraints[get_index(x, y) * size + value - 1] == 0;
 	}
 
 	// Checks if the current configuration is a valid Sudoku grid
 	inline bool is_valid_solution() const {
 		for (int y = 0; y < size; y++) {
 			for (int x = 0; x < size; x++) {
-				int current_value = grid[INDEX(x, y)];
+				int current_value = grid[get_index(x, y)];
 
 				if (current_value < 1 || current_value > size) return false;
 
 				// Check row, skipping the current cell
 				for (int i = 0; i < size; i++) {
-					if (i != x && grid[INDEX(i, y)] == current_value) {
+					if (i != x && grid[get_index(i, y)] == current_value) {
 						return false;
 					}
 				}
 
 				// Check column, skipping the current cell
 				for (int j = 0; j < size; j++) {
-					if (j != y && grid[INDEX(x, j)] == current_value) {
+					if (j != y && grid[get_index(x, j)] == current_value) {
 						return false;
 					}
 				}
@@ -71,7 +74,7 @@ struct Sudoku {
 
 				for (int j = by; j < by + N; j++) {
 					for (int i = bx; i < bx + N; i++) {
-						if ((i != x || j != y) && grid[INDEX(i, j)] == current_value) {
+						if ((i != x || j != y) && grid[get_index(i, j)] == current_value) {
 							return false;
 						}
 					}
@@ -95,7 +98,7 @@ struct Sudoku {
 		}
 
 		// For empty cells the domain size should be the same as the cached one
-		assert(Sudoku<N>::get(x, y) != 0 || domain_size == domain_sizes[INDEX(x, y)]);
+		assert(Sudoku<N>::get(x, y) != 0 || domain_size == domain_sizes[get_index(x, y)]);
 
 		return domain_size;
 	}
@@ -104,7 +107,7 @@ struct Sudoku {
 	inline void print() const {
 		for (int y = 0; y < size; y++) {
 			for (int x = 0; x < size; x++) {
-				printf("%u ", grid[INDEX(x, y)]);
+				printf("%u ", grid[get_index(x, y)]);
 			}
 
 			printf("\n");
@@ -113,7 +116,7 @@ struct Sudoku {
 
 	// Retrieves the value at cell (x, y)
 	inline int get(int x, int y) const {
-		return grid[INDEX(x, y)];
+		return grid[get_index(x, y)];
 	}
 	
 	// Sets the cell at (x, y) to the given value, using forward checking
@@ -125,7 +128,7 @@ struct Sudoku {
 		// Update all related domains that this grid is now a number
 		bool valid = update_domains<+1>(x, y, value - 1);
 
-		Sudoku<N>::grid[INDEX(x, y)] = value;
+		Sudoku<N>::grid[get_index(x, y)] = value;
 
 		return valid;
 	}
@@ -133,7 +136,7 @@ struct Sudoku {
 	// Resets the cell at (x, y) to zero
 	// Updates all related domains (cells in the same row, column and block) that the cell no longer has a value
 	inline void reset_cell(int x, int y) {
-		int index = INDEX(x, y);
+		int index = get_index(x, y);
 
 		assert(Sudoku<N>::grid[index] != 0);
 
@@ -150,7 +153,7 @@ private:
 
 	template<>
 	inline bool update_domain<+1>(int i, int j, int value) {
-		int index = INDEX(i, j);
+		int index = get_index(i, j);
 
 		if (constraints[index * size + value] == 0) {
 			// Previously unconstrained, now it is. The value was removed from the domain
@@ -168,7 +171,7 @@ private:
 
 	template<>
 	inline bool update_domain<-1>(int i, int j, int value) {
-		int index = INDEX(i, j);
+		int index = get_index(i, j);
 
 		if (constraints[index * size + value] == 1) {
 			// Previously constrained, now it isn't anymore. The value was added to the domain,
@@ -216,7 +219,7 @@ private:
 			}
 		}
 		
-		int index = INDEX(x, y) * size;
+		int index = get_index(x, y) * size;
 		// All values other than 'value' can be removed from the domain at (x, y)
 		for (int i = 0;         i < value; i++) constraints[index + i] += Change;
 		for (int i = value + 1; i < size;  i++) constraints[index + i] += Change;
