@@ -24,10 +24,10 @@ struct Sudoku {
 	// If a number is not filled in, the value is 0
 	int grid[size * size];
 
-    // 'constraints' stores a 1d array for each cell (x, y) in the Sudoku
-    // It contains at position [(x + y*size)*size + v - 1] the amount of variables in the row, column and block of position (x, y), that have value v.
-    // Thus if the value stored is 0, it means that v is in the domain of (x, y), as no other variable constrains that value.
-    // This setup allows for fast checking of domains
+	// 'constraints' stores a 1d array for each cell (x, y) in the Sudoku
+	// It contains at position [(x + y*size)*size + v - 1] the amount of variables in the row, column and block of position (x, y), that have value v.
+	// Thus if the value stored is 0, it means that v is in the domain of (x, y), as no other variable constrains that value.
+	// This setup allows for fast checking of domains
 	int constraints [size * size * size];
 	int domain_sizes[size * size];
 
@@ -56,10 +56,10 @@ struct Sudoku {
 				grid[index] = 0;
 
 				for (int value = 0; value < size; value++) {
-                    constraints[index * size + value] = 0;
+					constraints[index * size + value] = 0;
 				}
 
-                domain_sizes[index] = size;
+				domain_sizes[index] = size;
 
 				empty_cells      [index] = index;
 				empty_cells_index[index] = index;

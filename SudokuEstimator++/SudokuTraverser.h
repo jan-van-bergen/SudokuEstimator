@@ -13,7 +13,7 @@ struct Row_Right_Column_Down_Traverser {
 		move(sudoku);
 	}
 
-    inline bool move(const Sudoku<N> * sudoku) {
+	inline bool move(const Sudoku<N> * sudoku) {
 		do {
 			x++;
 
@@ -67,7 +67,7 @@ struct Most_Constrained_Traverser {
 				if (smallest_domain == 1) goto early_out;
 			}
 		}
-        
+		
 		// If the Sudoku is completed, return true.
 		if (smallest_x == -1) return true;
  early_out:
