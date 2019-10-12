@@ -9,3 +9,6 @@ TODO:
 * [ ] ~~Look into faster Latin Rectangle generation.~~ Although asymptotically better algorithms exist, for small N the current approach is fast enough.
 * [ ] Multithreading
 * [ ] Custom BigInteger class
+
+# Dependencies
+- MPIR 3.0.0 - https://github.com/wbhart/mpir - Highly optimized math library for large numbers.
