@@ -162,10 +162,16 @@ struct Sudoku {
 
 		grid[index] = value;
 
+		// Remove the current cell from the empty cell list in O(1) time by swapping with the last element in that list
+		// First look up the index of the current cell (x, y) in the empty cell list
 		int empty_cell_index = empty_cells_index[index];
+		// Look up the index of the last cell in the empty cell list
 		int last_empty_cell  = empty_cells[empty_cells_length - 1];
+		// Where previously the (x, y) cell was stored in the empty cell list we now store the last empty cell
 		empty_cells[empty_cell_index] = last_empty_cell;
+		// Update the fact that the previously last cell can now be found somewhere else
 		empty_cells_index[last_empty_cell] = empty_cell_index;
+		// Remove last element from empty cell list
 		empty_cells_length--;
 
 		return valid;
@@ -184,6 +190,7 @@ struct Sudoku {
 
 		grid[index] = 0;
 
+		// Store the cell after the last element in the empty cell list
 		empty_cells[empty_cells_length] = index;
 		empty_cells_index[index]= empty_cells_length;
 		empty_cells_length++;
