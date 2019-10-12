@@ -60,12 +60,13 @@ bool ac3(Sudoku<N> * sudoku) {
 
 			for (int di = 0; di < domain_size_i; di++) {
 				if (domain_i[di] == domain_j[0]) {
-					int& constraint = sudoku->constraints[(xi + yi * Sudoku<N>::size) * Sudoku<N>::size + domain_i[di] - 1];
+					int index_i = Sudoku<N>::get_index(xi, yi);
+					int& constraint = sudoku->constraints[index_i * Sudoku<N>::size + domain_i[di] - 1];
 
 					// If domain_i[di] was previously unconstrained, it is now
 					if (constraint == 0) {
 						// Remove the value from the domain
-						int& domain_size = sudoku->domain_sizes[xi + yi * Sudoku<N>::size];
+						int& domain_size = sudoku->domain_sizes[index_i];
 						domain_size--;
 
 						// If the domain is now empty, the Sudoku is not valid
