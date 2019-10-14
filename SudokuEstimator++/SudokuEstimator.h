@@ -1,4 +1,6 @@
 #pragma once
+#include <random>
+
 #include "BigInteger.h"
 
 #include "ScopedTimer.h"
@@ -24,6 +26,9 @@ private:
 
 	static constexpr int coordinate_count = Sudoku<N>::size * (Sudoku<N>::size - N);
 	int coordinates[coordinate_count];
+
+	std::random_device random_device;
+	std::mt19937       rng;
 
 	void backtrack_with_forward_check(Big_Integer& total);
 

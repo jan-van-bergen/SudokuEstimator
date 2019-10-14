@@ -58,7 +58,8 @@ void SudokuEstimator::knuth(Big_Integer& result) {
 
 		result *= domain_size;
 
-		int random_value_from_domain = domain[rand() % domain_size];
+		std::uniform_int_distribution<int> distribution(0, domain_size - 1);
+		int random_value_from_domain = domain[distribution(rng)];
 
 		// Use forward checking for a possible early out
 		// If any domain becomes empty the Sudoku can't be completed and 0 can be returned.
@@ -149,6 +150,8 @@ void SudokuEstimator::estimate_solution_count(Big_Integer& estimate, Big_Integer
 void SudokuEstimator::run() {
 	assert(s < coordinate_count);
 	assert(Sudoku<N>::size < (1 << 16)); // Coordinate indices (x, y) are packed together into a 32bit integer
+
+	rng = std::mt19937(random_device());
 
 	int index = 0;
 	for (int j = 1; j < Sudoku<N>::size; j++) {
