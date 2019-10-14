@@ -4,12 +4,6 @@ Implementation of a Monte Carlo style algorithm that estimates the amount of val
 
 Original idea based on <a>https://theartofmachinery.com/2017/08/14/monte_carlo_counting_sudoku_grids.html</a>
 
-TODO:
-
-* [x] ~~Look into faster Latin Rectangle generation.~~ Although asymptotically better algorithms exist, for small N the current approach is fastest.
-* [x] Multithreading
-* [x] ~~Custom BigInteger class~~ Integrated MPIR library.
-
 ### Dependencies
 - MPIR 3.0.0 - https://github.com/wbhart/mpir - Highly optimized math library for large numbers.
 
