@@ -3,7 +3,7 @@
 
 #include "AC3.h"
 
-void SudokuEstimator::backtrack_with_forward_check(Big_Integer& total) {
+void SudokuEstimator::backtrack_with_forward_check() {
 	int current_x = traverser.x;
 	int current_y = traverser.y;
 	
@@ -22,12 +22,12 @@ void SudokuEstimator::backtrack_with_forward_check(Big_Integer& total) {
 		if (sudoku.set_with_forward_check(current_x, current_y, value)) {
 			if (traverser.move(&sudoku)) {
 				// If the Sudoku was completed by this move, add 1 to the solution count
-				total += 1;
+				backtrack += 1;
 				
 				assert(sudoku.is_valid_solution());
 			} else {
 				// Otherwise, count the solutions that include this move
-				backtrack_with_forward_check(total);
+				backtrack_with_forward_check();
 			} 
 		}
 
@@ -38,8 +38,8 @@ void SudokuEstimator::backtrack_with_forward_check(Big_Integer& total) {
 	}
 }
 
-void SudokuEstimator::knuth(Big_Integer& result) {
-	result = 1;
+void SudokuEstimator::knuth() {
+	estimate = 1;
 
 	int domain[Sudoku<N>::size];
 
@@ -54,12 +54,12 @@ void SudokuEstimator::knuth(Big_Integer& result) {
 		int domain_size = sudoku.get_domain(x, y, domain);
 
 		if (domain_size == 0) {
-			result = 0;
+			estimate = 0;
 			
 			return;
 		}
 
-		result *= domain_size;
+		estimate *= domain_size;
 
 		std::uniform_int_distribution<int> distribution(0, domain_size - 1);
 		int random_value_from_domain = domain[distribution(rng)];
@@ -67,14 +67,14 @@ void SudokuEstimator::knuth(Big_Integer& result) {
 		// Use forward checking for a possible early out
 		// If any domain becomes empty the Sudoku can't be completed and 0 can be returned.
 		if (!sudoku.set_with_forward_check(x, y, random_value_from_domain)) {
-			result = 0;
+			estimate = 0;
 			
 			return;
 		}
 	}
 }
 
-void SudokuEstimator::estimate_solution_count(Big_Integer& estimate, Big_Integer& backtrack) {
+void SudokuEstimator::estimate_solution_count() {
 	// Reset all cells to 0 and clear domains
 	sudoku.reset();
 
@@ -122,7 +122,7 @@ void SudokuEstimator::estimate_solution_count(Big_Integer& estimate, Big_Integer
 	std::shuffle(coordinates, coordinates + coordinate_count, rng);
 
 	// Estime using Knuth's algorithm
-	knuth(estimate);
+	knuth();
 
 	if (mpz_is_zero(estimate)) return;
 
@@ -138,7 +138,7 @@ void SudokuEstimator::estimate_solution_count(Big_Integer& estimate, Big_Integer
 
 	// Count all Sudoku solutions that contain the current configuration as a subset
 	backtrack = 0;
-	backtrack_with_forward_check(backtrack);
+	backtrack_with_forward_check();
 	
 	if (mpz_is_zero(backtrack)) {
 		estimate = 0;
@@ -168,15 +168,12 @@ void SudokuEstimator::run() {
 	Big_Integer  batch_sum;
 	unsigned int batch_size = 100;
 
-	Big_Integer estimate;
-	Big_Integer backtrack;
-
 	while (true) {
 		batch_sum = 0;
 
 		// Sum 'batch_size' estimations, then store the result
 		for (unsigned int i = 0; i < batch_size; i++) {
-			estimate_solution_count(estimate, backtrack);
+			estimate_solution_count();
 
 			batch_sum += estimate;
 		}
