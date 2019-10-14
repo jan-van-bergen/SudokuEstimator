@@ -8,6 +8,7 @@ void create_and_run_estimator() {
 }
 
 int main() {
+	// Acquire logical core count of this machine
 	int thread_count = std::thread::hardware_concurrency();
 	if (thread_count == 0) {
 		printf("Something went wrong when attempting to determin the number of cores on this machine. Assuming single core.\n");
@@ -15,7 +16,7 @@ int main() {
 		thread_count = 1;
 	}
 	
-	// Run on n-1 other threads
+	// Run the algorithm on n-1 other threads
 	if (thread_count > 1) {
 		std::thread * threads = new std::thread[thread_count - 1];
 
@@ -24,6 +25,7 @@ int main() {
 		}
 	}
 
+	// Launch a thread that prints the results of all the other threads to the console
 	std::thread report_results_thread(report_results);
 
 	// Run on the main thread
