@@ -1,4 +1,7 @@
 #include "SudokuEstimator.h"
+#include <chrono>
+
+#include "AC3.h"
 
 void SudokuEstimator::backtrack_with_forward_check(Big_Integer& total) {
 	int current_x = traverser.x;
@@ -90,7 +93,7 @@ void SudokuEstimator::estimate_solution_count(Big_Integer& estimate, Big_Integer
 	retry: {
 		// Randomly shuffle every row but the first one
 		for (int row = 1; row < N; row++) {
-			std::random_shuffle(rows[row], rows[row] + Sudoku<N>::size);
+			std::shuffle(rows[row], rows[row] + Sudoku<N>::size, rng);
 		}
 
 		// Check if the current permutation of rows is a Latin Rectangle
@@ -116,7 +119,7 @@ void SudokuEstimator::estimate_solution_count(Big_Integer& estimate, Big_Integer
 	}
 
 	// Select s random cells from the other rows.
-	std::random_shuffle(coordinates, coordinates + coordinate_count);
+	std::shuffle(coordinates, coordinates + coordinate_count, rng);
 
 	// Estime using Knuth's algorithm
 	knuth(estimate);
@@ -162,6 +165,38 @@ void SudokuEstimator::run() {
 		}
 	}
 
+	Big_Integer  batch_sum;
+	unsigned int batch_size = 100;
+
+	Big_Integer estimate;
+	Big_Integer backtrack;
+
+	while (true) {
+		batch_sum = 0;
+
+		// Sum 'batch_size' estimations, then store the result
+		for (unsigned int i = 0; i < batch_size; i++) {
+			estimate_solution_count(estimate, backtrack);
+
+			batch_sum += estimate;
+		}
+
+		results.mutex.lock();
+		{
+			results.sum += batch_sum;
+			results.n   += batch_size;
+		}
+		results.mutex.unlock();
+	}
+}
+
+Results results;
+
+void report_results() {
+	// Amount of N x N^2 Latin Rectangles, this constant can be used to speed
+	// up the process of estimating the amount of valid N^2 x N^2 Sudoku Grids
+	Big_Integer latin_rectangle_count; 
+
 	const char * true_value;
 	switch (Sudoku<N>::size) {
 		case 4: {
@@ -200,45 +235,28 @@ void SudokuEstimator::run() {
 		} break;
 	}
 
-	Big_Integer sum;
-	Big_Integer avg;
-	Big_Integer estimate;
-	Big_Integer backtrack;
-	long long n = 0;
-
-	long long duration_sum = 0;
-	auto timer = std::chrono::high_resolution_clock::now();
+	Big_Integer  results_sum;
+	Big_Integer  results_avg;
+	unsigned int results_n;
 
 	while (true) {
-		estimate_solution_count(estimate, backtrack);
-		
-		sum += estimate;
-		n++;
-		
-		// Every 100 iterations print the current stats
-		if (n % 100 == 0) {
-			avg = sum / n;
+		using namespace std::chrono_literals;
 
-			estimate *= latin_rectangle_count;
-			avg      *= latin_rectangle_count;
+		std::this_thread::sleep_for(1s);
 
-			printf(  "%llu: Est: ",     n); mpz_out_str(stdout, 10, estimate.__get_mp());
-			printf("\n%llu: Avg: ",     n); mpz_out_str(stdout, 10,      avg.__get_mp());
-			printf("\n%llu: Tru: %s\n", n, true_value);
+		results.mutex.lock();
+		{
+			results_sum = results.sum;
+			results_n   = results.n;
+		}
+		results.mutex.unlock();
 
-			long long duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - timer).count();
-			timer = std::chrono::high_resolution_clock::now();
+		if (results_n > 0) { // @PERFORMANCE
+			results_avg = (results_sum / results_n) * latin_rectangle_count;
 
-			if (duration >= 1000000) {
-				printf("Duration: %llu us (%llu s)\n", duration, duration / 1000000);
-			} else if (duration >= 1000) {
-				printf("Duration: %llu us (%llu ms)\n", duration, duration / 1000);
-			} else {
-				printf("Duration: %llu us\n", duration);
-			}
-
-			duration_sum += duration;
-			printf("Avg duration: %llu\n", duration_sum / n * 100);
+			//printf(  "%llu: Est: ",     results_n); mpz_out_str(stdout, 10, estimate.__get_mp());
+			printf(  "%u: Avg: ",     results_n); mpz_out_str(stdout, 10, results_avg.__get_mp());
+			printf("\n%u: Tru: %s\n", results_n,  true_value);
 		}
 	}
 }

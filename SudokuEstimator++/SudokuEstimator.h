@@ -1,11 +1,8 @@
 #pragma once
+#include <mutex>
 #include <random>
 
 #include "BigInteger.h"
-
-#include "ScopedTimer.h"
-
-#include "AC3.h"
 
 #include "Sudoku.h"
 #include "SudokuTraverser.h"
@@ -16,10 +13,6 @@ constexpr int N = 3;
 struct SudokuEstimator {
 private:
 	Sudoku<N> sudoku; // N^2 x N^2 Sudoku
-
-	// Amount of N x N^2 Latin Rectangles, this constant can be used to speed
-	// up the process of estimating the amount of valid N^2 x N^2 Sudoku Grids
-	Big_Integer latin_rectangle_count; 
 
 	//Row_Right_Column_Down_Traverser<N> traverser; 
 	Most_Constrained_Traverser<N> traverser;
@@ -44,3 +37,13 @@ private:
 public:
 	void run();
 };
+
+struct Results {
+	std::mutex mutex;
+
+	Big_Integer  sum = 0;
+	unsigned int n   = 0;
+};
+extern Results results;
+
+void report_results();
