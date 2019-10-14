@@ -41,12 +41,4 @@ public:
 	void run();
 };
 
-struct Results {
-	std::mutex mutex;
-
-	Big_Integer  sum = 0;
-	unsigned int n   = 0;
-};
-extern Results results;
-
 void report_results();

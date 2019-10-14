@@ -15,7 +15,7 @@ int main() {
 
 		thread_count = 1;
 	}
-	
+
 	// Run the algorithm on n-1 other threads
 	if (thread_count > 1) {
 		std::thread * threads = new std::thread[thread_count - 1];

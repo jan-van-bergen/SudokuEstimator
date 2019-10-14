@@ -3,6 +3,13 @@
 
 #include "AC3.h"
 
+struct Results {
+	std::mutex mutex;
+
+	Big_Integer  sum = 0;
+	unsigned int n   = 0;
+} results;
+
 void SudokuEstimator::backtrack_with_forward_check() {
 	int current_x = traverser.x;
 	int current_y = traverser.y;
@@ -186,8 +193,6 @@ void SudokuEstimator::run() {
 		results.mutex.unlock();
 	}
 }
-
-Results results;
 
 void report_results() {
 	// Amount of N x N^2 Latin Rectangles, this constant can be used to speed
