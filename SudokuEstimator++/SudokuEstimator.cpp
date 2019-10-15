@@ -172,25 +172,26 @@ void SudokuEstimator::run() {
 		}
 	}
 
-	Big_Integer  batch_sum;
-	unsigned int batch_size = 100;
-
-	while (true) {
-		batch_sum = 0;
-
-		// Sum 'batch_size' estimations, then store the result
-		for (unsigned int i = 0; i < batch_size; i++) {
+	Big_Integer batch_sum;
+	
+	while (true) {		
+		// Sum 'batch_size' estimations
+		for (unsigned int i = 0; i < BATCH_SIZE; i++) {
 			estimate_solution_count();
 
 			batch_sum += estimate;
 		}
 
+		// Store the result in a thread safe way
 		results.mutex.lock();
 		{
 			results.sum += batch_sum;
-			results.n   += batch_size;
+			results.n   += BATCH_SIZE;
 		}
 		results.mutex.unlock();
+
+		// Reset sum for next iteration
+		batch_sum = 0;
 	}
 }
 

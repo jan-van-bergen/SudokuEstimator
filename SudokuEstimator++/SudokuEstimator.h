@@ -10,6 +10,8 @@
 constexpr int s = 6;
 constexpr int N = 3;
 
+constexpr unsigned int BATCH_SIZE = 100;
+
 struct SudokuEstimator {
 private:
 	Sudoku<N> sudoku; // N^2 x N^2 Sudoku
