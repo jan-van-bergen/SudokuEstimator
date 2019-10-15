@@ -266,7 +266,7 @@ void report_results() {
 		results.mutex.unlock();
 
 		if (results_n > 0) { // @PERFORMANCE
-			avg = (results_sum / results_n) * latin_rectangle_count;
+			avg = (results_sum * latin_rectangle_count) / results_n;
 
 			printf(  "%u: Avg: ",     results_n); mpz_out_str(stdout, 10, avg.__get_mp());
 			printf("\n%u: Tru: %s\n\nAvg Iteration Time: %llu us\n\n", results_n,  true_value, results_time / results_n);
