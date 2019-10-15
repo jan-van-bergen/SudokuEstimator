@@ -7,8 +7,8 @@
 #include "Sudoku.h"
 #include "SudokuTraverser.h"
 
-constexpr int s = 6;
 constexpr int N = 3;
+constexpr int random_walk_length = 6;
 
 constexpr unsigned int BATCH_SIZE = 100;
 
@@ -32,7 +32,7 @@ private:
 	// Uses backtracking to count all possible valid Sudoku solutions, given the current configuration of the grid
 	void backtrack_with_forward_check();
 
-	// Takes a random walk of length s through the tree of all possible Sudokus
+	// Takes a random walk of length 'random_walk_length' through the tree of all possible Sudokus
 	void knuth();
 
 	// Gives and estimate of the amount of valid Sudoku grids,

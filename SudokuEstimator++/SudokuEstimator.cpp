@@ -52,7 +52,7 @@ void SudokuEstimator::knuth() {
 
 	int domain[Sudoku<N>::size];
 
-	for (int i = 0; i < s; i++) {
+	for (int i = 0; i < random_walk_length; i++) {
 		int coordinate = coordinates[i];
 		int x = coordinate & 0x0000ffff;
 		int y = coordinate >> 16;
