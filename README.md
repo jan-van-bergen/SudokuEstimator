@@ -5,7 +5,7 @@ Implementation of a Monte Carlo style algorithm that estimates the amount of val
 Original idea based on <a>https://theartofmachinery.com/2017/08/14/monte_carlo_counting_sudoku_grids.html</a>
 
 ### TODO List
-- [ ] Support N x M Sudokus.
+- [x] Support N x M Sudokus.
 - [ ] Save results to disk.
 
 ### Dependencies
