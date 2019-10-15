@@ -46,7 +46,7 @@ struct Most_Constrained_Traverser {
 	}
 
 	inline bool move(const Sudoku<N, M> * sudoku) {
-		// If this is the case, it means there is at least 1 cell filled in, meaning not all domain sizes are N^2
+		// If this is the case, it means there is at least 1 cell filled in, meaning not all domain sizes are N*M
 		// We can thus initialize smallest_domain with Sudoku<N, M>::size, saving 1 (potential) swap
 		assert(sudoku->empty_cells_length < Sudoku_NxM::size * Sudoku_NxM::size);
 

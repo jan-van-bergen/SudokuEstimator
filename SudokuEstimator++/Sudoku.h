@@ -47,7 +47,7 @@ struct Sudoku {
 	}
 
 	// Resets all cells to zero
-	// Domains are reset to be the numbers 1 .. N^2
+	// Domains are reset to be the numbers 1 .. N*M
 	inline void reset() {
 		for (int j = 0; j < size; j++) {
 			for (int i = 0; i < size; i++) {

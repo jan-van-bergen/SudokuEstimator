@@ -87,11 +87,11 @@ void SudokuEstimator::estimate_solution_count() {
 	// Reset all cells to 0 and clear domains
 	sudoku.reset();
 
-	// Fill every Nth row with a row from a random N x N^2 Latin Rectangle
-	// The first row is always 1 .. N^2
+	// Fill every Nth row with a row from a random N x N*M Latin Rectangle
+	// The first row is always 1 .. N*M
 	int rows[M][Sudoku<N, M>::size];
 
-	// Initialize each row of the Latin Rectangle with the numbers 1 .. N^2
+	// Initialize each row of the Latin Rectangle with the numbers 1 .. N*M
 	for (int row = 0; row < N; row++) {
 		for (int i = 0; i < Sudoku<N, M>::size; i++) {
 			rows[row][i] = i + 1;
