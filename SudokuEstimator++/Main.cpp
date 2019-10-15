@@ -18,10 +18,9 @@ int main() {
 
 	// Run the algorithm on n-1 other threads
 	if (thread_count > 1) {
-		std::thread * threads = new std::thread[thread_count - 1];
-
 		for (int i = 0; i < thread_count - 1; i++) {
-			threads[i] = std::thread(create_and_run_estimator);
+			std::thread thread = std::thread(create_and_run_estimator);
+			thread.detach();
 		}
 	}
 
