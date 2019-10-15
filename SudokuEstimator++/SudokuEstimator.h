@@ -8,18 +8,21 @@
 #include "SudokuTraverser.h"
 
 constexpr int N = 3;
+constexpr int M = 3;
 constexpr int random_walk_length = 6;
 
 constexpr unsigned int BATCH_SIZE = 100;
 
+using Sudoku_NxM = Sudoku<N, M>; // Assertions cannot contain commas because they are macros, this alias is used to circumvent this.
+
 struct SudokuEstimator {
 private:
-	Sudoku<N> sudoku; // N^2 x N^2 Sudoku
+	Sudoku<N, M> sudoku; // N^2 x N^2 Sudoku
 
 	//Row_Right_Column_Down_Traverser<N> traverser; 
-	Most_Constrained_Traverser<N> traverser;
+	Most_Constrained_Traverser<N, M> traverser;
 
-	static constexpr int coordinate_count = Sudoku<N>::size * (Sudoku<N>::size - N);
+	static constexpr int coordinate_count = Sudoku<N, M>::size * (Sudoku<N, M>::size - N);
 	int coordinates[coordinate_count];
 	
 	Big_Integer estimate;

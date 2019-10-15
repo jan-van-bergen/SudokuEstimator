@@ -18,10 +18,10 @@ void SudokuEstimator::backtrack_with_forward_check() {
 	
 	assert(sudoku.get(current_x, current_y) == 0);
 
-	int domain[Sudoku<N>::size];
+	int domain[Sudoku<N, M>::size];
 	int domain_size = sudoku.get_domain(current_x, current_y, domain);
 
-	assert(domain_size == sudoku.domain_sizes[Sudoku<N>::get_index(current_x, current_y)]);
+	assert(domain_size == sudoku.domain_sizes[Sudoku_NxM::get_index(current_x, current_y)]);
 
 	// Try all possible values for the cell at (x, y)
 	for (int i = 0 ; i < domain_size; i++) {
@@ -50,7 +50,7 @@ void SudokuEstimator::backtrack_with_forward_check() {
 void SudokuEstimator::knuth() {
 	estimate = 1;
 
-	int domain[Sudoku<N>::size];
+	int domain[Sudoku<N, M>::size];
 
 	for (int i = 0; i < random_walk_length; i++) {
 		int coordinate = coordinates[i];
@@ -89,11 +89,11 @@ void SudokuEstimator::estimate_solution_count() {
 
 	// Fill every Nth row with a row from a random N x N^2 Latin Rectangle
 	// The first row is always 1 .. N^2
-	int rows[N][Sudoku<N>::size];
+	int rows[M][Sudoku<N, M>::size];
 
 	// Initialize each row of the Latin Rectangle with the numbers 1 .. N^2
 	for (int row = 0; row < N; row++) {
-		for (int i = 0; i < Sudoku<N>::size; i++) {
+		for (int i = 0; i < Sudoku<N, M>::size; i++) {
 			rows[row][i] = i + 1;
 		}
 	}
@@ -102,12 +102,12 @@ void SudokuEstimator::estimate_solution_count() {
 	retry: {
 		// Randomly shuffle every row but the first one
 		for (int row = 1; row < N; row++) {
-			std::shuffle(rows[row], rows[row] + Sudoku<N>::size, rng);
+			std::shuffle(rows[row], rows[row] + Sudoku<N, M>::size, rng);
 		}
 
 		// Check if the current permutation of rows is a Latin Rectangle
 		for (int row = 1; row < N; row++) {
-			for (int i = 0; i < Sudoku<N>::size; i++) {
+			for (int i = 0; i < Sudoku<N, M>::size; i++) {
 				for (int j = 0; j < row; j++) {
 					if (rows[row][i] == rows[j][i]) {
 						// Not a valid Latin Rectangle, retry
@@ -120,7 +120,7 @@ void SudokuEstimator::estimate_solution_count() {
 
 	// Fill every Nth row of the Sudoku with a row from the Latin Rectangle
 	for (int row = 0; row < N; row++) {
-		for (int i = 0; i < Sudoku<N>::size; i++) {
+		for (int i = 0; i < Sudoku<N, M>::size; i++) {
 			bool domains_valid = sudoku.set_with_forward_check(i, row * N, rows[row][i]);
 
 			assert(domains_valid);
@@ -160,16 +160,16 @@ void SudokuEstimator::estimate_solution_count() {
 }
 
 void SudokuEstimator::run() {
-	assert(s < coordinate_count);
-	assert(Sudoku<N>::size < (1 << 16)); // Coordinate indices (x, y) are packed together into a 32bit integer
+	assert(random_walk_length < coordinate_count);
+	assert(Sudoku_NxM::size < (1 << 16)); // Coordinate indices (x, y) are packed together into a 32bit integer
 
 	rng = std::mt19937(random_device());
 
 	int index = 0;
-	for (int j = 1; j < Sudoku<N>::size; j++) {
+	for (int j = 1; j < Sudoku<N, M>::size; j++) {
 		if (j % N == 0) continue;
 
-		for (int i = 0; i < Sudoku<N>::size; i++) {
+		for (int i = 0; i < Sudoku<N, M>::size; i++) {
 			coordinates[index++] = j << 16 | i;
 		}
 	}
@@ -209,7 +209,7 @@ void report_results() {
 	Big_Integer latin_rectangle_count; 
 
 	const char * true_value;
-	switch (Sudoku<N>::size) {
+	switch (Sudoku<N, M>::size) {
 		case 4: {
 			true_value = "288";
 

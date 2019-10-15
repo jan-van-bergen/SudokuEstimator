@@ -1,9 +1,9 @@
 #pragma once
 #include <cassert>
 
-template<int N> // N is the size of a block, meaning for a 9x9 sudoku N = 3
+template<int N, int M = N> // N is the height of a block, M is the width of a block. For a 9x9 sudoku N = M = 3
 struct Sudoku {
-	static constexpr int size = N * N;
+	static constexpr int size = N * M;
 
 	// Converts 2d grid cell coordinates (i, j) into a one dimensional index in a size * size grid
 	inline static constexpr int get_index(int i, int j) {
@@ -97,11 +97,11 @@ struct Sudoku {
 				}
 
 				// Check block, skipping the current cell
-				int bx = N * (x / N);
+				int bx = M * (x / M);
 				int by = N * (y / N);
 
 				for (int j = by; j < by + N; j++) {
-					for (int i = bx; i < bx + N; i++) {
+					for (int i = bx; i < bx + M; i++) {
 						if ((i != x || j != y) && grid[get_index(i, j)] == current_value) {
 							return false;
 						}
@@ -228,9 +228,9 @@ private:
 	template<int Change>
 	inline bool update_domains(int x, int y, int value) {
 		// Calculate current block bounds
-		int bx = N * (x / N);
+		int bx = M * (x / M);
 		int by = N * (y / N);
-		int bxe = bx + N;
+		int bxe = bx + M;
 		int bye = by + N;
 
 		bool valid = true;

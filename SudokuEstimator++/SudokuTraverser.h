@@ -1,19 +1,19 @@
 #pragma once
 #include "Sudoku.h"
 
-template<int N>
+template<int N, int M>
 struct Row_Right_Column_Down_Traverser {
 	int x;
 	int y;
 
-	inline void seek_first(const Sudoku<N> * sudoku) {
+	inline void seek_first(const Sudoku<N, M> * sudoku) {
 		x = -1;
 		y = 0;
 
 		move(sudoku);
 	}
 
-	inline bool move(const Sudoku<N> * sudoku) {
+	inline bool move(const Sudoku<N, M> * sudoku) {
 		do {
 			x++;
 
@@ -31,7 +31,7 @@ struct Row_Right_Column_Down_Traverser {
 	}
 };
 
-template<int N>
+template<int N, int M>
 struct Most_Constrained_Traverser {
 	int x;
 	int y;
@@ -41,16 +41,16 @@ struct Most_Constrained_Traverser {
 		y = -1;
 	}
 
-	inline void seek_first(const Sudoku<N> * sudoku) {
+	inline void seek_first(const Sudoku<N, M> * sudoku) {
 		move(sudoku);
 	}
 
-	inline bool move(const Sudoku<N> * sudoku) {
+	inline bool move(const Sudoku<N, M> * sudoku) {
 		// If this is the case, it means there is at least 1 cell filled in, meaning not all domain sizes are N^2
-		// We can thus initialize smallest_domain with Sudoku<N>::size, saving 1 (potential) swap
-		assert(sudoku->empty_cells_length < Sudoku<N>::size * Sudoku<N>::size);
+		// We can thus initialize smallest_domain with Sudoku<N, M>::size, saving 1 (potential) swap
+		assert(sudoku->empty_cells_length < Sudoku_NxM::size * Sudoku_NxM::size);
 
-		int smallest_domain = Sudoku<N>::size;
+		int smallest_domain = Sudoku<N, M>::size;
 		int smallest_x = -1;
 		int smallest_y = -1;
 
@@ -61,8 +61,8 @@ struct Most_Constrained_Traverser {
 			
 			if (domain_size < smallest_domain) {
 				smallest_domain = domain_size;
-				smallest_x = Sudoku<N>::get_x_from_index(index);
-				smallest_y = Sudoku<N>::get_y_from_index(index);
+				smallest_x = Sudoku<N, M>::get_x_from_index(index);
+				smallest_y = Sudoku<N, M>::get_y_from_index(index);
 
 				if (smallest_domain == 1) goto early_out;
 			}
