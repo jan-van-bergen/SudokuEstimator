@@ -17,7 +17,7 @@ using Sudoku_NxM = Sudoku<N, M>; // Assertions cannot contain commas because the
 
 struct SudokuEstimator {
 private:
-	Sudoku<N, M> sudoku; // N^2 x N^2 Sudoku
+	Sudoku<N, M> sudoku; // N*M x N*M Sudoku
 
 	//Row_Right_Column_Down_Traverser<N> traverser; 
 	Most_Constrained_Traverser<N, M> traverser;
@@ -46,4 +46,5 @@ public:
 	void run();
 };
 
+// Function that runs in its own thread and reports the results of all the other threads.
 void report_results();

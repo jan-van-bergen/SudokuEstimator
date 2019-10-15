@@ -204,8 +204,8 @@ void SudokuEstimator::run() {
 }
 
 void report_results() {
-	// Amount of N x N^2 Latin Rectangles, this constant can be used to speed
-	// up the process of estimating the amount of valid N^2 x N^2 Sudoku Grids
+	// Amount of N x N*M Latin Rectangles, this constant can be used to speed
+	// up the process of estimating the amount of valid N*M x N*M Sudoku Grids
 	Big_Integer latin_rectangle_count; 
 
 	const char * true_value;

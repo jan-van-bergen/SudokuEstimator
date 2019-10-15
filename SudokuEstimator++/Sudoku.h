@@ -1,7 +1,7 @@
 #pragma once
 #include <cassert>
 
-template<int N, int M = N> // N is the height of a block, M is the width of a block. For a 9x9 sudoku N = M = 3
+template<int N, int M = N> // N is the height of a block, M is the width of a block. The width and height of the entire Sudoku are N*M
 struct Sudoku {
 	static constexpr int size = N * M;
 
