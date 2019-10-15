@@ -8,6 +8,8 @@ struct Results {
 
 	Big_Integer  sum = 0;
 	unsigned int n   = 0;
+
+	unsigned long long time = 0;
 } results;
 
 void SudokuEstimator::backtrack_with_forward_check() {
@@ -174,7 +176,9 @@ void SudokuEstimator::run() {
 
 	Big_Integer batch_sum;
 	
-	while (true) {		
+	while (true) {	
+		auto start_time = std::chrono::high_resolution_clock::now();
+		
 		// Sum 'batch_size' estimations
 		for (unsigned int i = 0; i < BATCH_SIZE; i++) {
 			estimate_solution_count();
@@ -182,11 +186,15 @@ void SudokuEstimator::run() {
 			batch_sum += estimate;
 		}
 
+		auto stop_time = std::chrono::high_resolution_clock::now();
+		long long duration = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time).count();
+
 		// Store the result in a thread safe way
 		results.mutex.lock();
 		{
-			results.sum += batch_sum;
-			results.n   += BATCH_SIZE;
+			results.sum  += batch_sum;
+			results.n    += BATCH_SIZE;
+			results.time += duration;
 		}
 		results.mutex.unlock();
 
@@ -238,9 +246,11 @@ void report_results() {
 		} break;
 	}
 
-	Big_Integer  results_sum;
-	Big_Integer  results_avg;
-	unsigned int results_n;
+	Big_Integer        results_sum;
+	unsigned int       results_n;
+	unsigned long long results_time;
+	
+	Big_Integer avg;
 
 	while (true) {
 		using namespace std::chrono_literals;
@@ -249,17 +259,17 @@ void report_results() {
 
 		results.mutex.lock();
 		{
-			results_sum = results.sum;
-			results_n   = results.n;
+			results_sum  = results.sum;
+			results_n    = results.n;
+			results_time = results.time;
 		}
 		results.mutex.unlock();
 
 		if (results_n > 0) { // @PERFORMANCE
-			results_avg = (results_sum / results_n) * latin_rectangle_count;
+			avg = (results_sum / results_n) * latin_rectangle_count;
 
-			//printf(  "%llu: Est: ",     results_n); mpz_out_str(stdout, 10, estimate.__get_mp());
-			printf(  "%u: Avg: ",     results_n); mpz_out_str(stdout, 10, results_avg.__get_mp());
-			printf("\n%u: Tru: %s\n", results_n,  true_value);
+			printf(  "%u: Avg: ",     results_n); mpz_out_str(stdout, 10, avg.__get_mp());
+			printf("\n%u: Tru: %s\n\nAvg Iteration Time: %llu us\n\n", results_n,  true_value, results_time / results_n);
 		}
 	}
 }
