@@ -139,7 +139,7 @@ struct Sudoku {
 				int value = grid[get_index(x, y)];
 				
 				// When dealing with double-digit numbers, we might need to
-				// add one extra space to ensure proper alignment of numbers	
+				// add one extra space to ensure proper alignment of numbers
 				if constexpr (size > 9) { 
 					if (value > 9) {
 						printf("%u ", value);

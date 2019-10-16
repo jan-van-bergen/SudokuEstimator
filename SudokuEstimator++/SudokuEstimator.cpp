@@ -32,8 +32,8 @@ void SudokuEstimator::backtrack_with_forward_check() {
 			if (traverser.move(&sudoku)) {
 				// If the Sudoku was completed by this move, add 1 to the solution count
 				backtrack += 1;
-				
-				assert(sudoku.is_valid_solution());
+
+				//assert(sudoku.is_valid_solution());
 			} else {
 				// Otherwise, count the solutions that include this move
 				backtrack_with_forward_check();
@@ -87,12 +87,12 @@ void SudokuEstimator::estimate_solution_count() {
 	// Reset all cells to 0 and clear domains
 	sudoku.reset();
 
-	// Fill every Nth row with a row from a random N x N*M Latin Rectangle
+	// Fill every Nth row with a row from a random M x N*M Latin Rectangle
 	// The first row is always 1 .. N*M
 	int rows[M][Sudoku<N, M>::size];
 
 	// Initialize each row of the Latin Rectangle with the numbers 1 .. N*M
-	for (int row = 0; row < N; row++) {
+	for (int row = 0; row < M; row++) {
 		for (int i = 0; i < Sudoku<N, M>::size; i++) {
 			rows[row][i] = i + 1;
 		}
@@ -101,12 +101,12 @@ void SudokuEstimator::estimate_solution_count() {
 	// Repeat until a valid Latin Rectangle is obtained
 	retry: {
 		// Randomly shuffle every row but the first one
-		for (int row = 1; row < N; row++) {
+		for (int row = 1; row < M; row++) {
 			std::shuffle(rows[row], rows[row] + Sudoku<N, M>::size, rng);
 		}
 
 		// Check if the current permutation of rows is a Latin Rectangle
-		for (int row = 1; row < N; row++) {
+		for (int row = 1; row < M; row++) {
 			for (int i = 0; i < Sudoku<N, M>::size; i++) {
 				for (int j = 0; j < row; j++) {
 					if (rows[row][i] == rows[j][i]) {
@@ -119,7 +119,7 @@ void SudokuEstimator::estimate_solution_count() {
 	}
 
 	// Fill every Nth row of the Sudoku with a row from the Latin Rectangle
-	for (int row = 0; row < N; row++) {
+	for (int row = 0; row < M; row++) {
 		for (int i = 0; i < Sudoku<N, M>::size; i++) {
 			bool domains_valid = sudoku.set_with_forward_check(i, row * N, rows[row][i]);
 
@@ -160,9 +160,6 @@ void SudokuEstimator::estimate_solution_count() {
 }
 
 void SudokuEstimator::run() {
-	assert(random_walk_length < coordinate_count);
-	assert(Sudoku_NxM::size < (1 << 16)); // Coordinate indices (x, y) are packed together into a 32bit integer
-
 	rng = std::mt19937(random_device());
 
 	int index = 0;
@@ -179,6 +176,8 @@ void SudokuEstimator::run() {
 	while (true) {	
 		auto start_time = std::chrono::high_resolution_clock::now();
 		
+		batch_sum = 0;
+
 		// Sum 'batch_size' estimations
 		for (unsigned int i = 0; i < BATCH_SIZE; i++) {
 			estimate_solution_count();
@@ -186,8 +185,8 @@ void SudokuEstimator::run() {
 			batch_sum += estimate;
 		}
 
-		auto stop_time = std::chrono::high_resolution_clock::now();
-		long long duration = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time).count();
+		auto      stop_time = std::chrono::high_resolution_clock::now();
+		long long duration  = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time).count();
 
 		// Store the result in a thread safe way
 		results.mutex.lock();
@@ -197,54 +196,82 @@ void SudokuEstimator::run() {
 			results.time += duration;
 		}
 		results.mutex.unlock();
-
-		// Reset sum for next iteration
-		batch_sum = 0;
 	}
 }
 
+Big_Integer factorial(Big_Integer x) {
+	assert(x >= 0);
+
+	if (x <= 1) return 1;
+
+	return x * factorial(x - 1);
+}
+
+Big_Integer reduced_factor(int k, int n) {
+	return (factorial(n) * factorial(n - 1)) / factorial(n - k);	
+}
+
 void report_results() {
-	// Amount of N x N*M Latin Rectangles, this constant can be used to speed
+	// True number of N*M x N*M Sudoku grids, if known. 
+	// Source: https://en.wikipedia.org/wiki/Mathematics_of_Sudoku#Enumeration_results
+	const char * true_value = nullptr;
+
+	// Number of M x N*M Latin Rectangles, this constant can be used to speed
 	// up the process of estimating the amount of valid N*M x N*M Sudoku Grids
+	// Source: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
 	Big_Integer latin_rectangle_count; 
 
-	const char * true_value;
-	switch (Sudoku<N, M>::size) {
-		case 4: {
-			true_value = "288";
+	if constexpr (N == 2 && M == 2) { // 2x2 blocks
+		true_value = "288";
 
-			latin_rectangle_count = 24 * 9; // 4! times number of 2x4 latin rectangles where the first row is 1 .. 4
-		} break;
-		case 9: {
-			true_value = "6670903752021072936960"; 
+		latin_rectangle_count = 3; // Number of Reduced 2x4 Latin Rectangles
+	} else if constexpr (N == 2 && M == 3) { // 2x3 blocks
+		true_value = "28200960";
+
+		latin_rectangle_count =	1064; // Number of Reduced 3x6 Latin Rectangles
+	} else if constexpr (N == 2 && M == 4) { // 2x4 blocks
+		true_value = "29136487207403520";
+		
+		latin_rectangle_count = 420909504; // Number of Reduced 4x8 Latin Rectangles
+	} else if constexpr (N == 2 && M == 5) { // 2x5 blocks
+		true_value = "1903816047972624930994913280000";
+		
+		latin_rectangle_count = 746988383076286464; // Number of Reduced 5x10 Latin Rectangles
+	} else if constexpr (N == 2 && M == 6) { // 2x6 blocks
+		true_value = "38296278920738107863746324732012492486187417600000";
+
+		latin_rectangle_count  = 1 << 17;
+		latin_rectangle_count *= 9 * 5 * 131;
+		latin_rectangle_count *= 110630813;
+		latin_rectangle_count *= 65475601447957; // Number of Reduced 6x12 Latin Rectangles
+	} else if constexpr (N == 3 && M == 3) { // 3x3 blocks
+		true_value = "6670903752021072936960"; 
 			
-			latin_rectangle_count = 362880 * 5792853248; // 9! times number of 3x9 latin rectangles where the first row is 1 .. 9
-		} break;
-		case 16: {
-			true_value = "595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"; // Estimate, real value is currently unknown
+		latin_rectangle_count = 103443808; // Number of Reduced 3x9 Latin Rectangles
+	} else if constexpr (N == 3 && M == 4) { // 3x4 blocks
+		true_value = "81171437193104932746936103027318645818654720000";
 
-			latin_rectangle_count  = 20922789888000;	// 16!
-			latin_rectangle_count *= 1307674368000;		// Convert from number of Reduced Latin Rectangles to actual number
-			latin_rectangle_count /= 479001600;
+		latin_rectangle_count  = 1 << 9;
+		latin_rectangle_count *= 27 * 7;
+		latin_rectangle_count *= 1945245990285863; // Number of Reduced 4x12 Latin Rectangles
+	} else if constexpr (N == 3 && M == 5) { // 3x5 blocks
 
-			// Number of reduced Latin Rectangles
-			latin_rectangle_count *= 1 << 14;
-			latin_rectangle_count *= 243 * 2693;
-			latin_rectangle_count *= 42787;
-			latin_rectangle_count *= 1699482467;
-			latin_rectangle_count *= 8098773443;
-		} break;
-		case 25: {
-			true_value = "TODO"; // @TODO
+	} else if constexpr (N == 4 && M == 4) { // 4x4 blocks
+		true_value = "595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"; // Estimate, real value is currently unknown
 
-			latin_rectangle_count = -1; // @TODO: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
-		} break;
-		default: {
-			true_value = "Unknown";
-			
-			latin_rectangle_count = -1;
-		} break;
+		// Number of reduced Latin Rectangles
+		latin_rectangle_count  = 1 << 14;
+		latin_rectangle_count *= 243 * 2693;
+		latin_rectangle_count *= 42787;
+		latin_rectangle_count *= 1699482467;
+		latin_rectangle_count *= 8098773443; // Number of Reduced 4x16 Latin Rectangles
+	} else {
+		true_value = "Unknown";
+		
+		latin_rectangle_count = -1;
 	}
+
+	latin_rectangle_count *= reduced_factor(M, Sudoku<N, M>::size);
 
 	Big_Integer        results_sum;
 	unsigned int       results_n;
@@ -268,7 +295,7 @@ void report_results() {
 		if (results_n > 0) { // @PERFORMANCE
 			avg = (results_sum * latin_rectangle_count) / results_n;
 
-			printf(  "%u: Avg: ",     results_n); mpz_out_str(stdout, 10, avg.__get_mp());
+			printf(  "%u: Avg: ",                                      results_n); mpz_out_str(stdout, 10, avg.__get_mp());
 			printf("\n%u: Tru: %s\n\nAvg Iteration Time: %llu us\n\n", results_n,  true_value, results_time / results_n);
 		}
 	}

@@ -8,8 +8,10 @@
 #include "SudokuTraverser.h"
 
 constexpr int N = 3;
-constexpr int M = 3;
-constexpr int random_walk_length = 6;
+constexpr int M = 4;
+constexpr int random_walk_length = 16;
+
+static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
 
 constexpr unsigned int BATCH_SIZE = 100;
 
@@ -22,9 +24,11 @@ private:
 	//Row_Right_Column_Down_Traverser<N> traverser; 
 	Most_Constrained_Traverser<N, M> traverser;
 
-	static constexpr int coordinate_count = Sudoku<N, M>::size * (Sudoku<N, M>::size - N);
+	static constexpr int coordinate_count = Sudoku<N, M>::size * (Sudoku<N, M>::size - M);
 	int coordinates[coordinate_count];
-	
+
+	static_assert(random_walk_length <= coordinate_count, "Length of the random walk cannot be longer than the available number of cells.");
+
 	Big_Integer estimate;
 	Big_Integer backtrack;
 
