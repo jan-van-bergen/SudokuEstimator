@@ -136,7 +136,19 @@ struct Sudoku {
 	inline void print() const {
 		for (int y = 0; y < size; y++) {
 			for (int x = 0; x < size; x++) {
-				printf("%u ", grid[get_index(x, y)]);
+				int value = grid[get_index(x, y)];
+				
+				// When dealing with double-digit numbers, we might need to
+				// add one extra space to ensure proper alignment of numbers	
+				if constexpr (size > 9) { 
+					if (value > 9) {
+						printf("%u ", value);
+					} else {
+						printf("%u  ", value);
+					}
+				} else {
+					printf("%u ", value);
+				}
 			}
 
 			printf("\n");
