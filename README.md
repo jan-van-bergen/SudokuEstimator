@@ -14,4 +14,4 @@ Original idea based on <a>https://theartofmachinery.com/2017/08/14/monte_carlo_c
 ### How to build
 The x64 haswell_avx ``.lib`` for MPIR is included in the repository. If you wish to build for a different platform or for a different architecture, you will need to download the MPIR library from http://www.mpir.org/downloads.html, and build a ``.lib`` for the desired platform.
 
-The rest of the program should work out of the box using Visual Studio 2019.
+The rest of the program should work out of the box using Visual Studio 2019. The project uses C++ 17 features such as ``if constexpr``.
