@@ -6,7 +6,7 @@
 struct Results {
 	std::mutex mutex;
 
-	BigInteger  sum = 0;
+	BigInteger   sum = 0;
 	unsigned int n   = 0;
 
 	unsigned long long time = 0;
