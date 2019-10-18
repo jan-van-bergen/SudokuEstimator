@@ -2,41 +2,11 @@
 #include "Sudoku.h"
 
 template<int N, int M>
-struct Row_Right_Column_Down_Traverser {
+struct MostConstrainedTraverser {
 	int x;
 	int y;
 
-	inline void seek_first(const Sudoku<N, M> * sudoku) {
-		x = -1;
-		y = 0;
-
-		move(sudoku);
-	}
-
-	inline bool move(const Sudoku<N, M> * sudoku) {
-		do {
-			x++;
-
-			if (x == sudoku->size) { 
-				x = 0; 
-				y++; 
-
-				if (y == sudoku->size) {
-					return true;
-				}
-			}
-		} while (sudoku->get(x, y) != 0);
-
-		return false;
-	}
-};
-
-template<int N, int M>
-struct Most_Constrained_Traverser {
-	int x;
-	int y;
-
-	inline Most_Constrained_Traverser() {
+	inline MostConstrainedTraverser() {
 		x = -1;
 		y = -1;
 	}

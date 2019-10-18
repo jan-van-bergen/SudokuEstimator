@@ -6,7 +6,7 @@
 struct Results {
 	std::mutex mutex;
 
-	Big_Integer  sum = 0;
+	BigInteger  sum = 0;
 	unsigned int n   = 0;
 
 	unsigned long long time = 0;
@@ -61,7 +61,6 @@ void SudokuEstimator::knuth() {
 		assert(sudoku.get(x, y) == 0); // Cell should be empty
 		
 		int domain_size = sudoku.get_domain(x, y, domain);
-
 		if (domain_size == 0) {
 			estimate = 0;
 			
@@ -70,6 +69,7 @@ void SudokuEstimator::knuth() {
 
 		estimate *= domain_size;
 
+		// Pick a random value from the domain
 		std::uniform_int_distribution<int> distribution(0, domain_size - 1);
 		int random_value_from_domain = domain[distribution(rng)];
 
@@ -171,7 +171,7 @@ void SudokuEstimator::run() {
 		}
 	}
 
-	Big_Integer batch_sum;
+	BigInteger batch_sum;
 	
 	while (true) {	
 		auto start_time = std::chrono::high_resolution_clock::now();
@@ -199,15 +199,19 @@ void SudokuEstimator::run() {
 	}
 }
 
-Big_Integer factorial(Big_Integer x) {
+BigInteger factorial(BigInteger x) {
 	assert(x >= 0);
 
-	if (x <= 1) return 1;
+	BigInteger result = 1;
 
-	return x * factorial(x - 1);
+	for (int i = 2; i <= x; i++) {
+		result *= i;
+	}
+
+	return result;
 }
 
-Big_Integer reduced_factor(int k, int n) {
+BigInteger reduced_factor(int k, int n) {
 	return (factorial(n) * factorial(n - 1)) / factorial(n - k);	
 }
 
@@ -219,7 +223,7 @@ void report_results() {
 	// Number of M x N*M Latin Rectangles, this constant can be used to speed
 	// up the process of estimating the amount of valid N*M x N*M Sudoku Grids
 	// Source: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
-	Big_Integer latin_rectangle_count; 
+	BigInteger latin_rectangle_count; 
 
 	if constexpr (N == 2 && M == 2) { // 2x2 blocks
 		true_value = "288";
@@ -273,11 +277,11 @@ void report_results() {
 
 	latin_rectangle_count *= reduced_factor(M, Sudoku<N, M>::size);
 
-	Big_Integer        results_sum;
+	BigInteger        results_sum;
 	unsigned int       results_n;
 	unsigned long long results_time;
 	
-	Big_Integer avg;
+	BigInteger avg;
 
 	while (true) {
 		using namespace std::chrono_literals;
