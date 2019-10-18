@@ -277,7 +277,7 @@ void report_results() {
 
 	latin_rectangle_count *= reduced_factor(M, Sudoku<N, M>::size);
 
-	BigInteger        results_sum;
+	BigInteger         results_sum;
 	unsigned int       results_n;
 	unsigned long long results_time;
 	

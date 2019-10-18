@@ -8,7 +8,7 @@
 #include "SudokuTraverser.h"
 
 constexpr int N = 3;
-constexpr int M = 4;
+constexpr int M = 3;
 constexpr int random_walk_length = 8;
 
 static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
@@ -21,7 +21,6 @@ struct SudokuEstimator {
 private:
 	Sudoku<N, M> sudoku; // N*M x N*M Sudoku
 
-	//Row_Right_Column_Down_Traverser<N> traverser; 
 	MostConstrainedTraverser<N, M> traverser;
 
 	static constexpr int coordinate_count = Sudoku<N, M>::size * (Sudoku<N, M>::size - M);

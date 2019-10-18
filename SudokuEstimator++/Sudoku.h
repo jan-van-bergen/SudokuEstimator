@@ -250,7 +250,7 @@ private:
 		// Update all domains in the current row, skipping the cell at (x, y)
 		for (int i = 0;   i < x;    i++) valid &= update_domain<Change>(i, y, value);
 		for (int i = x+1; i < size; i++) valid &= update_domain<Change>(i, y, value);
-
+		
 		// Update all domains in the current column, skipping the cell at (x, y)
 		for (int j = 0;   j < y;    j++) valid &= update_domain<Change>(x, j, value);
 		for (int j = y+1; j < size; j++) valid &= update_domain<Change>(x, j, value);
