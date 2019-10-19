@@ -2,10 +2,48 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-file_path = '../Results/results_3x3_s=8.txt'
+N = 3
+M = 3
+random_walk_length = 8
+
+true_sudoku_counts = {
+    (2, 2): 288,
+    (2, 3): 28200960,
+    (2, 4): 29136487207403520,
+    (2, 5): 1903816047972624930994913280000,
+    (2, 6): 38296278920738107863746324732012492486187417600000,
+    (3, 3): 6670903752021072936960,
+    (3, 4): 81171437193104932746936103027318645818654720000,
+    (4, 4): 595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+}
+
+def factorial(x):
+    result = 1
+    for i in range(2, x + 1): 
+        result *= i
+    return result
+
+def reduced_factor(k, n):
+    return (factorial(n) * factorial(n - 1)) / factorial(n - k)
+
+# Number of reduced Latin Rectangles, given N, M
+latin_rectangle_counts = {
+    (2, 2): 3,
+    (2, 3): 1064,
+    (2, 4): 420909504,
+    (2, 5): 746988383076286464,
+    (2, 6): (1 << 17) * 9 * 5 * 131 * 110630813 *65475601447957,
+    (3, 3): 103443808,
+    (3, 4): (1 << 9) * 27 * 7 * 1945245990285863,
+    (4, 4): (1 << 14) * 243 * 2693 * 42787 * 1699482467 * 8098773443
+}
+
+file_path = '../Results/results_{}x{}_s={}.txt'.format(N, M, random_walk_length)
 # Change these values based on the Sudoku size
-latin_rectangle_count = 2102110586634240
-true_sudoku_count     = 6670903752021072936960
+latin_rectangle_count = reduced_factor(M, N * M) * latin_rectangle_counts[(N, M)]
+true_sudoku_count     = true_sudoku_counts[(N, M)]
+
+print(latin_rectangle_count)
 
 print('Reading file...')
 
