@@ -7,9 +7,9 @@
 #include "Sudoku.h"
 #include "SudokuTraverser.h"
 
-constexpr int N = 3;
-constexpr int M = 3;
-constexpr int random_walk_length = 8;
+constexpr int N = 4;
+constexpr int M = 4;
+constexpr int random_walk_length = 60;
 
 static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
 

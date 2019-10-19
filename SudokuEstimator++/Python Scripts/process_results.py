@@ -66,10 +66,12 @@ for estimate in estimates:
 
     running_average.append(cumulative_sum / n)
 
+print('Sample count: {}'.format(n))
+
 # Plot the data
 plt.plot(running_average)
 plt.hlines(true_sudoku_count, xmin=0, xmax=n, linestyles='dashed')
 plt.xlabel('Iteration Number')
 plt.ylabel('Estimate')
-plt.title('{} x {} Sudoku Solution Estimate - Running Average - Random walk length: {}'.format(N, M, random_walk_length))
+plt.title('{} x {} Sudoku Solution Estimate - s = {} - Running Average'.format(N, M, random_walk_length))
 plt.show()
