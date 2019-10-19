@@ -13,7 +13,7 @@ constexpr int random_walk_length = 8;
 
 static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
 
-constexpr unsigned int BATCH_SIZE = 100;
+constexpr int BATCH_SIZE = 100;
 
 using Sudoku_NxM = Sudoku<N, M>; // Assertions cannot contain commas because they are macros, this alias is used to circumvent this.
 

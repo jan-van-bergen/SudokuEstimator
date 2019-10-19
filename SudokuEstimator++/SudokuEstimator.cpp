@@ -171,7 +171,11 @@ void SudokuEstimator::run() {
 		}
 	}
 
+	char results_file_name[32];
+	sprintf_s(results_file_name, "Results/results_%ux%u_s=%u.txt", N, M, random_walk_length);
+
 	BigInteger batch_sum;
+	BigInteger batch[BATCH_SIZE];
 	
 	while (true) {	
 		auto start_time = std::chrono::high_resolution_clock::now();
@@ -179,10 +183,11 @@ void SudokuEstimator::run() {
 		batch_sum = 0;
 
 		// Sum 'batch_size' estimations
-		for (unsigned int i = 0; i < BATCH_SIZE; i++) {
+		for (int i = 0; i < BATCH_SIZE; i++) {
 			estimate_solution_count();
 
 			batch_sum += estimate;
+			batch[i]   = estimate;
 		}
 
 		auto      stop_time = std::chrono::high_resolution_clock::now();
@@ -194,6 +199,19 @@ void SudokuEstimator::run() {
 			results.sum  += batch_sum;
 			results.n    += BATCH_SIZE;
 			results.time += duration;
+
+			FILE * file;
+			if (fopen_s(&file, results_file_name, "a") == EINVAL) {
+				abort();
+			}
+
+			for (int i = 0; i < BATCH_SIZE; i++) {
+				mpz_ptr estimate = batch[i].__get_mp();
+				mpz_out_str(file, 10, estimate);
+				fprintf(file, "\n");
+			}
+
+			fclose(file);
 		}
 		results.mutex.unlock();
 	}
