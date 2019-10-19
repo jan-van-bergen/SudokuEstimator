@@ -2,17 +2,17 @@
 #include <chrono>
 
 // Timer that uses its constructor and destructor to record time
-struct Scoped_Timer {
+struct ScopedTimer {
 private:
 	const char* name;
 	std::chrono::high_resolution_clock::time_point start_time;
 
 public:
-	inline Scoped_Timer(const char* name = "Scoped Timer") : name(name) {
+	inline ScopedTimer(const char* name = "Scoped Timer") : name(name) {
 		start_time = std::chrono::high_resolution_clock::now();
 	}
 
-	inline ~Scoped_Timer() {
+	inline ~ScopedTimer() {
 		auto      stop_time = std::chrono::high_resolution_clock::now();
 		long long duration  = std::chrono::duration_cast<std::chrono::microseconds>(stop_time - start_time).count();
 
