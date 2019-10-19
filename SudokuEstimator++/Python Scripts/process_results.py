@@ -1,10 +1,11 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
-N = 3
-M = 3
-random_walk_length = 8
+N = 4
+M = 4
+random_walk_length = 60
 
 true_sudoku_counts = {
     (2, 2): 288,
@@ -14,17 +15,11 @@ true_sudoku_counts = {
     (2, 6): 38296278920738107863746324732012492486187417600000,
     (3, 3): 6670903752021072936960,
     (3, 4): 81171437193104932746936103027318645818654720000,
-    (4, 4): 595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    (4, 4): 595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 # estimate, real value unknown
 }
 
-def factorial(x):
-    result = 1
-    for i in range(2, x + 1): 
-        result *= i
-    return result
-
 def reduced_factor(k, n):
-    return (factorial(n) * factorial(n - 1)) / factorial(n - k)
+    return (math.factorial(n) * math.factorial(n - 1)) / math.factorial(n - k)
 
 # Number of reduced Latin Rectangles, given N, M
 latin_rectangle_counts = {
@@ -42,8 +37,6 @@ file_path = '../Results/results_{}x{}_s={}.txt'.format(N, M, random_walk_length)
 # Change these values based on the Sudoku size
 latin_rectangle_count = reduced_factor(M, N * M) * latin_rectangle_counts[(N, M)]
 true_sudoku_count     = true_sudoku_counts[(N, M)]
-
-print(latin_rectangle_count)
 
 print('Reading file...')
 
@@ -78,5 +71,5 @@ plt.plot(running_average)
 plt.hlines(true_sudoku_count, xmin=0, xmax=n, linestyles='dashed')
 plt.xlabel('Iteration Number')
 plt.ylabel('Estimate')
-plt.title('Sudoku Solution Estimate - Running Average')
+plt.title('{} x {} Sudoku Solution Estimate - Running Average - Random walk length: {}'.format(N, M, random_walk_length))
 plt.show()
