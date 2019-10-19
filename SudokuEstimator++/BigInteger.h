@@ -1,7 +1,8 @@
 #pragma once
 #include <mpirxx.h>
 
-// MPIR is used to handle big integer math
+// MPIR Library is used to handle big integer math
+// This alias is used for convenience
 typedef mpz_class BigInteger;
 
 // Convenience function to check if a given Big_Integer is zero
