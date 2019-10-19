@@ -14,7 +14,6 @@ estimates = []
 # Load a results file line by line and store it in the array 'estimates'
 with open(file_path) as file:
    line = file.readline()
-   cnt = 1
    while line:
        estimates.append(int(line))
        line = file.readline()
