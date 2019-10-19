@@ -9,7 +9,7 @@ and in this readme as well. This means the standard size Sudoku is referred to a
 This is done to avoid ambiguities when dealing with non-square blocks. For example, a "16x16 Sudoku" could consists of 2x8 blocks or 4x4 blocks.
 
 ![Figure:_Sudoku 3x3 - Running Average of Estimates](Figures/Sudoku_3x3.png)
-Plot of the running average of 5 million estimates of the number of 3x3 Sudoku solutions. The dotted line represents the actual number of Sudoku solutions. The average of the estimates converges quickly and gets really close to the actual number.
+*Plot of the running average of 5 million estimates of the number of 3x3 Sudoku solutions. The dotted line represents the actual number of Sudoku solutions. The average of the estimates converges quickly and gets really close to the actual number. The 5 million iterations took 5 minutes running on an i7 using 8 simultaneous threads.*
 
 ### Features
 - Supports Sudokus of different sizes. Sudoku puzzles with non-square blocks such as 2x3 or 3x4 are supported as well.
