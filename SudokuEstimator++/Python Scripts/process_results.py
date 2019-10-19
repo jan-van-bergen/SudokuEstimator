@@ -31,8 +31,9 @@ for estimate in estimates:
 
     cumulative_average.append(cumulative_sum / n)
 
+# Plot the data
 plt.plot(cumulative_average)
-plt.hlines(true_sudoku_count, xmin=0, xmax=n)
+plt.hlines(true_sudoku_count, xmin=0, xmax=n, linestyles='dashed')
 plt.xlabel('Iteration Number')
 plt.ylabel('Estimate')
 plt.title('Sudoku Solution Estimate - Cumulative Average')
