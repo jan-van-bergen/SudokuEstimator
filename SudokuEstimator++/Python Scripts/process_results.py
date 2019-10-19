@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-N = 4
-M = 4
-random_walk_length = 60
+N                  = int(input('Enter N: '))
+M                  = int(input('Enter M: '))
+random_walk_length = int(input('Enter s: '))
 
 true_sudoku_counts = {
     (2, 2): 288,
