@@ -18,7 +18,7 @@ This is done to avoid ambiguities when dealing with non-square blocks. For examp
 ### About
 
 The algorithm uses a clever trick to reduce the search space of the problem. This trick is based on the observation that in a NxM Sudoku every Nth row is part of a different block, meaning these rows are only restricting eachother with regard to the column rule. This means these M rows together form a M by N\*M Latin Rectangle.
-Thus, if at the start of the algorithm we uniformly choose such a random Latin Rectangle and use it to fill in every Nth row, we have reduced the search space of the problem by the number of M x N\*M Latin Rectagles. For the standard Sudoku where N=M=3, this means we can reduce the search space by a factor of 2102110586634240, which speeds up the algorithm enormously
+Thus, if at the start of the algorithm we uniformly choose such a random Latin Rectangle and use it to fill in every Nth row, we have reduced the search space of the problem by the number of M x N\*M Latin Rectagles. For the standard Sudoku where N=M=3, this means we can reduce the search space by a factor of 2102110586634240, which speeds up the algorithm significantly.
 
 ### Dependencies
 - MPIR 3.0.0 - https://github.com/wbhart/mpir - Highly optimized math library for large numbers.
