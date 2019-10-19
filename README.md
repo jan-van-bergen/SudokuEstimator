@@ -7,6 +7,14 @@ Original idea based on <a>https://theartofmachinery.com/2017/08/14/monte_carlo_c
 ![Figure:_Sudoku 3x3 - Running Average of Estimates](Figures/Sudoku_3x3.png)
 Plot of the running average of 5 million estimates of the number of 3x3 Sudoku solutions. The dotted line represents the actual number of Sudoku solutions. The average of the estimates converges quickly and gets really close to the actual number.
 
+### Features
+- Supports Sudokus of different sizes. Sudoku puzzles with non-square blocks such as 2x3 or 3x4 are supported as well.
+- Multithreading using all available cores.
+
+### About
+
+TODO
+
 ### Dependencies
 - MPIR 3.0.0 - https://github.com/wbhart/mpir - Highly optimized math library for large numbers.
 
