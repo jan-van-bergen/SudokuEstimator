@@ -266,11 +266,6 @@ private:
 			}
 		}
 		
-		int index = get_index(x, y) * size;
-		// All values other than 'value' can be removed from the domain at (x, y)
-		for (int i = 0;         i < value; i++) constraints[index + i] += Change;
-		for (int i = value + 1; i < size;  i++) constraints[index + i] += Change;
-
 		// The domain update was valid if no domains were made empty
 		return valid;
 	}
