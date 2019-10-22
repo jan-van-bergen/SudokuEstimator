@@ -202,7 +202,7 @@ void SudokuEstimator::run() {
 			results.time += duration;
 
 			FILE * file;
-			if (fopen_s(&file, results_file_name, "a") == EINVAL) {
+			if (fopen_s(&file, results_file_name, "a") != 0) {
 				abort();
 			}
 
@@ -244,7 +244,7 @@ void report_results() {
 		}
 		results.mutex.unlock();
 
-		if (results_n > 0) { // @PERFORMANCE
+		if (results_n > 0) { // Avoid division by 0
 			avg = (results_sum * latin_rectangle_count) / results_n;
 
 			printf(  "%u: Avg: ",                                      results_n); mpz_out_str(stdout, 10, avg.__get_mp());
