@@ -277,7 +277,12 @@ void report_results() {
 		latin_rectangle_count *= 27 * 7;
 		latin_rectangle_count *= 1945245990285863; // Number of Reduced 4x12 Latin Rectangles
 	} else if constexpr (N == 3 && M == 5) { // 3x5 blocks
+		true_value = "3508600000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
+		latin_rectangle_count  = 1 << 22;
+		latin_rectangle_count *= 2187 * 19; // 3^7 * 19
+		latin_rectangle_count *= 423843896863;
+		latin_rectangle_count *= 34662016427839511;
 	} else if constexpr (N == 4 && M == 4) { // 4x4 blocks
 		true_value = "595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"; // Estimate, real value is currently unknown
 
