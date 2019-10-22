@@ -1,20 +1,8 @@
 #pragma once
 #include "BigInteger.h"
-#include <cassert>
 
 namespace Constants {	
-	inline BigInteger factorial(BigInteger x) {
-		assert(x >= 0);
-
-		BigInteger result = 1;
-
-		for (int i = 2; i <= x; i++) {
-			result *= i;
-		}
-
-		return result;
-	}
-
+	// Factor that is used to convert from the reduced number of kxn Latin Rectangles to the total number
 	inline BigInteger reduced_factor(int k, int n) {
 		return (factorial(n) * factorial(n - 1)) / factorial(n - k);	
 	}
@@ -39,7 +27,7 @@ namespace Constants {
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 2>() { return 3; }																													// Number of Reduced 2x4 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 3>() { return 1064; }																													// Number of Reduced 3x6 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 4>() { return 420909504; }																											// Number of Reduced 4x8 Latin Rectangles
-	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 5>() { return 746988383076286464; }																									// Number of Reduced 5x10 Latin Rectangles
+	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 5>() { return 746988383076286464ULL; }																								// Number of Reduced 5x10 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 6>() { return BigInteger(1 << 17) * BigInteger(9 * 5 * 131) * BigInteger(110630813) * BigInteger(65475601447957); }					// Number of Reduced 6x12 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 3>() { return 103443808; }																											// Number of Reduced 3x9 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 4>() { return BigInteger(1 << 9) * BigInteger(27 * 7) * BigInteger(1945245990285863); }												// Number of Reduced 4x12 Latin Rectangles
