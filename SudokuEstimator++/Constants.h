@@ -20,7 +20,7 @@ namespace Constants {
 	template<> inline BigInteger get_true_value<3, 5>() { return BigInteger("3508600000000000000000000000000000000000000000000000000000000000000000000000000000000"); }					// Estimate, real value unknown
 	template<> inline BigInteger get_true_value<4, 4>() { return BigInteger("595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"); }	// Estimate, real value unknown
 
-	// Number of M x N*M Latin Rectangles, this constant can be used to speed
+	// Reduced number of M x N*M Latin Rectangles, these constants can be used to speed
 	// up the process of estimating the amount of valid N*M x N*M Sudoku Grids
 	// Source: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
 	template<int N, int M> inline BigInteger get_reduced_latin_rectangle_count();
@@ -34,6 +34,7 @@ namespace Constants {
 	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 5>() { return BigInteger(1 << 22) * BigInteger(2187 * 19) * BigInteger(423843896863) * BigInteger(34662016427839511); }				// Number of Reduced 5x15 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<4, 4>() { return BigInteger(1 << 14) * BigInteger(243 * 2693) * BigInteger(42787) * BigInteger(1699482467) * BigInteger(8098773443); }	// Number of Reduced 4x16 Latin Rectangles
 
+	// Total number of M x N*M Latin Rectangles
 	template<int N, int M> inline BigInteger get_latin_rectangle_count() {
 		return get_reduced_latin_rectangle_count<N, M>() * reduced_factor(M, N * M);
 	}
