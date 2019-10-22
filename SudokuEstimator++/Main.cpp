@@ -11,7 +11,7 @@ int main() {
 	// Acquire logical core count of this machine
 	int thread_count = std::thread::hardware_concurrency();
 	if (thread_count == 0) {
-		printf("Something went wrong when attempting to determin the number of cores on this machine. Assuming single core.\n");
+		printf("Something went wrong when attempting to determine the number of cores on this machine. Assuming single core.\n");
 
 		thread_count = 1;
 	}
