@@ -29,7 +29,7 @@ namespace Constants {
 	template<> inline BigInteger get_true_value<2, 6>() { return BigInteger("38296278920738107863746324732012492486187417600000"); }
 	template<> inline BigInteger get_true_value<3, 3>() { return BigInteger("6670903752021072936960"); }
 	template<> inline BigInteger get_true_value<3, 4>() { return BigInteger("81171437193104932746936103027318645818654720000"); }
-	template<> inline BigInteger get_true_value<3, 5>() { return BigInteger("3508600000000000000000000000000000000000000000000000000000000000000000000000000000000"); }				// Estimate, real value unknown
+	template<> inline BigInteger get_true_value<3, 5>() { return BigInteger("3508600000000000000000000000000000000000000000000000000000000000000000000000000000000"); }					// Estimate, real value unknown
 	template<> inline BigInteger get_true_value<4, 4>() { return BigInteger("595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"); }	// Estimate, real value unknown
 
 	// Number of M x N*M Latin Rectangles, this constant can be used to speed
@@ -37,7 +37,7 @@ namespace Constants {
 	// Source: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
 	template<int N, int M> inline BigInteger get_reduced_latin_rectangle_count();
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 2>() { return 3; }																													// Number of Reduced 2x4 Latin Rectangles
-	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 3>() { return 1064; }																												// Number of Reduced 3x6 Latin Rectangles
+	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 3>() { return 1064; }																													// Number of Reduced 3x6 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 4>() { return 420909504; }																											// Number of Reduced 4x8 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 5>() { return 746988383076286464; }																									// Number of Reduced 5x10 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 6>() { return BigInteger(1 << 17) * BigInteger(9 * 5 * 131) * BigInteger(110630813) * BigInteger(65475601447957); }					// Number of Reduced 6x12 Latin Rectangles
