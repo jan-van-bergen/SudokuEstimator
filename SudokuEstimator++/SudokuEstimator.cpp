@@ -2,6 +2,7 @@
 #include <chrono>
 
 #include "AC3.h"
+#include "Constants.h"
 
 struct Results {
 	std::mutex mutex;
@@ -217,88 +218,12 @@ void SudokuEstimator::run() {
 	}
 }
 
-BigInteger factorial(BigInteger x) {
-	assert(x >= 0);
-
-	BigInteger result = 1;
-
-	for (int i = 2; i <= x; i++) {
-		result *= i;
-	}
-
-	return result;
-}
-
-BigInteger reduced_factor(int k, int n) {
-	return (factorial(n) * factorial(n - 1)) / factorial(n - k);	
-}
-
 void report_results() {
-	// True number of N*M x N*M Sudoku grids, if known. 
-	// Source: https://en.wikipedia.org/wiki/Mathematics_of_Sudoku#Enumeration_results
-	const char * true_value = nullptr;
+	// True number of N*M x N*M Sudoku grids 
+	BigInteger true_value            = Constants::get_true_value<N, M>();
+	BigInteger latin_rectangle_count = Constants::get_latin_rectangle_count<N, M>();
 
-	// Number of M x N*M Latin Rectangles, this constant can be used to speed
-	// up the process of estimating the amount of valid N*M x N*M Sudoku Grids
-	// Source: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
-	BigInteger latin_rectangle_count; 
-
-	if constexpr (N == 2 && M == 2) { // 2x2 blocks
-		true_value = "288";
-
-		latin_rectangle_count = 3; // Number of Reduced 2x4 Latin Rectangles
-	} else if constexpr (N == 2 && M == 3) { // 2x3 blocks
-		true_value = "28200960";
-
-		latin_rectangle_count =	1064; // Number of Reduced 3x6 Latin Rectangles
-	} else if constexpr (N == 2 && M == 4) { // 2x4 blocks
-		true_value = "29136487207403520";
-		
-		latin_rectangle_count = 420909504; // Number of Reduced 4x8 Latin Rectangles
-	} else if constexpr (N == 2 && M == 5) { // 2x5 blocks
-		true_value = "1903816047972624930994913280000";
-		
-		latin_rectangle_count = 746988383076286464; // Number of Reduced 5x10 Latin Rectangles
-	} else if constexpr (N == 2 && M == 6) { // 2x6 blocks
-		true_value = "38296278920738107863746324732012492486187417600000";
-
-		latin_rectangle_count  = 1 << 17;
-		latin_rectangle_count *= 9 * 5 * 131;
-		latin_rectangle_count *= 110630813;
-		latin_rectangle_count *= 65475601447957; // Number of Reduced 6x12 Latin Rectangles
-	} else if constexpr (N == 3 && M == 3) { // 3x3 blocks
-		true_value = "6670903752021072936960"; 
-			
-		latin_rectangle_count = 103443808; // Number of Reduced 3x9 Latin Rectangles
-	} else if constexpr (N == 3 && M == 4) { // 3x4 blocks
-		true_value = "81171437193104932746936103027318645818654720000";
-
-		latin_rectangle_count  = 1 << 9;
-		latin_rectangle_count *= 27 * 7;
-		latin_rectangle_count *= 1945245990285863; // Number of Reduced 4x12 Latin Rectangles
-	} else if constexpr (N == 3 && M == 5) { // 3x5 blocks
-		true_value = "3508600000000000000000000000000000000000000000000000000000000000000000000000000000000";
-
-		latin_rectangle_count  = 1 << 22;
-		latin_rectangle_count *= 2187 * 19; // 3^7 * 19
-		latin_rectangle_count *= 423843896863;
-		latin_rectangle_count *= 34662016427839511;
-	} else if constexpr (N == 4 && M == 4) { // 4x4 blocks
-		true_value = "595840000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"; // Estimate, real value is currently unknown
-
-		// Number of reduced Latin Rectangles
-		latin_rectangle_count  = 1 << 14;
-		latin_rectangle_count *= 243 * 2693;
-		latin_rectangle_count *= 42787;
-		latin_rectangle_count *= 1699482467;
-		latin_rectangle_count *= 8098773443; // Number of Reduced 4x16 Latin Rectangles
-	} else {
-		true_value = "Unknown";
-		
-		latin_rectangle_count = -1;
-	}
-
-	latin_rectangle_count *= reduced_factor(M, Sudoku<N, M>::size);
+	std::string true_value_str = true_value.get_str();
 
 	BigInteger         results_sum;
 	unsigned int       results_n;
@@ -323,7 +248,7 @@ void report_results() {
 			avg = (results_sum * latin_rectangle_count) / results_n;
 
 			printf(  "%u: Avg: ",                                      results_n); mpz_out_str(stdout, 10, avg.__get_mp());
-			printf("\n%u: Tru: %s\n\nAvg Iteration Time: %llu us\n\n", results_n,  true_value, results_time / results_n);
+			printf("\n%u: Tru: %s\n\nAvg Iteration Time: %llu us\n\n", results_n,  true_value_str.c_str(), results_time / results_n);
 		}
 	}
 }

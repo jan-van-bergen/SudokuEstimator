@@ -171,6 +171,7 @@
   <ItemGroup>
     <ClInclude Include="AC3.h" />
     <ClInclude Include="BigInteger.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="ScopedTimer.h" />
     <ClInclude Include="Sudoku.h" />
     <ClInclude Include="SudokuEstimator.h" />
