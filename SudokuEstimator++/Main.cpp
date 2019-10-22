@@ -9,7 +9,7 @@ void create_and_run_estimator() {
 
 int main() {
 	// Acquire logical core count of this machine
-	int thread_count = std::thread::hardware_concurrency();
+	int thread_count = 1;//std::thread::hardware_concurrency();
 	if (thread_count == 0) {
 		printf("Something went wrong when attempting to determin the number of cores on this machine. Assuming single core.\n");
 

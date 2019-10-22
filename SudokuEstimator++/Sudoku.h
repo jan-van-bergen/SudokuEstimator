@@ -37,13 +37,6 @@ struct Sudoku {
 
 	inline Sudoku() {
 		reset();
-		
-		// Lookup table for a function that evaluates whether its input is zero.
-		// This is done to prevent branching
-		is_zero[0] = 1;
-		for (int i = 1; i < size; i++) {
-			is_zero[i] = 0;
-		}
 	}
 
 	// Resets all cells to zero
@@ -209,13 +202,11 @@ struct Sudoku {
 	}
 	
 private:
-	int is_zero[size]; // Lookup table to avoid branching. Evaluates to 1 if its input is 0, evaluates to 0 for any other input
-
 	enum Change { INCREASE = +1, DECREASE = -1 };
 
 	// Updates the domain of the variable at (i, j). 
 	// Returns true if it's domains isn't empty, false otherwise
-	template<Change Change> inline bool update_constraint(int i, int j, int value);
+	template<Change> inline bool update_constraint(int i, int j, int value);
 
 	template<>
 	inline bool update_constraint<INCREASE>(int i, int j, int value) {
@@ -223,7 +214,7 @@ private:
 
 		// If there were previously no constraints on this value, now there is one.
 		// This means the domain size of the cell at (i, j) has shrunk by 1
-		domain_sizes[index] -= is_zero[constraints[index * size + value]++]; 
+		domain_sizes[index] -= !( constraints[index * size + value]++ ); 
 
 		return domain_sizes[index] != 0;;
 	}
@@ -234,7 +225,7 @@ private:
 
 		// If there was previously a constraint on this value, now there are none.
 		// This means the domain size of the cell at (i, j) has increased by 1
-		domain_sizes[index] += is_zero[--constraints[index * size + value]];
+		domain_sizes[index] += !( --constraints[index * size + value] );
 
 		return true;
 	}

@@ -9,7 +9,7 @@
 
 constexpr int N = 4;
 constexpr int M = 4;
-constexpr int random_walk_length = 60;
+constexpr int random_walk_length = 61;
 
 static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
 
