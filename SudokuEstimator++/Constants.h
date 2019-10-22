@@ -4,7 +4,7 @@
 namespace Constants {	
 	// Factor that is used to convert from the reduced number of kxn Latin Rectangles to the total number
 	inline BigInteger reduced_factor(int k, int n) {
-		return (factorial(n) * factorial(n - 1)) / factorial(n - k);	
+		return (BigIntegerMath::factorial(n) * BigIntegerMath::factorial(n - 1)) / BigIntegerMath::factorial(n - k);	
 	}
 
 	// True number of N*M x N*M Sudoku grids, if known. 

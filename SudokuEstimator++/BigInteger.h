@@ -6,17 +6,21 @@
 // This alias is used for convenience
 typedef mpz_class BigInteger;
 
-// Convenience function to check if a given Big_Integer is zero
-#define mpz_is_zero(big_integer) (mpz_size(big_integer.__get_mp()) == 0)
-
-inline BigInteger factorial(BigInteger x) {
-	assert(x >= 0);
-
-	BigInteger result = 1;
-
-	for (int i = 2; i <= x; i++) {
-		result *= i;
+namespace BigIntegerMath {
+	// Convenience function to check if a given Big_Integer is zero
+	inline bool is_zero(const BigInteger& integer) {
+		return mpz_size(integer.__get_mp()) == 0;
 	}
 
-	return result;
-}
+	inline BigInteger factorial(const BigInteger& x) {
+		assert(x >= 0);
+
+		BigInteger result = 1;
+
+		for (int i = 2; i <= x; i++) {
+			result *= i;
+		}
+
+		return result;
+	}
+};

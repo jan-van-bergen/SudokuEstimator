@@ -127,14 +127,14 @@ void SudokuEstimator::estimate_solution_count() {
 			assert(domains_valid);
 		}
 	}
-
+	
 	// Select s random cells from the other rows.
 	std::shuffle(coordinates, coordinates + coordinate_count, rng);
 
 	// Estime using Knuth's algorithm
 	knuth();
 
-	if (mpz_is_zero(estimate)) return;
+	if (BigIntegerMath::is_zero(estimate)) return;
 
 	// Reduce domain sizes using AC3
 	// If a domain was made empty, return false
@@ -150,7 +150,7 @@ void SudokuEstimator::estimate_solution_count() {
 	backtrack = 0;
 	backtrack_with_forward_check();
 	
-	if (mpz_is_zero(backtrack)) {
+	if (BigIntegerMath::is_zero(backtrack)) {
 		estimate = 0;
 
 		return;
