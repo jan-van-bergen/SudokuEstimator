@@ -1,7 +1,9 @@
 #pragma once
 #include <cassert>
 
-template<int N, int M = N> // N is the height of a block, M is the width of a block. The width and height of the entire Sudoku are N*M
+#include "Generated.h"
+
+template<int N, int M> // N is the height of a block, M is the width of a block. The width and height of the entire Sudoku are N*M
 struct Sudoku {
 	static constexpr int size = N * M;
 
@@ -163,8 +165,7 @@ struct Sudoku {
 		assert(value >= 1 && value <= size);
 
 		// Update all related domains that this grid is now a number
-		bool valid = update_domains_set(x, y, value - 1);
-
+		bool valid = Generated::table_set[index](domain_sizes, constraints, value - 1);
 		grid[index] = value;
 
 		// Remove the current cell from the empty cell list in O(1) time by swapping with the last element in that list
@@ -191,107 +192,12 @@ struct Sudoku {
 		assert(empty_cells_length < size * size);
 
 		// Update all related domains that this grid is no longer a number
-		update_domains_reset(x, y, grid[index] - 1);
-
+		Generated::table_reset[index](domain_sizes, constraints, grid[index] - 1);
 		grid[index] = 0;
 
 		// Store the cell after the last element in the empty cell list
 		empty_cells[empty_cells_length] = index;
 		empty_cells_index[index]= empty_cells_length;
 		empty_cells_length++;
-	}
-	
-private:
-	// Method for updating the constraint at cell (i, j), associated with 'value' when SETTING the value
-	inline bool update_constraint_set(int i, int j, int value) {
-		int index = get_index(i, j);
-
-		// If there were previously no constraints on this value, now there is one.
-		// This means the domain size of the cell at (i, j) has shrunk by 1
-		domain_sizes[index] -= !( constraints[index * size + value]++ ); 
-
-		return domain_sizes[index] != 0;;
-	}
-	
-	// Method for updating the constraint at cell (i, j), associated with 'value' when RESETTING the value
-	inline void update_constraint_reset(int i, int j, int value) {
-		int index = get_index(i, j);
-
-		// If there was previously a constraint on this value, now there are none.
-		// This means the domain size of the cell at (i, j) has increased by 1
-		domain_sizes[index] += !( --constraints[index * size + value] );
-	}
-
-	inline bool update_domains_set(int x, int y, int value) {
-		// Calculate current block bounds
-		int bx = M * (x / M);
-		int by = N * (y / N);
-		int bxe = bx + M;
-		int bye = by + N;
-
-		bool valid = true;
-
-		// Update all domains in the current row, skipping the cell at (x, y)
-		for (int i = 0;   i < x;    i++) valid &= update_constraint_set(i, y, value);
-		for (int i = x+1; i < size; i++) valid &= update_constraint_set(i, y, value);
-		
-		// Update all domains in the current column, skipping the cell at (x, y)
-		for (int j = 0;   j < y;    j++) valid &= update_constraint_set(x, j, value);
-		for (int j = y+1; j < size; j++) valid &= update_constraint_set(x, j, value);
-
-		// Update all domains in the current block, except for the cells in row y and column x
-		for (int j = by; j < y; j++) {
-			for (int i = bx; i < x; i++) {
-				valid &= update_constraint_set(i, j, value);
-			}
-			for (int i = x+1; i < bxe; i++) {
-				valid &= update_constraint_set(i, j, value);
-			}
-		}
-		for (int j = y+1; j < bye; j++) {
-			for (int i = bx; i < x; i++) {
-				valid &= update_constraint_set(i, j, value);
-			}
-			for (int i = x+1; i < bxe; i++) {
-				valid &= update_constraint_set(i, j, value);
-			}
-		}
-		
-		// The domain update was valid if no domains were made empty
-		return valid;
-	}
-
-	inline void update_domains_reset(int x, int y, int value) {
-		// Calculate current block bounds
-		int bx = M * (x / M);
-		int by = N * (y / N);
-		int bxe = bx + M;
-		int bye = by + N;
-
-		// Update all domains in the current row, skipping the cell at (x, y)
-		for (int i = 0;   i < x;    i++) update_constraint_reset(i, y, value);
-		for (int i = x+1; i < size; i++) update_constraint_reset(i, y, value);
-		
-		// Update all domains in the current column, skipping the cell at (x, y)
-		for (int j = 0;   j < y;    j++) update_constraint_reset(x, j, value);
-		for (int j = y+1; j < size; j++) update_constraint_reset(x, j, value);
-
-		// Update all domains in the current block, except for the cells in row y and column x
-		for (int j = by; j < y; j++) {
-			for (int i = bx; i < x; i++) {
-				update_constraint_reset(i, j, value);
-			}
-			for (int i = x+1; i < bxe; i++) {
-				update_constraint_reset(i, j, value);
-			}
-		}
-		for (int j = y+1; j < bye; j++) {
-			for (int i = bx; i < x; i++) {
-				update_constraint_reset(i, j, value);
-			}
-			for (int i = x+1; i < bxe; i++) {
-				update_constraint_reset(i, j, value);
-			}
-		}
 	}
 };

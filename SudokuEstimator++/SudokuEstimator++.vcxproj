@@ -172,12 +172,14 @@
     <ClInclude Include="AC3.h" />
     <ClInclude Include="BigInteger.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Generated.h" />
     <ClInclude Include="ScopedTimer.h" />
     <ClInclude Include="Sudoku.h" />
     <ClInclude Include="SudokuEstimator.h" />
     <ClInclude Include="SudokuTraverser.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Generated.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SudokuEstimator.cpp" />
   </ItemGroup>

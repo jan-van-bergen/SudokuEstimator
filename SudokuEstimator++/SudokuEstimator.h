@@ -9,7 +9,9 @@
 
 constexpr int N = 4;
 constexpr int M = 4;
-constexpr int random_walk_length = 60;
+constexpr int random_walk_length = 55;
+
+static_assert(N == Generated::N && M == Generated::M, "N and M should match the generated code!");
 
 static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
 
