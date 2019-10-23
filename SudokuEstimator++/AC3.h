@@ -51,16 +51,20 @@ bool ac3(Sudoku<N, M> * sudoku) {
 		int xi = (int)(cij & 0xff000000) >> 24, yi = (int)(cij & 0x00ff0000) >> 16;
 		int xj = (int)(cij & 0x0000ff00) >> 8,  yj = (int)(cij & 0x000000ff);
 
+		// @TODO: can be optimized!
+		int index_i = Sudoku<N, M>::get_index(xi, yi);
+		int index_j = Sudoku<N, M>::get_index(xj, yj); 
+
 		bool modified = false;
 
-		int domain_size_j = sudoku->get_domain(xj, yj, domain_j);
+		int domain_size_j = sudoku->get_domain(index_j, domain_j);
 
 		if (domain_size_j == 1) {
-			int domain_size_i = sudoku->get_domain(xi, yi, domain_i);
+			int domain_size_i = sudoku->get_domain(index_i, domain_i);
 
 			for (int di = 0; di < domain_size_i; di++) {
 				if (domain_i[di] == domain_j[0]) {
-					int index_i = Sudoku<N, M>::get_index(xi, yi);
+					
 					int& constraint = sudoku->constraints[index_i * Sudoku<N, M>::size + domain_i[di] - 1];
 
 					// If domain_i[di] was previously unconstrained, it is now

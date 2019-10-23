@@ -13,14 +13,14 @@ struct Sudoku {
 	}
 
 	// Converts one dimensional index obtainable from get_index back into its x coordinate
-	inline static constexpr int get_x_from_index(int index) {
+	/*inline static constexpr int get_x_from_index(int index) {
 		return index % size;
 	}
 	
 	// Converts one dimensional index obtainable from get_index back into its y coordinate
 	inline static constexpr int get_y_from_index(int index) {
 		return index / size;
-	}
+	}*/
 
 	// Sudoku grid, contains all currently filled in numbers
 	// If a number is not filled in, the value is 0
@@ -65,8 +65,8 @@ struct Sudoku {
 	}
 	
 	// Checks if the cell at (x, y) is allowed to assume the given value
-	inline bool is_valid_move(int x, int y, int value) const {
-		return constraints[get_index(x, y) * size + value - 1] == 0;
+	inline bool is_valid_move(int index, int value) const {
+		return constraints[index * size + value - 1] == 0;
 	}
 
 	// Checks if the current configuration is a valid Sudoku grid
@@ -112,11 +112,11 @@ struct Sudoku {
 	// Gets the domain of cell (x, y)
 	// Stores the resulting domain in result_domain, which should be an array of length >= size
 	// The size of the domain is returned
-	inline int get_domain(int x, int y, int result_domain[size]) const {
+	inline int get_domain(int index, int result_domain[size]) const {
 		int domain_size = 0;
 
 		for (int value = 1; value <= size; value++) {
-			if (is_valid_move(x, y, value)) {
+			if (is_valid_move(index, value)) {
 				result_domain[domain_size++] = value;
 			}
 		}
@@ -150,17 +150,10 @@ struct Sudoku {
 		}
 	}
 
-	// Retrieves the value at cell (x, y)
-	inline int get(int x, int y) const {
-		return grid[get_index(x, y)];
-	}
-	
 	// Sets the cell at (x, y) to the given value, using forward checking
 	// Updates all related domains (cells in the same row, column and block) that the cell has the new value
 	// If any of those domains become empty false is returned, true otherwise
-	inline bool set_with_forward_check(int x, int y, int value) {
-		int index = get_index(x, y);
-		
+	inline bool set_with_forward_check(int index, int value) {
 		assert(grid[index] == 0);
 		assert(value >= 1 && value <= size);
 
@@ -185,9 +178,7 @@ struct Sudoku {
 
 	// Resets the cell at (x, y) to zero
 	// Updates all related domains (cells in the same row, column and block) that the cell no longer has a value
-	inline void reset_cell(int x, int y) {
-		int index = get_index(x, y);
-
+	inline void reset_cell(int index) {
 		assert(grid[index] != 0);
 		assert(empty_cells_length < size * size);
 

@@ -14,13 +14,12 @@ struct Results {
 } results;
 
 void SudokuEstimator::backtrack_with_forward_check() {
-	int current_x = traverser.x;
-	int current_y = traverser.y;
+	int current_index = traverser.index;;
 	
 	assert(sudoku.get(current_x, current_y) == 0);
 
 	int domain[Sudoku<N, M>::size];
-	int domain_size = sudoku.get_domain(current_x, current_y, domain);
+	int domain_size = sudoku.get_domain(current_index, domain);
 
 	assert(domain_size == sudoku.domain_sizes[Sudoku_NxM::get_index(current_x, current_y)]);
 
@@ -29,7 +28,7 @@ void SudokuEstimator::backtrack_with_forward_check() {
 		int value = domain[i];
 		
 		// Try the current value
-		if (sudoku.set_with_forward_check(current_x, current_y, value)) {
+		if (sudoku.set_with_forward_check(current_index, value)) {
 			if (traverser.move(&sudoku)) {
 				// If the Sudoku was completed by this move, add 1 to the solution count
 				backtrack += 1;
@@ -41,10 +40,9 @@ void SudokuEstimator::backtrack_with_forward_check() {
 			} 
 		}
 
-		traverser.x = current_x;
-		traverser.y = current_y;
+		traverser.index = current_index;
 
-		sudoku.reset_cell(current_x, current_y);
+		sudoku.reset_cell(current_index);
 	}
 }
 
@@ -54,14 +52,12 @@ void SudokuEstimator::knuth() {
 	int domain[Sudoku<N, M>::size];
 
 	for (int i = 0; i < random_walk_length; i++) {
-		int coordinate = coordinates[i];
-		int x = coordinate & 0x0000ffff;
-		int y = coordinate >> 16;
+		int index = coordinates[i];
 
 		assert(y % N != 0); // First row of every block is filled with numbers from a Latin Rectangle
 		assert(sudoku.get(x, y) == 0); // Cell should be empty
 		
-		int domain_size = sudoku.get_domain(x, y, domain);
+		int domain_size = sudoku.get_domain(index, domain);
 		if (domain_size == 0) {
 			estimate = 0;
 			
@@ -76,7 +72,7 @@ void SudokuEstimator::knuth() {
 
 		// Use forward checking for a possible early out
 		// If any domain becomes empty the Sudoku can't be completed and 0 can be returned.
-		if (!sudoku.set_with_forward_check(x, y, random_value_from_domain)) {
+		if (!sudoku.set_with_forward_check(index, random_value_from_domain)) {
 			estimate = 0;
 			
 			return;
@@ -122,7 +118,7 @@ void SudokuEstimator::estimate_solution_count() {
 	// Fill every Nth row of the Sudoku with a row from the Latin Rectangle
 	for (int row = 0; row < M; row++) {
 		for (int i = 0; i < Sudoku<N, M>::size; i++) {
-			bool domains_valid = sudoku.set_with_forward_check(i, row * N, rows[row][i]);
+			bool domains_valid = sudoku.set_with_forward_check(Sudoku<N, M>::get_index(i, row * N), rows[row][i]);
 
 			assert(domains_valid);
 		}
@@ -168,7 +164,7 @@ void SudokuEstimator::run() {
 		if (j % N == 0) continue;
 
 		for (int i = 0; i < Sudoku<N, M>::size; i++) {
-			coordinates[index++] = j << 16 | i;
+			coordinates[index++] = Sudoku<N, M>::get_index(i, j);
 		}
 	}
 
