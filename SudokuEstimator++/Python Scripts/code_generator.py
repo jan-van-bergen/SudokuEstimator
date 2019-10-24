@@ -63,7 +63,7 @@ def output_update_domains_set(file, x, y):
     file.write('\n')
     file.write('\treturn ')
 
-    for i in range(1, len(indices) - 1):
+    for i in range(1, len(indices)):
         file.write('valid{} && '.format(i))
     file.write('valid{};\n'.format(len(indices)))
     file.write('}\n\n')
