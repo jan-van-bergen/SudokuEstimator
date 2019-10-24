@@ -10,7 +10,7 @@ def update_constraint_set(number, i, j):
 
 def update_constraint_reset(i, j):
     index = get_index(i, j)
-    return '\tdomain_sizes[{}] += (constraints[{} + value]-- == 1); // Cell ({}, P{})\n'.format(index, index * size, i, j)
+    return '\tdomain_sizes[{}] += (constraints[{} + value]-- == 1); // Cell ({}, {})\n'.format(index, index * size, i, j)
 
 def output_update_domains_set(file, x, y):
     bx = M * int(x / M)
