@@ -16,12 +16,12 @@ struct Results {
 void SudokuEstimator::backtrack_with_forward_check() {
 	int current_index = traverser.index;;
 	
-	assert(sudoku.get(current_x, current_y) == 0);
+	assert(sudoku.grid[current_index] == 0);
 
 	int domain[Sudoku<N, M>::size];
 	int domain_size = sudoku.get_domain(current_index, domain);
 
-	assert(domain_size == sudoku.domain_sizes[Sudoku_NxM::get_index(current_x, current_y)]);
+	assert(domain_size == sudoku.domain_sizes[current_index]);
 
 	// Try all possible values for the cell at (x, y)
 	for (int i = 0 ; i < domain_size; i++) {
@@ -54,8 +54,7 @@ void SudokuEstimator::knuth() {
 	for (int i = 0; i < random_walk_length; i++) {
 		int index = coordinates[i];
 
-		assert(y % N != 0); // First row of every block is filled with numbers from a Latin Rectangle
-		assert(sudoku.get(x, y) == 0); // Cell should be empty
+		assert(sudoku.grid[index] == 0); // Cell should be empty
 		
 		int domain_size = sudoku.get_domain(index, domain);
 		if (domain_size == 0) {

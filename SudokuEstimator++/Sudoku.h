@@ -12,16 +12,6 @@ struct Sudoku {
 		return i + j * size;
 	}
 
-	// Converts one dimensional index obtainable from get_index back into its x coordinate
-	/*inline static constexpr int get_x_from_index(int index) {
-		return index % size;
-	}
-	
-	// Converts one dimensional index obtainable from get_index back into its y coordinate
-	inline static constexpr int get_y_from_index(int index) {
-		return index / size;
-	}*/
-
 	// Sudoku grid, contains all currently filled in numbers
 	// If a number is not filled in, the value is 0
 	int grid[size * size];
@@ -122,7 +112,7 @@ struct Sudoku {
 		}
 
 		// For empty cells the domain size should be the same as the cached one
-		assert(get(x, y) != 0 || domain_size == domain_sizes[get_index(x, y)]);
+		assert(grid[index] != 0 || domain_size == domain_sizes[index]);
 
 		return domain_size;
 	}
