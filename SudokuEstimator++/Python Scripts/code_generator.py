@@ -8,7 +8,7 @@ def update_constraint_set(i, j):
 
 def update_constraint_reset(i, j):
     index = i + j * size
-    return '\tdomain_sizes[{}] += constraints[{} + value]-- == 1;\n'.format(index, index * size)
+    return '\tdomain_sizes[{}] += (constraints[{} + value]-- == 1);\n'.format(index, index * size)
 
 def output_update_domains_set(file, x, y):
     bx = M * int(x / M)
