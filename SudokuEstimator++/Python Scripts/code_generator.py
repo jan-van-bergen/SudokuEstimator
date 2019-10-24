@@ -6,11 +6,11 @@ def get_index(i, j): return i + j * size
 
 def update_constraint_set(number, i, j):
     index = get_index(i, j)
-    return '\tbool valid{} = (domain_sizes[{}] -= (constraints[{} + value]++ == 0)) != 0;\n'.format(number, index, index * size)
+    return '\tbool valid{} = (domain_sizes[{}] -= (constraints[{} + value]++ == 0)) != 0; // Cell ({}, {})\n'.format(number, index, index * size, i, j)
 
 def update_constraint_reset(i, j):
     index = get_index(i, j)
-    return '\tdomain_sizes[{}] += (constraints[{} + value]-- == 1);\n'.format(index, index * size)
+    return '\tdomain_sizes[{}] += (constraints[{} + value]-- == 1); // Cell ({}, P{})\n'.format(index, index * size, i, j)
 
 def output_update_domains_set(file, x, y):
     bx = M * int(x / M)
