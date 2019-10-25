@@ -60,7 +60,7 @@ def output_update_domains_set(file, x, y):
             indices.append(get_index(i, j))
             file.write(update_constraint_set(len(indices), i, j))
 
-    file.write('\n')
+    file.write('\n\t// Check whether all domains are still valid (i.e. non-empty)\n')
     file.write('\treturn ')
 
     for i in range(1, len(indices)):

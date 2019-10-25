@@ -48,6 +48,7 @@ bool Generated::update_domains_set_0_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 	bool valid36 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -138,6 +139,7 @@ bool Generated::update_domains_set_1_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 	bool valid36 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -228,6 +230,7 @@ bool Generated::update_domains_set_2_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[49] -= (constraints[784 + value]++ == 0)) != 0; // Cell (1, 3)
 	bool valid36 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -318,6 +321,7 @@ bool Generated::update_domains_set_3_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[49] -= (constraints[784 + value]++ == 0)) != 0; // Cell (1, 3)
 	bool valid36 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -408,6 +412,7 @@ bool Generated::update_domains_set_4_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 	bool valid36 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -498,6 +503,7 @@ bool Generated::update_domains_set_5_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 	bool valid36 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -588,6 +594,7 @@ bool Generated::update_domains_set_6_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[53] -= (constraints[848 + value]++ == 0)) != 0; // Cell (5, 3)
 	bool valid36 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -678,6 +685,7 @@ bool Generated::update_domains_set_7_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[53] -= (constraints[848 + value]++ == 0)) != 0; // Cell (5, 3)
 	bool valid36 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -768,6 +776,7 @@ bool Generated::update_domains_set_8_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 	bool valid36 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -858,6 +867,7 @@ bool Generated::update_domains_set_9_0(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 	bool valid36 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -948,6 +958,7 @@ bool Generated::update_domains_set_10_0(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[57] -= (constraints[912 + value]++ == 0)) != 0; // Cell (9, 3)
 	bool valid36 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -1038,6 +1049,7 @@ bool Generated::update_domains_set_11_0(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[57] -= (constraints[912 + value]++ == 0)) != 0; // Cell (9, 3)
 	bool valid36 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -1128,6 +1140,7 @@ bool Generated::update_domains_set_12_0(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 	bool valid36 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -1218,6 +1231,7 @@ bool Generated::update_domains_set_13_0(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 	bool valid36 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -1308,6 +1322,7 @@ bool Generated::update_domains_set_14_0(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[61] -= (constraints[976 + value]++ == 0)) != 0; // Cell (13, 3)
 	bool valid36 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -1398,6 +1413,7 @@ bool Generated::update_domains_set_15_0(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[61] -= (constraints[976 + value]++ == 0)) != 0; // Cell (13, 3)
 	bool valid36 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -1484,6 +1500,7 @@ bool Generated::update_domains_set_0_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 	bool valid32 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -1566,6 +1583,7 @@ bool Generated::update_domains_set_1_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 	bool valid32 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -1648,6 +1666,7 @@ bool Generated::update_domains_set_2_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[49] -= (constraints[784 + value]++ == 0)) != 0; // Cell (1, 3)
 	bool valid32 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -1730,6 +1749,7 @@ bool Generated::update_domains_set_3_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[49] -= (constraints[784 + value]++ == 0)) != 0; // Cell (1, 3)
 	bool valid32 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -1812,6 +1832,7 @@ bool Generated::update_domains_set_4_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 	bool valid32 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -1894,6 +1915,7 @@ bool Generated::update_domains_set_5_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 	bool valid32 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -1976,6 +1998,7 @@ bool Generated::update_domains_set_6_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[53] -= (constraints[848 + value]++ == 0)) != 0; // Cell (5, 3)
 	bool valid32 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2058,6 +2081,7 @@ bool Generated::update_domains_set_7_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[53] -= (constraints[848 + value]++ == 0)) != 0; // Cell (5, 3)
 	bool valid32 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2140,6 +2164,7 @@ bool Generated::update_domains_set_8_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 	bool valid32 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2222,6 +2247,7 @@ bool Generated::update_domains_set_9_1(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 	bool valid32 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2304,6 +2330,7 @@ bool Generated::update_domains_set_10_1(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[57] -= (constraints[912 + value]++ == 0)) != 0; // Cell (9, 3)
 	bool valid32 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2386,6 +2413,7 @@ bool Generated::update_domains_set_11_1(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[57] -= (constraints[912 + value]++ == 0)) != 0; // Cell (9, 3)
 	bool valid32 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2468,6 +2496,7 @@ bool Generated::update_domains_set_12_1(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 	bool valid32 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2550,6 +2579,7 @@ bool Generated::update_domains_set_13_1(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 	bool valid32 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2632,6 +2662,7 @@ bool Generated::update_domains_set_14_1(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[61] -= (constraints[976 + value]++ == 0)) != 0; // Cell (13, 3)
 	bool valid32 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2714,6 +2745,7 @@ bool Generated::update_domains_set_15_1(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[61] -= (constraints[976 + value]++ == 0)) != 0; // Cell (13, 3)
 	bool valid32 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2796,6 +2828,7 @@ bool Generated::update_domains_set_0_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 	bool valid32 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2878,6 +2911,7 @@ bool Generated::update_domains_set_1_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 	bool valid32 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -2960,6 +2994,7 @@ bool Generated::update_domains_set_2_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[49] -= (constraints[784 + value]++ == 0)) != 0; // Cell (1, 3)
 	bool valid32 = (domain_sizes[51] -= (constraints[816 + value]++ == 0)) != 0; // Cell (3, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3042,6 +3077,7 @@ bool Generated::update_domains_set_3_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[49] -= (constraints[784 + value]++ == 0)) != 0; // Cell (1, 3)
 	bool valid32 = (domain_sizes[50] -= (constraints[800 + value]++ == 0)) != 0; // Cell (2, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3124,6 +3160,7 @@ bool Generated::update_domains_set_4_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 	bool valid32 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3206,6 +3243,7 @@ bool Generated::update_domains_set_5_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 	bool valid32 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3288,6 +3326,7 @@ bool Generated::update_domains_set_6_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[53] -= (constraints[848 + value]++ == 0)) != 0; // Cell (5, 3)
 	bool valid32 = (domain_sizes[55] -= (constraints[880 + value]++ == 0)) != 0; // Cell (7, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3370,6 +3409,7 @@ bool Generated::update_domains_set_7_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[53] -= (constraints[848 + value]++ == 0)) != 0; // Cell (5, 3)
 	bool valid32 = (domain_sizes[54] -= (constraints[864 + value]++ == 0)) != 0; // Cell (6, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3452,6 +3492,7 @@ bool Generated::update_domains_set_8_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 	bool valid32 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3534,6 +3575,7 @@ bool Generated::update_domains_set_9_2(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 	bool valid32 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3616,6 +3658,7 @@ bool Generated::update_domains_set_10_2(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[57] -= (constraints[912 + value]++ == 0)) != 0; // Cell (9, 3)
 	bool valid32 = (domain_sizes[59] -= (constraints[944 + value]++ == 0)) != 0; // Cell (11, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3698,6 +3741,7 @@ bool Generated::update_domains_set_11_2(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[57] -= (constraints[912 + value]++ == 0)) != 0; // Cell (9, 3)
 	bool valid32 = (domain_sizes[58] -= (constraints[928 + value]++ == 0)) != 0; // Cell (10, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3780,6 +3824,7 @@ bool Generated::update_domains_set_12_2(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 	bool valid32 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3862,6 +3907,7 @@ bool Generated::update_domains_set_13_2(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 	bool valid32 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -3944,6 +3990,7 @@ bool Generated::update_domains_set_14_2(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[61] -= (constraints[976 + value]++ == 0)) != 0; // Cell (13, 3)
 	bool valid32 = (domain_sizes[63] -= (constraints[1008 + value]++ == 0)) != 0; // Cell (15, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4026,6 +4073,7 @@ bool Generated::update_domains_set_15_2(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[61] -= (constraints[976 + value]++ == 0)) != 0; // Cell (13, 3)
 	bool valid32 = (domain_sizes[62] -= (constraints[992 + value]++ == 0)) != 0; // Cell (14, 3)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4108,6 +4156,7 @@ bool Generated::update_domains_set_0_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[34] -= (constraints[544 + value]++ == 0)) != 0; // Cell (2, 2)
 	bool valid32 = (domain_sizes[35] -= (constraints[560 + value]++ == 0)) != 0; // Cell (3, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4190,6 +4239,7 @@ bool Generated::update_domains_set_1_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[34] -= (constraints[544 + value]++ == 0)) != 0; // Cell (2, 2)
 	bool valid32 = (domain_sizes[35] -= (constraints[560 + value]++ == 0)) != 0; // Cell (3, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4272,6 +4322,7 @@ bool Generated::update_domains_set_2_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[33] -= (constraints[528 + value]++ == 0)) != 0; // Cell (1, 2)
 	bool valid32 = (domain_sizes[35] -= (constraints[560 + value]++ == 0)) != 0; // Cell (3, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4354,6 +4405,7 @@ bool Generated::update_domains_set_3_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[33] -= (constraints[528 + value]++ == 0)) != 0; // Cell (1, 2)
 	bool valid32 = (domain_sizes[34] -= (constraints[544 + value]++ == 0)) != 0; // Cell (2, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4436,6 +4488,7 @@ bool Generated::update_domains_set_4_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[38] -= (constraints[608 + value]++ == 0)) != 0; // Cell (6, 2)
 	bool valid32 = (domain_sizes[39] -= (constraints[624 + value]++ == 0)) != 0; // Cell (7, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4518,6 +4571,7 @@ bool Generated::update_domains_set_5_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[38] -= (constraints[608 + value]++ == 0)) != 0; // Cell (6, 2)
 	bool valid32 = (domain_sizes[39] -= (constraints[624 + value]++ == 0)) != 0; // Cell (7, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4600,6 +4654,7 @@ bool Generated::update_domains_set_6_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[37] -= (constraints[592 + value]++ == 0)) != 0; // Cell (5, 2)
 	bool valid32 = (domain_sizes[39] -= (constraints[624 + value]++ == 0)) != 0; // Cell (7, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4682,6 +4737,7 @@ bool Generated::update_domains_set_7_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[37] -= (constraints[592 + value]++ == 0)) != 0; // Cell (5, 2)
 	bool valid32 = (domain_sizes[38] -= (constraints[608 + value]++ == 0)) != 0; // Cell (6, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4764,6 +4820,7 @@ bool Generated::update_domains_set_8_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[42] -= (constraints[672 + value]++ == 0)) != 0; // Cell (10, 2)
 	bool valid32 = (domain_sizes[43] -= (constraints[688 + value]++ == 0)) != 0; // Cell (11, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4846,6 +4903,7 @@ bool Generated::update_domains_set_9_3(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[42] -= (constraints[672 + value]++ == 0)) != 0; // Cell (10, 2)
 	bool valid32 = (domain_sizes[43] -= (constraints[688 + value]++ == 0)) != 0; // Cell (11, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -4928,6 +4986,7 @@ bool Generated::update_domains_set_10_3(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[41] -= (constraints[656 + value]++ == 0)) != 0; // Cell (9, 2)
 	bool valid32 = (domain_sizes[43] -= (constraints[688 + value]++ == 0)) != 0; // Cell (11, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -5010,6 +5069,7 @@ bool Generated::update_domains_set_11_3(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[41] -= (constraints[656 + value]++ == 0)) != 0; // Cell (9, 2)
 	bool valid32 = (domain_sizes[42] -= (constraints[672 + value]++ == 0)) != 0; // Cell (10, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -5092,6 +5152,7 @@ bool Generated::update_domains_set_12_3(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[46] -= (constraints[736 + value]++ == 0)) != 0; // Cell (14, 2)
 	bool valid32 = (domain_sizes[47] -= (constraints[752 + value]++ == 0)) != 0; // Cell (15, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -5174,6 +5235,7 @@ bool Generated::update_domains_set_13_3(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[46] -= (constraints[736 + value]++ == 0)) != 0; // Cell (14, 2)
 	bool valid32 = (domain_sizes[47] -= (constraints[752 + value]++ == 0)) != 0; // Cell (15, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -5256,6 +5318,7 @@ bool Generated::update_domains_set_14_3(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[45] -= (constraints[720 + value]++ == 0)) != 0; // Cell (13, 2)
 	bool valid32 = (domain_sizes[47] -= (constraints[752 + value]++ == 0)) != 0; // Cell (15, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -5338,6 +5401,7 @@ bool Generated::update_domains_set_15_3(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[45] -= (constraints[720 + value]++ == 0)) != 0; // Cell (13, 2)
 	bool valid32 = (domain_sizes[46] -= (constraints[736 + value]++ == 0)) != 0; // Cell (14, 2)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -5424,6 +5488,7 @@ bool Generated::update_domains_set_0_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 	bool valid36 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -5514,6 +5579,7 @@ bool Generated::update_domains_set_1_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 	bool valid36 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -5604,6 +5670,7 @@ bool Generated::update_domains_set_2_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[113] -= (constraints[1808 + value]++ == 0)) != 0; // Cell (1, 7)
 	bool valid36 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -5694,6 +5761,7 @@ bool Generated::update_domains_set_3_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[113] -= (constraints[1808 + value]++ == 0)) != 0; // Cell (1, 7)
 	bool valid36 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -5784,6 +5852,7 @@ bool Generated::update_domains_set_4_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 	bool valid36 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -5874,6 +5943,7 @@ bool Generated::update_domains_set_5_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 	bool valid36 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -5964,6 +6034,7 @@ bool Generated::update_domains_set_6_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[117] -= (constraints[1872 + value]++ == 0)) != 0; // Cell (5, 7)
 	bool valid36 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6054,6 +6125,7 @@ bool Generated::update_domains_set_7_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[117] -= (constraints[1872 + value]++ == 0)) != 0; // Cell (5, 7)
 	bool valid36 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6144,6 +6216,7 @@ bool Generated::update_domains_set_8_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 	bool valid36 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6234,6 +6307,7 @@ bool Generated::update_domains_set_9_4(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 	bool valid36 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6324,6 +6398,7 @@ bool Generated::update_domains_set_10_4(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[121] -= (constraints[1936 + value]++ == 0)) != 0; // Cell (9, 7)
 	bool valid36 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6414,6 +6489,7 @@ bool Generated::update_domains_set_11_4(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[121] -= (constraints[1936 + value]++ == 0)) != 0; // Cell (9, 7)
 	bool valid36 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6504,6 +6580,7 @@ bool Generated::update_domains_set_12_4(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 	bool valid36 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6594,6 +6671,7 @@ bool Generated::update_domains_set_13_4(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 	bool valid36 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6684,6 +6762,7 @@ bool Generated::update_domains_set_14_4(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[125] -= (constraints[2000 + value]++ == 0)) != 0; // Cell (13, 7)
 	bool valid36 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6774,6 +6853,7 @@ bool Generated::update_domains_set_15_4(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[125] -= (constraints[2000 + value]++ == 0)) != 0; // Cell (13, 7)
 	bool valid36 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -6860,6 +6940,7 @@ bool Generated::update_domains_set_0_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 	bool valid32 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -6942,6 +7023,7 @@ bool Generated::update_domains_set_1_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 	bool valid32 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7024,6 +7106,7 @@ bool Generated::update_domains_set_2_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[113] -= (constraints[1808 + value]++ == 0)) != 0; // Cell (1, 7)
 	bool valid32 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7106,6 +7189,7 @@ bool Generated::update_domains_set_3_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[113] -= (constraints[1808 + value]++ == 0)) != 0; // Cell (1, 7)
 	bool valid32 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7188,6 +7272,7 @@ bool Generated::update_domains_set_4_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 	bool valid32 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7270,6 +7355,7 @@ bool Generated::update_domains_set_5_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 	bool valid32 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7352,6 +7438,7 @@ bool Generated::update_domains_set_6_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[117] -= (constraints[1872 + value]++ == 0)) != 0; // Cell (5, 7)
 	bool valid32 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7434,6 +7521,7 @@ bool Generated::update_domains_set_7_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[117] -= (constraints[1872 + value]++ == 0)) != 0; // Cell (5, 7)
 	bool valid32 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7516,6 +7604,7 @@ bool Generated::update_domains_set_8_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 	bool valid32 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7598,6 +7687,7 @@ bool Generated::update_domains_set_9_5(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 	bool valid32 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7680,6 +7770,7 @@ bool Generated::update_domains_set_10_5(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[121] -= (constraints[1936 + value]++ == 0)) != 0; // Cell (9, 7)
 	bool valid32 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7762,6 +7853,7 @@ bool Generated::update_domains_set_11_5(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[121] -= (constraints[1936 + value]++ == 0)) != 0; // Cell (9, 7)
 	bool valid32 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7844,6 +7936,7 @@ bool Generated::update_domains_set_12_5(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 	bool valid32 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -7926,6 +8019,7 @@ bool Generated::update_domains_set_13_5(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 	bool valid32 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8008,6 +8102,7 @@ bool Generated::update_domains_set_14_5(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[125] -= (constraints[2000 + value]++ == 0)) != 0; // Cell (13, 7)
 	bool valid32 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8090,6 +8185,7 @@ bool Generated::update_domains_set_15_5(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[125] -= (constraints[2000 + value]++ == 0)) != 0; // Cell (13, 7)
 	bool valid32 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8172,6 +8268,7 @@ bool Generated::update_domains_set_0_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 	bool valid32 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8254,6 +8351,7 @@ bool Generated::update_domains_set_1_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 	bool valid32 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8336,6 +8434,7 @@ bool Generated::update_domains_set_2_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[113] -= (constraints[1808 + value]++ == 0)) != 0; // Cell (1, 7)
 	bool valid32 = (domain_sizes[115] -= (constraints[1840 + value]++ == 0)) != 0; // Cell (3, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8418,6 +8517,7 @@ bool Generated::update_domains_set_3_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[113] -= (constraints[1808 + value]++ == 0)) != 0; // Cell (1, 7)
 	bool valid32 = (domain_sizes[114] -= (constraints[1824 + value]++ == 0)) != 0; // Cell (2, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8500,6 +8600,7 @@ bool Generated::update_domains_set_4_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 	bool valid32 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8582,6 +8683,7 @@ bool Generated::update_domains_set_5_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 	bool valid32 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8664,6 +8766,7 @@ bool Generated::update_domains_set_6_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[117] -= (constraints[1872 + value]++ == 0)) != 0; // Cell (5, 7)
 	bool valid32 = (domain_sizes[119] -= (constraints[1904 + value]++ == 0)) != 0; // Cell (7, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8746,6 +8849,7 @@ bool Generated::update_domains_set_7_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[117] -= (constraints[1872 + value]++ == 0)) != 0; // Cell (5, 7)
 	bool valid32 = (domain_sizes[118] -= (constraints[1888 + value]++ == 0)) != 0; // Cell (6, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8828,6 +8932,7 @@ bool Generated::update_domains_set_8_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 	bool valid32 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8910,6 +9015,7 @@ bool Generated::update_domains_set_9_6(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 	bool valid32 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -8992,6 +9098,7 @@ bool Generated::update_domains_set_10_6(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[121] -= (constraints[1936 + value]++ == 0)) != 0; // Cell (9, 7)
 	bool valid32 = (domain_sizes[123] -= (constraints[1968 + value]++ == 0)) != 0; // Cell (11, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9074,6 +9181,7 @@ bool Generated::update_domains_set_11_6(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[121] -= (constraints[1936 + value]++ == 0)) != 0; // Cell (9, 7)
 	bool valid32 = (domain_sizes[122] -= (constraints[1952 + value]++ == 0)) != 0; // Cell (10, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9156,6 +9264,7 @@ bool Generated::update_domains_set_12_6(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 	bool valid32 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9238,6 +9347,7 @@ bool Generated::update_domains_set_13_6(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 	bool valid32 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9320,6 +9430,7 @@ bool Generated::update_domains_set_14_6(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[125] -= (constraints[2000 + value]++ == 0)) != 0; // Cell (13, 7)
 	bool valid32 = (domain_sizes[127] -= (constraints[2032 + value]++ == 0)) != 0; // Cell (15, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9402,6 +9513,7 @@ bool Generated::update_domains_set_15_6(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[125] -= (constraints[2000 + value]++ == 0)) != 0; // Cell (13, 7)
 	bool valid32 = (domain_sizes[126] -= (constraints[2016 + value]++ == 0)) != 0; // Cell (14, 7)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9484,6 +9596,7 @@ bool Generated::update_domains_set_0_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[98] -= (constraints[1568 + value]++ == 0)) != 0; // Cell (2, 6)
 	bool valid32 = (domain_sizes[99] -= (constraints[1584 + value]++ == 0)) != 0; // Cell (3, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9566,6 +9679,7 @@ bool Generated::update_domains_set_1_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[98] -= (constraints[1568 + value]++ == 0)) != 0; // Cell (2, 6)
 	bool valid32 = (domain_sizes[99] -= (constraints[1584 + value]++ == 0)) != 0; // Cell (3, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9648,6 +9762,7 @@ bool Generated::update_domains_set_2_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[97] -= (constraints[1552 + value]++ == 0)) != 0; // Cell (1, 6)
 	bool valid32 = (domain_sizes[99] -= (constraints[1584 + value]++ == 0)) != 0; // Cell (3, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9730,6 +9845,7 @@ bool Generated::update_domains_set_3_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[97] -= (constraints[1552 + value]++ == 0)) != 0; // Cell (1, 6)
 	bool valid32 = (domain_sizes[98] -= (constraints[1568 + value]++ == 0)) != 0; // Cell (2, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9812,6 +9928,7 @@ bool Generated::update_domains_set_4_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[102] -= (constraints[1632 + value]++ == 0)) != 0; // Cell (6, 6)
 	bool valid32 = (domain_sizes[103] -= (constraints[1648 + value]++ == 0)) != 0; // Cell (7, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9894,6 +10011,7 @@ bool Generated::update_domains_set_5_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[102] -= (constraints[1632 + value]++ == 0)) != 0; // Cell (6, 6)
 	bool valid32 = (domain_sizes[103] -= (constraints[1648 + value]++ == 0)) != 0; // Cell (7, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -9976,6 +10094,7 @@ bool Generated::update_domains_set_6_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[101] -= (constraints[1616 + value]++ == 0)) != 0; // Cell (5, 6)
 	bool valid32 = (domain_sizes[103] -= (constraints[1648 + value]++ == 0)) != 0; // Cell (7, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10058,6 +10177,7 @@ bool Generated::update_domains_set_7_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[101] -= (constraints[1616 + value]++ == 0)) != 0; // Cell (5, 6)
 	bool valid32 = (domain_sizes[102] -= (constraints[1632 + value]++ == 0)) != 0; // Cell (6, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10140,6 +10260,7 @@ bool Generated::update_domains_set_8_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[106] -= (constraints[1696 + value]++ == 0)) != 0; // Cell (10, 6)
 	bool valid32 = (domain_sizes[107] -= (constraints[1712 + value]++ == 0)) != 0; // Cell (11, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10222,6 +10343,7 @@ bool Generated::update_domains_set_9_7(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[106] -= (constraints[1696 + value]++ == 0)) != 0; // Cell (10, 6)
 	bool valid32 = (domain_sizes[107] -= (constraints[1712 + value]++ == 0)) != 0; // Cell (11, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10304,6 +10426,7 @@ bool Generated::update_domains_set_10_7(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[105] -= (constraints[1680 + value]++ == 0)) != 0; // Cell (9, 6)
 	bool valid32 = (domain_sizes[107] -= (constraints[1712 + value]++ == 0)) != 0; // Cell (11, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10386,6 +10509,7 @@ bool Generated::update_domains_set_11_7(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[105] -= (constraints[1680 + value]++ == 0)) != 0; // Cell (9, 6)
 	bool valid32 = (domain_sizes[106] -= (constraints[1696 + value]++ == 0)) != 0; // Cell (10, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10468,6 +10592,7 @@ bool Generated::update_domains_set_12_7(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[110] -= (constraints[1760 + value]++ == 0)) != 0; // Cell (14, 6)
 	bool valid32 = (domain_sizes[111] -= (constraints[1776 + value]++ == 0)) != 0; // Cell (15, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10550,6 +10675,7 @@ bool Generated::update_domains_set_13_7(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[110] -= (constraints[1760 + value]++ == 0)) != 0; // Cell (14, 6)
 	bool valid32 = (domain_sizes[111] -= (constraints[1776 + value]++ == 0)) != 0; // Cell (15, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10632,6 +10758,7 @@ bool Generated::update_domains_set_14_7(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[109] -= (constraints[1744 + value]++ == 0)) != 0; // Cell (13, 6)
 	bool valid32 = (domain_sizes[111] -= (constraints[1776 + value]++ == 0)) != 0; // Cell (15, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10714,6 +10841,7 @@ bool Generated::update_domains_set_15_7(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[109] -= (constraints[1744 + value]++ == 0)) != 0; // Cell (13, 6)
 	bool valid32 = (domain_sizes[110] -= (constraints[1760 + value]++ == 0)) != 0; // Cell (14, 6)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -10800,6 +10928,7 @@ bool Generated::update_domains_set_0_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 	bool valid36 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -10890,6 +11019,7 @@ bool Generated::update_domains_set_1_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 	bool valid36 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -10980,6 +11110,7 @@ bool Generated::update_domains_set_2_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[177] -= (constraints[2832 + value]++ == 0)) != 0; // Cell (1, 11)
 	bool valid36 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11070,6 +11201,7 @@ bool Generated::update_domains_set_3_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[177] -= (constraints[2832 + value]++ == 0)) != 0; // Cell (1, 11)
 	bool valid36 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11160,6 +11292,7 @@ bool Generated::update_domains_set_4_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 	bool valid36 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11250,6 +11383,7 @@ bool Generated::update_domains_set_5_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 	bool valid36 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11340,6 +11474,7 @@ bool Generated::update_domains_set_6_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[181] -= (constraints[2896 + value]++ == 0)) != 0; // Cell (5, 11)
 	bool valid36 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11430,6 +11565,7 @@ bool Generated::update_domains_set_7_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[181] -= (constraints[2896 + value]++ == 0)) != 0; // Cell (5, 11)
 	bool valid36 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11520,6 +11656,7 @@ bool Generated::update_domains_set_8_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 	bool valid36 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11610,6 +11747,7 @@ bool Generated::update_domains_set_9_8(int domain_sizes[], int constraints[], in
 	bool valid35 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 	bool valid36 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11700,6 +11838,7 @@ bool Generated::update_domains_set_10_8(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[185] -= (constraints[2960 + value]++ == 0)) != 0; // Cell (9, 11)
 	bool valid36 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11790,6 +11929,7 @@ bool Generated::update_domains_set_11_8(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[185] -= (constraints[2960 + value]++ == 0)) != 0; // Cell (9, 11)
 	bool valid36 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11880,6 +12020,7 @@ bool Generated::update_domains_set_12_8(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 	bool valid36 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -11970,6 +12111,7 @@ bool Generated::update_domains_set_13_8(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 	bool valid36 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -12060,6 +12202,7 @@ bool Generated::update_domains_set_14_8(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[189] -= (constraints[3024 + value]++ == 0)) != 0; // Cell (13, 11)
 	bool valid36 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -12150,6 +12293,7 @@ bool Generated::update_domains_set_15_8(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[189] -= (constraints[3024 + value]++ == 0)) != 0; // Cell (13, 11)
 	bool valid36 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -12236,6 +12380,7 @@ bool Generated::update_domains_set_0_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 	bool valid32 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12318,6 +12463,7 @@ bool Generated::update_domains_set_1_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 	bool valid32 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12400,6 +12546,7 @@ bool Generated::update_domains_set_2_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[177] -= (constraints[2832 + value]++ == 0)) != 0; // Cell (1, 11)
 	bool valid32 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12482,6 +12629,7 @@ bool Generated::update_domains_set_3_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[177] -= (constraints[2832 + value]++ == 0)) != 0; // Cell (1, 11)
 	bool valid32 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12564,6 +12712,7 @@ bool Generated::update_domains_set_4_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 	bool valid32 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12646,6 +12795,7 @@ bool Generated::update_domains_set_5_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 	bool valid32 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12728,6 +12878,7 @@ bool Generated::update_domains_set_6_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[181] -= (constraints[2896 + value]++ == 0)) != 0; // Cell (5, 11)
 	bool valid32 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12810,6 +12961,7 @@ bool Generated::update_domains_set_7_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[181] -= (constraints[2896 + value]++ == 0)) != 0; // Cell (5, 11)
 	bool valid32 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12892,6 +13044,7 @@ bool Generated::update_domains_set_8_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 	bool valid32 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -12974,6 +13127,7 @@ bool Generated::update_domains_set_9_9(int domain_sizes[], int constraints[], in
 	bool valid31 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 	bool valid32 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13056,6 +13210,7 @@ bool Generated::update_domains_set_10_9(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[185] -= (constraints[2960 + value]++ == 0)) != 0; // Cell (9, 11)
 	bool valid32 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13138,6 +13293,7 @@ bool Generated::update_domains_set_11_9(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[185] -= (constraints[2960 + value]++ == 0)) != 0; // Cell (9, 11)
 	bool valid32 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13220,6 +13376,7 @@ bool Generated::update_domains_set_12_9(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 	bool valid32 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13302,6 +13459,7 @@ bool Generated::update_domains_set_13_9(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 	bool valid32 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13384,6 +13542,7 @@ bool Generated::update_domains_set_14_9(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[189] -= (constraints[3024 + value]++ == 0)) != 0; // Cell (13, 11)
 	bool valid32 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13466,6 +13625,7 @@ bool Generated::update_domains_set_15_9(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[189] -= (constraints[3024 + value]++ == 0)) != 0; // Cell (13, 11)
 	bool valid32 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13548,6 +13708,7 @@ bool Generated::update_domains_set_0_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 	bool valid32 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13630,6 +13791,7 @@ bool Generated::update_domains_set_1_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 	bool valid32 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13712,6 +13874,7 @@ bool Generated::update_domains_set_2_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[177] -= (constraints[2832 + value]++ == 0)) != 0; // Cell (1, 11)
 	bool valid32 = (domain_sizes[179] -= (constraints[2864 + value]++ == 0)) != 0; // Cell (3, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13794,6 +13957,7 @@ bool Generated::update_domains_set_3_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[177] -= (constraints[2832 + value]++ == 0)) != 0; // Cell (1, 11)
 	bool valid32 = (domain_sizes[178] -= (constraints[2848 + value]++ == 0)) != 0; // Cell (2, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13876,6 +14040,7 @@ bool Generated::update_domains_set_4_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 	bool valid32 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -13958,6 +14123,7 @@ bool Generated::update_domains_set_5_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 	bool valid32 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14040,6 +14206,7 @@ bool Generated::update_domains_set_6_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[181] -= (constraints[2896 + value]++ == 0)) != 0; // Cell (5, 11)
 	bool valid32 = (domain_sizes[183] -= (constraints[2928 + value]++ == 0)) != 0; // Cell (7, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14122,6 +14289,7 @@ bool Generated::update_domains_set_7_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[181] -= (constraints[2896 + value]++ == 0)) != 0; // Cell (5, 11)
 	bool valid32 = (domain_sizes[182] -= (constraints[2912 + value]++ == 0)) != 0; // Cell (6, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14204,6 +14372,7 @@ bool Generated::update_domains_set_8_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 	bool valid32 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14286,6 +14455,7 @@ bool Generated::update_domains_set_9_10(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 	bool valid32 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14368,6 +14538,7 @@ bool Generated::update_domains_set_10_10(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[185] -= (constraints[2960 + value]++ == 0)) != 0; // Cell (9, 11)
 	bool valid32 = (domain_sizes[187] -= (constraints[2992 + value]++ == 0)) != 0; // Cell (11, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14450,6 +14621,7 @@ bool Generated::update_domains_set_11_10(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[185] -= (constraints[2960 + value]++ == 0)) != 0; // Cell (9, 11)
 	bool valid32 = (domain_sizes[186] -= (constraints[2976 + value]++ == 0)) != 0; // Cell (10, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14532,6 +14704,7 @@ bool Generated::update_domains_set_12_10(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 	bool valid32 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14614,6 +14787,7 @@ bool Generated::update_domains_set_13_10(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 	bool valid32 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14696,6 +14870,7 @@ bool Generated::update_domains_set_14_10(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[189] -= (constraints[3024 + value]++ == 0)) != 0; // Cell (13, 11)
 	bool valid32 = (domain_sizes[191] -= (constraints[3056 + value]++ == 0)) != 0; // Cell (15, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14778,6 +14953,7 @@ bool Generated::update_domains_set_15_10(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[189] -= (constraints[3024 + value]++ == 0)) != 0; // Cell (13, 11)
 	bool valid32 = (domain_sizes[190] -= (constraints[3040 + value]++ == 0)) != 0; // Cell (14, 11)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14860,6 +15036,7 @@ bool Generated::update_domains_set_0_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[162] -= (constraints[2592 + value]++ == 0)) != 0; // Cell (2, 10)
 	bool valid32 = (domain_sizes[163] -= (constraints[2608 + value]++ == 0)) != 0; // Cell (3, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -14942,6 +15119,7 @@ bool Generated::update_domains_set_1_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[162] -= (constraints[2592 + value]++ == 0)) != 0; // Cell (2, 10)
 	bool valid32 = (domain_sizes[163] -= (constraints[2608 + value]++ == 0)) != 0; // Cell (3, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15024,6 +15202,7 @@ bool Generated::update_domains_set_2_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[161] -= (constraints[2576 + value]++ == 0)) != 0; // Cell (1, 10)
 	bool valid32 = (domain_sizes[163] -= (constraints[2608 + value]++ == 0)) != 0; // Cell (3, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15106,6 +15285,7 @@ bool Generated::update_domains_set_3_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[161] -= (constraints[2576 + value]++ == 0)) != 0; // Cell (1, 10)
 	bool valid32 = (domain_sizes[162] -= (constraints[2592 + value]++ == 0)) != 0; // Cell (2, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15188,6 +15368,7 @@ bool Generated::update_domains_set_4_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[166] -= (constraints[2656 + value]++ == 0)) != 0; // Cell (6, 10)
 	bool valid32 = (domain_sizes[167] -= (constraints[2672 + value]++ == 0)) != 0; // Cell (7, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15270,6 +15451,7 @@ bool Generated::update_domains_set_5_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[166] -= (constraints[2656 + value]++ == 0)) != 0; // Cell (6, 10)
 	bool valid32 = (domain_sizes[167] -= (constraints[2672 + value]++ == 0)) != 0; // Cell (7, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15352,6 +15534,7 @@ bool Generated::update_domains_set_6_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[165] -= (constraints[2640 + value]++ == 0)) != 0; // Cell (5, 10)
 	bool valid32 = (domain_sizes[167] -= (constraints[2672 + value]++ == 0)) != 0; // Cell (7, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15434,6 +15617,7 @@ bool Generated::update_domains_set_7_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[165] -= (constraints[2640 + value]++ == 0)) != 0; // Cell (5, 10)
 	bool valid32 = (domain_sizes[166] -= (constraints[2656 + value]++ == 0)) != 0; // Cell (6, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15516,6 +15700,7 @@ bool Generated::update_domains_set_8_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[170] -= (constraints[2720 + value]++ == 0)) != 0; // Cell (10, 10)
 	bool valid32 = (domain_sizes[171] -= (constraints[2736 + value]++ == 0)) != 0; // Cell (11, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15598,6 +15783,7 @@ bool Generated::update_domains_set_9_11(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[170] -= (constraints[2720 + value]++ == 0)) != 0; // Cell (10, 10)
 	bool valid32 = (domain_sizes[171] -= (constraints[2736 + value]++ == 0)) != 0; // Cell (11, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15680,6 +15866,7 @@ bool Generated::update_domains_set_10_11(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[169] -= (constraints[2704 + value]++ == 0)) != 0; // Cell (9, 10)
 	bool valid32 = (domain_sizes[171] -= (constraints[2736 + value]++ == 0)) != 0; // Cell (11, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15762,6 +15949,7 @@ bool Generated::update_domains_set_11_11(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[169] -= (constraints[2704 + value]++ == 0)) != 0; // Cell (9, 10)
 	bool valid32 = (domain_sizes[170] -= (constraints[2720 + value]++ == 0)) != 0; // Cell (10, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15844,6 +16032,7 @@ bool Generated::update_domains_set_12_11(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[174] -= (constraints[2784 + value]++ == 0)) != 0; // Cell (14, 10)
 	bool valid32 = (domain_sizes[175] -= (constraints[2800 + value]++ == 0)) != 0; // Cell (15, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -15926,6 +16115,7 @@ bool Generated::update_domains_set_13_11(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[174] -= (constraints[2784 + value]++ == 0)) != 0; // Cell (14, 10)
 	bool valid32 = (domain_sizes[175] -= (constraints[2800 + value]++ == 0)) != 0; // Cell (15, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -16008,6 +16198,7 @@ bool Generated::update_domains_set_14_11(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[173] -= (constraints[2768 + value]++ == 0)) != 0; // Cell (13, 10)
 	bool valid32 = (domain_sizes[175] -= (constraints[2800 + value]++ == 0)) != 0; // Cell (15, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -16090,6 +16281,7 @@ bool Generated::update_domains_set_15_11(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[173] -= (constraints[2768 + value]++ == 0)) != 0; // Cell (13, 10)
 	bool valid32 = (domain_sizes[174] -= (constraints[2784 + value]++ == 0)) != 0; // Cell (14, 10)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -16176,6 +16368,7 @@ bool Generated::update_domains_set_0_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 	bool valid36 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16266,6 +16459,7 @@ bool Generated::update_domains_set_1_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 	bool valid36 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16356,6 +16550,7 @@ bool Generated::update_domains_set_2_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[241] -= (constraints[3856 + value]++ == 0)) != 0; // Cell (1, 15)
 	bool valid36 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16446,6 +16641,7 @@ bool Generated::update_domains_set_3_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[241] -= (constraints[3856 + value]++ == 0)) != 0; // Cell (1, 15)
 	bool valid36 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16536,6 +16732,7 @@ bool Generated::update_domains_set_4_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 	bool valid36 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16626,6 +16823,7 @@ bool Generated::update_domains_set_5_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 	bool valid36 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16716,6 +16914,7 @@ bool Generated::update_domains_set_6_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[245] -= (constraints[3920 + value]++ == 0)) != 0; // Cell (5, 15)
 	bool valid36 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16806,6 +17005,7 @@ bool Generated::update_domains_set_7_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[245] -= (constraints[3920 + value]++ == 0)) != 0; // Cell (5, 15)
 	bool valid36 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16896,6 +17096,7 @@ bool Generated::update_domains_set_8_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 	bool valid36 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -16986,6 +17187,7 @@ bool Generated::update_domains_set_9_12(int domain_sizes[], int constraints[], i
 	bool valid35 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 	bool valid36 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17076,6 +17278,7 @@ bool Generated::update_domains_set_10_12(int domain_sizes[], int constraints[], 
 	bool valid35 = (domain_sizes[249] -= (constraints[3984 + value]++ == 0)) != 0; // Cell (9, 15)
 	bool valid36 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17166,6 +17369,7 @@ bool Generated::update_domains_set_11_12(int domain_sizes[], int constraints[], 
 	bool valid35 = (domain_sizes[249] -= (constraints[3984 + value]++ == 0)) != 0; // Cell (9, 15)
 	bool valid36 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17256,6 +17460,7 @@ bool Generated::update_domains_set_12_12(int domain_sizes[], int constraints[], 
 	bool valid35 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 	bool valid36 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17346,6 +17551,7 @@ bool Generated::update_domains_set_13_12(int domain_sizes[], int constraints[], 
 	bool valid35 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 	bool valid36 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17436,6 +17642,7 @@ bool Generated::update_domains_set_14_12(int domain_sizes[], int constraints[], 
 	bool valid35 = (domain_sizes[253] -= (constraints[4048 + value]++ == 0)) != 0; // Cell (13, 15)
 	bool valid36 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17526,6 +17733,7 @@ bool Generated::update_domains_set_15_12(int domain_sizes[], int constraints[], 
 	bool valid35 = (domain_sizes[253] -= (constraints[4048 + value]++ == 0)) != 0; // Cell (13, 15)
 	bool valid36 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32 && valid33 && valid34 && valid35 && valid36;
 }
 
@@ -17612,6 +17820,7 @@ bool Generated::update_domains_set_0_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 	bool valid32 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -17694,6 +17903,7 @@ bool Generated::update_domains_set_1_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 	bool valid32 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -17776,6 +17986,7 @@ bool Generated::update_domains_set_2_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[241] -= (constraints[3856 + value]++ == 0)) != 0; // Cell (1, 15)
 	bool valid32 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -17858,6 +18069,7 @@ bool Generated::update_domains_set_3_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[241] -= (constraints[3856 + value]++ == 0)) != 0; // Cell (1, 15)
 	bool valid32 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -17940,6 +18152,7 @@ bool Generated::update_domains_set_4_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 	bool valid32 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18022,6 +18235,7 @@ bool Generated::update_domains_set_5_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 	bool valid32 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18104,6 +18318,7 @@ bool Generated::update_domains_set_6_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[245] -= (constraints[3920 + value]++ == 0)) != 0; // Cell (5, 15)
 	bool valid32 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18186,6 +18401,7 @@ bool Generated::update_domains_set_7_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[245] -= (constraints[3920 + value]++ == 0)) != 0; // Cell (5, 15)
 	bool valid32 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18268,6 +18484,7 @@ bool Generated::update_domains_set_8_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 	bool valid32 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18350,6 +18567,7 @@ bool Generated::update_domains_set_9_13(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 	bool valid32 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18432,6 +18650,7 @@ bool Generated::update_domains_set_10_13(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[249] -= (constraints[3984 + value]++ == 0)) != 0; // Cell (9, 15)
 	bool valid32 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18514,6 +18733,7 @@ bool Generated::update_domains_set_11_13(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[249] -= (constraints[3984 + value]++ == 0)) != 0; // Cell (9, 15)
 	bool valid32 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18596,6 +18816,7 @@ bool Generated::update_domains_set_12_13(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 	bool valid32 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18678,6 +18899,7 @@ bool Generated::update_domains_set_13_13(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 	bool valid32 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18760,6 +18982,7 @@ bool Generated::update_domains_set_14_13(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[253] -= (constraints[4048 + value]++ == 0)) != 0; // Cell (13, 15)
 	bool valid32 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18842,6 +19065,7 @@ bool Generated::update_domains_set_15_13(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[253] -= (constraints[4048 + value]++ == 0)) != 0; // Cell (13, 15)
 	bool valid32 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -18924,6 +19148,7 @@ bool Generated::update_domains_set_0_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 	bool valid32 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19006,6 +19231,7 @@ bool Generated::update_domains_set_1_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 	bool valid32 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19088,6 +19314,7 @@ bool Generated::update_domains_set_2_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[241] -= (constraints[3856 + value]++ == 0)) != 0; // Cell (1, 15)
 	bool valid32 = (domain_sizes[243] -= (constraints[3888 + value]++ == 0)) != 0; // Cell (3, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19170,6 +19397,7 @@ bool Generated::update_domains_set_3_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[241] -= (constraints[3856 + value]++ == 0)) != 0; // Cell (1, 15)
 	bool valid32 = (domain_sizes[242] -= (constraints[3872 + value]++ == 0)) != 0; // Cell (2, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19252,6 +19480,7 @@ bool Generated::update_domains_set_4_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 	bool valid32 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19334,6 +19563,7 @@ bool Generated::update_domains_set_5_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 	bool valid32 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19416,6 +19646,7 @@ bool Generated::update_domains_set_6_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[245] -= (constraints[3920 + value]++ == 0)) != 0; // Cell (5, 15)
 	bool valid32 = (domain_sizes[247] -= (constraints[3952 + value]++ == 0)) != 0; // Cell (7, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19498,6 +19729,7 @@ bool Generated::update_domains_set_7_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[245] -= (constraints[3920 + value]++ == 0)) != 0; // Cell (5, 15)
 	bool valid32 = (domain_sizes[246] -= (constraints[3936 + value]++ == 0)) != 0; // Cell (6, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19580,6 +19812,7 @@ bool Generated::update_domains_set_8_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 	bool valid32 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19662,6 +19895,7 @@ bool Generated::update_domains_set_9_14(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 	bool valid32 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19744,6 +19978,7 @@ bool Generated::update_domains_set_10_14(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[249] -= (constraints[3984 + value]++ == 0)) != 0; // Cell (9, 15)
 	bool valid32 = (domain_sizes[251] -= (constraints[4016 + value]++ == 0)) != 0; // Cell (11, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19826,6 +20061,7 @@ bool Generated::update_domains_set_11_14(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[249] -= (constraints[3984 + value]++ == 0)) != 0; // Cell (9, 15)
 	bool valid32 = (domain_sizes[250] -= (constraints[4000 + value]++ == 0)) != 0; // Cell (10, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19908,6 +20144,7 @@ bool Generated::update_domains_set_12_14(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 	bool valid32 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -19990,6 +20227,7 @@ bool Generated::update_domains_set_13_14(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 	bool valid32 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20072,6 +20310,7 @@ bool Generated::update_domains_set_14_14(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[253] -= (constraints[4048 + value]++ == 0)) != 0; // Cell (13, 15)
 	bool valid32 = (domain_sizes[255] -= (constraints[4080 + value]++ == 0)) != 0; // Cell (15, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20154,6 +20393,7 @@ bool Generated::update_domains_set_15_14(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[253] -= (constraints[4048 + value]++ == 0)) != 0; // Cell (13, 15)
 	bool valid32 = (domain_sizes[254] -= (constraints[4064 + value]++ == 0)) != 0; // Cell (14, 15)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20236,6 +20476,7 @@ bool Generated::update_domains_set_0_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[226] -= (constraints[3616 + value]++ == 0)) != 0; // Cell (2, 14)
 	bool valid32 = (domain_sizes[227] -= (constraints[3632 + value]++ == 0)) != 0; // Cell (3, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20318,6 +20559,7 @@ bool Generated::update_domains_set_1_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[226] -= (constraints[3616 + value]++ == 0)) != 0; // Cell (2, 14)
 	bool valid32 = (domain_sizes[227] -= (constraints[3632 + value]++ == 0)) != 0; // Cell (3, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20400,6 +20642,7 @@ bool Generated::update_domains_set_2_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[225] -= (constraints[3600 + value]++ == 0)) != 0; // Cell (1, 14)
 	bool valid32 = (domain_sizes[227] -= (constraints[3632 + value]++ == 0)) != 0; // Cell (3, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20482,6 +20725,7 @@ bool Generated::update_domains_set_3_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[225] -= (constraints[3600 + value]++ == 0)) != 0; // Cell (1, 14)
 	bool valid32 = (domain_sizes[226] -= (constraints[3616 + value]++ == 0)) != 0; // Cell (2, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20564,6 +20808,7 @@ bool Generated::update_domains_set_4_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[230] -= (constraints[3680 + value]++ == 0)) != 0; // Cell (6, 14)
 	bool valid32 = (domain_sizes[231] -= (constraints[3696 + value]++ == 0)) != 0; // Cell (7, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20646,6 +20891,7 @@ bool Generated::update_domains_set_5_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[230] -= (constraints[3680 + value]++ == 0)) != 0; // Cell (6, 14)
 	bool valid32 = (domain_sizes[231] -= (constraints[3696 + value]++ == 0)) != 0; // Cell (7, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20728,6 +20974,7 @@ bool Generated::update_domains_set_6_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[229] -= (constraints[3664 + value]++ == 0)) != 0; // Cell (5, 14)
 	bool valid32 = (domain_sizes[231] -= (constraints[3696 + value]++ == 0)) != 0; // Cell (7, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20810,6 +21057,7 @@ bool Generated::update_domains_set_7_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[229] -= (constraints[3664 + value]++ == 0)) != 0; // Cell (5, 14)
 	bool valid32 = (domain_sizes[230] -= (constraints[3680 + value]++ == 0)) != 0; // Cell (6, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20892,6 +21140,7 @@ bool Generated::update_domains_set_8_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[234] -= (constraints[3744 + value]++ == 0)) != 0; // Cell (10, 14)
 	bool valid32 = (domain_sizes[235] -= (constraints[3760 + value]++ == 0)) != 0; // Cell (11, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -20974,6 +21223,7 @@ bool Generated::update_domains_set_9_15(int domain_sizes[], int constraints[], i
 	bool valid31 = (domain_sizes[234] -= (constraints[3744 + value]++ == 0)) != 0; // Cell (10, 14)
 	bool valid32 = (domain_sizes[235] -= (constraints[3760 + value]++ == 0)) != 0; // Cell (11, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -21056,6 +21306,7 @@ bool Generated::update_domains_set_10_15(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[233] -= (constraints[3728 + value]++ == 0)) != 0; // Cell (9, 14)
 	bool valid32 = (domain_sizes[235] -= (constraints[3760 + value]++ == 0)) != 0; // Cell (11, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -21138,6 +21389,7 @@ bool Generated::update_domains_set_11_15(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[233] -= (constraints[3728 + value]++ == 0)) != 0; // Cell (9, 14)
 	bool valid32 = (domain_sizes[234] -= (constraints[3744 + value]++ == 0)) != 0; // Cell (10, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -21220,6 +21472,7 @@ bool Generated::update_domains_set_12_15(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[238] -= (constraints[3808 + value]++ == 0)) != 0; // Cell (14, 14)
 	bool valid32 = (domain_sizes[239] -= (constraints[3824 + value]++ == 0)) != 0; // Cell (15, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -21302,6 +21555,7 @@ bool Generated::update_domains_set_13_15(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[238] -= (constraints[3808 + value]++ == 0)) != 0; // Cell (14, 14)
 	bool valid32 = (domain_sizes[239] -= (constraints[3824 + value]++ == 0)) != 0; // Cell (15, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -21384,6 +21638,7 @@ bool Generated::update_domains_set_14_15(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[237] -= (constraints[3792 + value]++ == 0)) != 0; // Cell (13, 14)
 	bool valid32 = (domain_sizes[239] -= (constraints[3824 + value]++ == 0)) != 0; // Cell (15, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
@@ -21466,6 +21721,7 @@ bool Generated::update_domains_set_15_15(int domain_sizes[], int constraints[], 
 	bool valid31 = (domain_sizes[237] -= (constraints[3792 + value]++ == 0)) != 0; // Cell (13, 14)
 	bool valid32 = (domain_sizes[238] -= (constraints[3808 + value]++ == 0)) != 0; // Cell (14, 14)
 
+	// Check whether all domains are still valid (i.e. non-empty)
 	return valid1 && valid2 && valid3 && valid4 && valid5 && valid6 && valid7 && valid8 && valid9 && valid10 && valid11 && valid12 && valid13 && valid14 && valid15 && valid16 && valid17 && valid18 && valid19 && valid20 && valid21 && valid22 && valid23 && valid24 && valid25 && valid26 && valid27 && valid28 && valid29 && valid30 && valid31 && valid32;
 }
 
