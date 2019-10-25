@@ -12,10 +12,10 @@ bool ac3(Sudoku<N, M> * sudoku) {
 	for (int yi = 0; yi < sudoku->size; yi++) {
 		for (int xi = 0; xi < sudoku->size; xi++) {
 			// Calculate current block bounds
-			int bx = N * (xi / N);
+			int bx = M * (xi / M);
 			int by = N * (yi / N);
 
-			int bxe = bx + N;
+			int bxe = bx + M;
 			int bye = by + N;
 
 			unsigned int current_cell        = xi << 24 | yi << 16; 
@@ -76,10 +76,10 @@ bool ac3(Sudoku<N, M> * sudoku) {
 					constraint++;
 
 					// Calculate current block bounds
-					int bx = N * (xi / N);
+					int bx = M * (xi / M);
 					int by = N * (yi / N);
 
-					int bxe = bx + N;
+					int bxe = bx + M;
 					int bye = by + N;
 
 					unsigned int current_cell        = xi << 8 | yi;
