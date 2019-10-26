@@ -104,10 +104,8 @@ void SudokuEstimator::estimate_solution_count() {
 		// Randomly shuffle every row but the first one
 		for (int row = 1; row < M; row++) {
 			std::shuffle(rows[row], rows[row] + Sudoku<N, M>::size, rng);
-		}
 
-		// Check if the current permutation of rows is a Latin Rectangle
-		for (int row = 1; row < M; row++) {
+			// Check if the current permutation of rows is still a Latin Rectangle
 			for (int i = 0; i < Sudoku<N, M>::size; i++) {
 				for (int j = 0; j < row; j++) {
 					if (rows[row][i] == rows[j][i]) {
