@@ -129,7 +129,7 @@ void SudokuEstimator::estimate_solution_count() {
 	// Select s random cells from the other rows.
 	std::shuffle(coordinates, coordinates + coordinate_count, rng);
 
-	// Estime using Knuth's algorithm
+	// Estimate using Knuth's algorithm
 	knuth();
 
 	if (BigIntegerMath::is_zero(estimate)) return;
