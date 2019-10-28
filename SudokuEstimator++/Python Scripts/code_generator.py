@@ -6,11 +6,11 @@ def get_index(i, j): return i + j * size
 
 def update_constraint_set(number, i, j):
     index = get_index(i, j)
-    return '\tbool valid{} = (domain_sizes[{}] -= (constraints[{} + value]++ == 0)) != 0; // Cell ({}, {})\n'.format(number, index, index * size, i, j)
+    return '\tbool valid{} = (domain_sizes[{}] -= !( constraints[{} + value]++ )) != 0; // Cell ({}, {})\n'.format(number, index, index * size, i, j)
 
 def update_constraint_reset(i, j):
     index = get_index(i, j)
-    return '\tdomain_sizes[{}] += (constraints[{} + value]-- == 1); // Cell ({}, {})\n'.format(index, index * size, i, j)
+    return '\tdomain_sizes[{}] += !( --constraints[{} + value] ); // Cell ({}, {})\n'.format(index, index * size, i, j)
 
 def output_update_domains_set(file, x, y):
     bx = M * int(x / M)
@@ -21,6 +21,7 @@ def output_update_domains_set(file, x, y):
     indices = []
 
     file.write('bool Generated::update_domains_set_{}_{}(int domain_sizes[], int constraints[], int value) {{\n'.format(x, y))
+    file.write('\tbool valid = true;\n\n')
     file.write('\t// Update current row\n')
 
     for i in range(0, x):    
@@ -29,6 +30,14 @@ def output_update_domains_set(file, x, y):
     for i in range(x+1, size): 
         indices.append(get_index(i, y))
         file.write(update_constraint_set(len(indices), i, y))
+
+    file.write('\n\t// Check whether all domains are still valid (i.e. non-empty)\n')
+    file.write('\tvalid = ')
+
+    for i in range(1, len(indices)):
+        file.write('valid{} && '.format(i))
+    file.write('valid{};\n'.format(len(indices)))
+    temp = len(indices) + 1
 
     file.write('\n')
     file.write('\t// Update current column\n')
@@ -41,6 +50,14 @@ def output_update_domains_set(file, x, y):
         if j % N != 0: 
             indices.append(get_index(x, j))
             file.write(update_constraint_set(len(indices), x, j))
+
+    file.write('\n\t// Check whether all domains are still valid (i.e. non-empty)\n')
+    file.write('\tvalid = valid && ')
+
+    for i in range(temp, len(indices)):
+        file.write('valid{} && '.format(i))
+    file.write('valid{};\n'.format(len(indices)))
+    temp = len(indices) + 1
 
     file.write('\n')
     file.write('\t// Update current block\n')
@@ -61,9 +78,9 @@ def output_update_domains_set(file, x, y):
             file.write(update_constraint_set(len(indices), i, j))
 
     file.write('\n\t// Check whether all domains are still valid (i.e. non-empty)\n')
-    file.write('\treturn ')
+    file.write('\treturn valid && ')
 
-    for i in range(1, len(indices)):
+    for i in range(temp, len(indices)):
         file.write('valid{} && '.format(i))
     file.write('valid{};\n'.format(len(indices)))
     file.write('}\n\n')
