@@ -90,7 +90,7 @@ void SudokuEstimator::estimate_solution_count() {
 	// Initialize each row of the Latin Rectangle with the numbers 1 .. N*M
 	for (int row = 0; row < M; row++) {
 		for (int i = 0; i < Sudoku<N, M>::size; i++) {
-			rows[row][i] = i + 1;
+			rows[row][i] = i;
 		}
 	}
 
@@ -124,7 +124,7 @@ void SudokuEstimator::estimate_solution_count() {
 	// Select s random cells from the other rows.
 	std::shuffle(coordinates, coordinates + coordinate_count, rng);
 
-	// Estime using Knuth's algorithm
+	// Estimate using Knuth's algorithm
 	knuth();
 
 	if (BigIntegerMath::is_zero(estimate)) return;

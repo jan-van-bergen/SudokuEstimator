@@ -64,8 +64,7 @@ bool ac3(Sudoku<N, M> * sudoku) {
 
 			for (int di = 0; di < domain_size_i; di++) {
 				if (domain_i[di] == domain_j[0]) {
-					
-					int& constraint = sudoku->constraints[index_i * Sudoku<N, M>::size + domain_i[di] - 1];
+					int& constraint = sudoku->constraints[index_i * Sudoku<N, M>::size + domain_i[di]];
 
 					// If domain_i[di] was previously unconstrained, it is now
 					if (constraint == 0) {
