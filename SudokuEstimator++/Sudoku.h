@@ -64,7 +64,7 @@ struct Sudoku {
 	
 	// Checks if the cell at (x, y) is allowed to assume the given value
 	inline bool is_valid_move(int x, int y, int value) const {
-		return constraints[get_index(x, y) * size + value - 1] == 0;
+		return constraints[get_index(x, y) * size + value] == 0;
 	}
 
 	// Checks if the current configuration is a valid Sudoku grid
@@ -113,7 +113,7 @@ struct Sudoku {
 	inline int get_domain(int x, int y, int result_domain[size]) const {
 		int domain_size = 0;
 
-		for (int value = 1; value <= size; value++) {
+		for (int value = 0; value < size; value++) {
 			if (is_valid_move(x, y, value)) {
 				result_domain[domain_size++] = value;
 			}
@@ -160,23 +160,23 @@ struct Sudoku {
 		int index = get_index(x, y);
 		
 		assert(grid[index] == 0);
-		assert(value >= 1 && value <= size);
+		assert(value >= 0 && value < size);
 
 		// Update all related domains that this grid is now a number
-		bool valid = update_domains_set(x, y, value - 1);
+		bool valid = update_domains_set(x, y, value);
 
-		grid[index] = value;
+		grid[index] = value + 1;
 
 		// Remove the current cell from the empty cell list in O(1) time by swapping with the last element in that list
-		// First look up the index of the current cell (x, y) in the empty cell list
+		// - First look up the index of the current cell (x, y) in the empty cell list
+		// - Look up the index of the last cell in the empty cell list
+		// - Where previously the (x, y) cell was stored in the empty cell list we now store the last empty cell
+		// - Update the fact that the previously last cell can now be found somewhere else
+		// - Remove last element from empty cell list
 		int empty_cell_index = empty_cells_index[index];
-		// Look up the index of the last cell in the empty cell list
 		int last_empty_cell  = empty_cells[empty_cells_length - 1];
-		// Where previously the (x, y) cell was stored in the empty cell list we now store the last empty cell
 		empty_cells[empty_cell_index] = last_empty_cell;
-		// Update the fact that the previously last cell can now be found somewhere else
 		empty_cells_index[last_empty_cell] = empty_cell_index;
-		// Remove last element from empty cell list
 		empty_cells_length--;
 
 		return valid;

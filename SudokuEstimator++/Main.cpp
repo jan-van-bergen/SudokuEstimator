@@ -16,16 +16,10 @@ int main() {
 		thread_count = 1;
 	}
 
-	// Run the algorithm on n-1 other threads
-	if (thread_count > 1) {
-		for (int i = 0; i < thread_count - 1; i++) {
-			std::thread(create_and_run_estimator).detach();
-		}
+	for (int i = 0; i < thread_count; i++) {
+		std::thread(create_and_run_estimator).detach();
 	}
 
-	// Launch a thread that prints the results of all the other threads to the console
-	std::thread report_results_thread(report_results);
-
-	// Run on the main thread
-	create_and_run_estimator();
+	// Run function on the main thread that prints the results of all the other threads to the console
+	report_results();
 }
