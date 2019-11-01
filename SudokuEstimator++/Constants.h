@@ -24,12 +24,12 @@ namespace Constants {
 	// up the process of estimating the amount of valid N*M x N*M Sudoku Grids
 	// Source: http://combinatoricswiki.org/wiki/Enumeration_of_Latin_Squares_and_Rectangles
 	template<int N, int M> inline BigInteger get_reduced_latin_rectangle_count();
-	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 2>() { return 3; }																													// Number of Reduced 2x4 Latin Rectangles
-	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 3>() { return 1064; }																													// Number of Reduced 3x6 Latin Rectangles
-	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 4>() { return 420909504; }																											// Number of Reduced 4x8 Latin Rectangles
+	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 2>() { return 3; }																													// Number of Reduced 2x4  Latin Rectangles
+	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 3>() { return 1064; }																													// Number of Reduced 3x6  Latin Rectangles
+	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 4>() { return 420909504; }																											// Number of Reduced 4x8  Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 5>() { return 746988383076286464ULL; }																								// Number of Reduced 5x10 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<2, 6>() { return BigInteger(1 << 17) * BigInteger(9 * 5 * 131) * BigInteger(110630813) * BigInteger(65475601447957); }					// Number of Reduced 6x12 Latin Rectangles
-	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 3>() { return 103443808; }																											// Number of Reduced 3x9 Latin Rectangles
+	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 3>() { return 103443808; }																											// Number of Reduced 3x9  Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 4>() { return BigInteger(1 << 9) * BigInteger(27 * 7) * BigInteger(1945245990285863); }												// Number of Reduced 4x12 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<3, 5>() { return BigInteger(1 << 22) * BigInteger(2187 * 19) * BigInteger(423843896863) * BigInteger(34662016427839511); }				// Number of Reduced 5x15 Latin Rectangles
 	template<> inline BigInteger get_reduced_latin_rectangle_count<4, 4>() { return BigInteger(1 << 14) * BigInteger(243 * 2693) * BigInteger(42787) * BigInteger(1699482467) * BigInteger(8098773443); }	// Number of Reduced 4x16 Latin Rectangles

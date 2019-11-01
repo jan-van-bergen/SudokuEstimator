@@ -1,5 +1,4 @@
 #pragma once
-#include <mutex>
 #include <random>
 
 #include "BigInteger.h"
@@ -47,8 +46,7 @@ private:
 	void estimate_solution_count();
 
 public:
-	void run();
+	void run(int thread_index);
 };
 
-// Function that runs in its own thread and reports the results of all the other threads.
 void report_results();

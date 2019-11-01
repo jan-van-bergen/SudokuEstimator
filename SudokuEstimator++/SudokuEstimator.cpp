@@ -1,4 +1,6 @@
 #include "SudokuEstimator.h"
+
+#include <mutex>
 #include <chrono>
 
 #include "AC3.h"
@@ -52,11 +54,11 @@ void SudokuEstimator::knuth() {
 	int domain[Sudoku<N, M>::size];
 
 	for (int i = 0; i < random_walk_length; i++) {
-		int index = coordinates[i];
+		int cell_index = coordinates[i];
 
-		assert(sudoku.grid[index] == 0); // Cell should be empty
+		assert(sudoku.grid[cell_index] == 0); // Cell should be empty
 		
-		int domain_size = sudoku.get_domain(index, domain);
+		int domain_size = sudoku.get_domain(cell_index, domain);
 		if (domain_size == 0) {
 			estimate = 0;
 			
@@ -71,7 +73,7 @@ void SudokuEstimator::knuth() {
 
 		// Use forward checking for a possible early out
 		// If any domain becomes empty the Sudoku can't be completed and 0 can be returned.
-		if (!sudoku.set_with_forward_check(index, random_value_from_domain)) {
+		if (!sudoku.set_with_forward_check(cell_index, random_value_from_domain)) {
 			estimate = 0;
 			
 			return;
@@ -153,7 +155,7 @@ void SudokuEstimator::estimate_solution_count() {
 	estimate *= backtrack;
 }
 
-void SudokuEstimator::run() {
+void SudokuEstimator::run(int thread_index) {
 	rng = std::mt19937(random_device());
 
 	int index = 0;
@@ -165,7 +167,7 @@ void SudokuEstimator::run() {
 		}
 	}
 
-	char results_file_name[32];
+	char results_file_name[64];
 	sprintf_s(results_file_name, "Results/results_%ux%u_s=%u.txt", N, M, random_walk_length);
 
 	BigInteger batch_sum;

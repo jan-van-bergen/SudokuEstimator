@@ -1,5 +1,6 @@
 #pragma once
 #include <queue>
+
 #include "Sudoku.h"
 
 template<int N, int M>
@@ -51,7 +52,6 @@ bool ac3(Sudoku<N, M> * sudoku) {
 		int xi = (int)(cij & 0xff000000) >> 24, yi = (int)(cij & 0x00ff0000) >> 16;
 		int xj = (int)(cij & 0x0000ff00) >> 8,  yj = (int)(cij & 0x000000ff);
 
-		// @TODO: can be optimized!
 		int index_i = Sudoku<N, M>::get_index(xi, yi);
 		int index_j = Sudoku<N, M>::get_index(xj, yj); 
 
@@ -64,12 +64,13 @@ bool ac3(Sudoku<N, M> * sudoku) {
 
 			for (int di = 0; di < domain_size_i; di++) {
 				if (domain_i[di] == domain_j[0]) {
-					int& constraint = sudoku->constraints[index_i * Sudoku<N, M>::size + domain_i[di]];
+					
+					unsigned char& constraint = sudoku->constraints[index_i * Sudoku<N, M>::size + domain_i[di]];
 
 					// If domain_i[di] was previously unconstrained, it is now
 					if (constraint == 0) {
 						// Remove the value from the domain
-						int& domain_size = sudoku->domain_sizes[index_i];
+						unsigned char& domain_size = sudoku->domain_sizes[index_i];
 						domain_size--;
 
 						// If the domain is now empty, the Sudoku is not valid

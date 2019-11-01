@@ -3,7 +3,7 @@
 
 #include "Generated.h"
 
-template<int N, int M> // N is the height of a block, M is the width of a block. The width and height of the entire Sudoku are N*M
+template<int N, int M = N> // N is the height of a block, M is the width of a block. The width and height of the entire Sudoku are N*M
 struct Sudoku {
 	static constexpr int size = N * M;
 
@@ -14,17 +14,17 @@ struct Sudoku {
 
 	// Sudoku grid, contains all currently filled in numbers
 	// If a number is not filled in, the value is 0
-	int grid[size * size];
+	unsigned char grid[size * size];
 
 	// 'constraints' stores a 1d array for each cell (x, y) in the Sudoku
 	// It contains at position [(x + y*size)*size + v - 1] the amount of variables in the row, column and block of position (x, y), that have value v.
 	// Thus if the value stored is 0, it means that v is in the domain of (x, y), as no other variable constrains that value.
 	// This setup allows for fast checking of domains
-	int constraints [size * size * size];
-	int domain_sizes[size * size];
+	unsigned char constraints [size * size * size];
+	unsigned char domain_sizes[size * size];
 
-	int empty_cells      [size * size]; // Keeps a list of indices that are currently empty
-	int empty_cells_index[size * size]; // Used to transform a cell index (i, j) into its index in the 'empty_cells' list
+	unsigned char empty_cells      [size * size]; // Keeps a list of indices that are currently empty
+	unsigned char empty_cells_index[size * size]; // Used to transform a cell index (i, j) into its index in the 'empty_cells' list
 	int empty_cells_length;				// Keeps track of the length of 'empty_cells'
 
 	inline Sudoku() {
@@ -55,64 +55,24 @@ struct Sudoku {
 	}
 	
 	// Checks if the cell at (x, y) is allowed to assume the given value
-	inline bool is_valid_move(int index, int value) const {
-		return constraints[index * size + value ] == 0;
+	inline bool is_valid_move(int cell_index, int value) const {
+		return constraints[cell_index * size + value] == 0;
 	}
 
-	// Checks if the current configuration is a valid Sudoku grid
-	inline bool is_valid_solution() const {
-		for (int y = 0; y < size; y++) {
-			for (int x = 0; x < size; x++) {
-				int current_value = grid[get_index(x, y)];
-
-				if (current_value < 1 || current_value > size) return false;
-
-				// Check row, skipping the current cell
-				for (int i = 0; i < size; i++) {
-					if (i != x && grid[get_index(i, y)] == current_value) {
-						return false;
-					}
-				}
-
-				// Check column, skipping the current cell
-				for (int j = 0; j < size; j++) {
-					if (j != y && grid[get_index(x, j)] == current_value) {
-						return false;
-					}
-				}
-
-				// Check block, skipping the current cell
-				int bx = M * (x / M);
-				int by = N * (y / N);
-
-				for (int j = by; j < by + N; j++) {
-					for (int i = bx; i < bx + M; i++) {
-						if ((i != x || j != y) && grid[get_index(i, j)] == current_value) {
-							return false;
-						}
-					}
-				}
-			}
-		}
-
-		// None of the checks failed, the Sudoku is correct
-		return true;
-	}
-	
 	// Gets the domain of cell (x, y)
 	// Stores the resulting domain in result_domain, which should be an array of length >= size
 	// The size of the domain is returned
-	inline int get_domain(int index, int result_domain[size]) const {
+	inline int get_domain(int cell_index, int result_domain[size]) const {
 		int domain_size = 0;
 
 		for (int value = 0; value < size; value++) {
-			if (is_valid_move(index, value)) {
+			if (is_valid_move(cell_index, value)) {
 				result_domain[domain_size++] = value;
 			}
 		}
 
 		// For empty cells the domain size should be the same as the cached one
-		assert(grid[index] != 0 || domain_size == domain_sizes[index]);
+		assert(grid[cell_index] != 0 || domain_size == domain_sizes[cell_index]);
 
 		return domain_size;
 	}
@@ -143,13 +103,14 @@ struct Sudoku {
 	// Sets the cell at (x, y) to the given value, using forward checking
 	// Updates all related domains (cells in the same row, column and block) that the cell has the new value
 	// If any of those domains become empty false is returned, true otherwise
-	inline bool set_with_forward_check(int index, int value) {
-		assert(grid[index] == 0);
+	inline bool set_with_forward_check(int cell_index, int value) {
+		assert(grid[cell_index] == 0);
 		assert(value >= 0 && value < size);
 
 		// Update all related domains that this grid is now a number
-		bool valid = Generated::table_set[index](domain_sizes, constraints, value);
-		grid[index] = value + 1;
+
+		bool valid = Generated::table_set[cell_index](domain_sizes, constraints, value);
+		grid[cell_index] = value + 1;
 
 		// Remove the current cell from the empty cell list in O(1) time by swapping with the last element in that list
 		// - First look up the index of the current cell (x, y) in the empty cell list
@@ -157,10 +118,10 @@ struct Sudoku {
 		// - Where previously the (x, y) cell was stored in the empty cell list we now store the last empty cell
 		// - Update the fact that the previously last cell can now be found somewhere else
 		// - Remove last element from empty cell list
-		int empty_cell_index = empty_cells_index[index];
+		int empty_cell_index = empty_cells_index[cell_index];
 		int last_empty_cell  = empty_cells[empty_cells_length - 1];
-		empty_cells[empty_cell_index] = last_empty_cell;
-		empty_cells_index[last_empty_cell] = empty_cell_index;
+		empty_cells      [empty_cell_index] = last_empty_cell;
+		empty_cells_index[last_empty_cell]  = empty_cell_index;
 		empty_cells_length--;
 
 		return valid;
@@ -168,17 +129,17 @@ struct Sudoku {
 
 	// Resets the cell at (x, y) to zero
 	// Updates all related domains (cells in the same row, column and block) that the cell no longer has a value
-	inline void reset_cell(int index) {
-		assert(grid[index] != 0);
+	inline void reset_cell(int cell_index) {
+		assert(grid[cell_index] != 0);
 		assert(empty_cells_length < size * size);
 
 		// Update all related domains that this grid is no longer a number
-		Generated::table_reset[index](domain_sizes, constraints, grid[index] - 1);
-		grid[index] = 0;
+		Generated::table_reset[cell_index](domain_sizes, constraints, grid[cell_index] - 1);
+		grid[cell_index] = 0;
 
 		// Store the cell after the last element in the empty cell list
-		empty_cells[empty_cells_length] = index;
-		empty_cells_index[index]= empty_cells_length;
+		empty_cells[empty_cells_length] = cell_index;
+		empty_cells_index[cell_index]= empty_cells_length;
 		empty_cells_length++;
 	}
 };
