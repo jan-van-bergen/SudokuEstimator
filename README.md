@@ -1,6 +1,7 @@
 # Monte Carlo Sudoku Solution Estimator
 
 Implementation of a Monte Carlo style algorithm that estimates the amount of valid solutions to a Sudoku of arbitrary size.
+The implementation was optimized as part of the course <i><a href="http://www.cs.uu.nl/docs/vakken/mov/">Optimization and Vectorization</a></i>.
 
 Original idea based on <a>https://theartofmachinery.com/2017/08/14/monte_carlo_counting_sudoku_grids.html</a>
 
