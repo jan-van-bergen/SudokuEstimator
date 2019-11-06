@@ -10,7 +10,7 @@ constexpr int N = 4;
 constexpr int M = 4;
 constexpr int random_walk_length = 55;
 
-static_assert(N == Generated::N && M == Generated::M, "N and M should match the generated code!");
+static_assert(N == Generated::N && M == Generated::M, "N and M should match the generated code! The code can be regenerated with different N and M using 'Python Scripts/code_generator.py'");
 static_assert(N <= M, "Values of N and M should be swapped such that N <= M");
 
 constexpr int BATCH_SIZE = 100;
